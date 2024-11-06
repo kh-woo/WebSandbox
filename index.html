@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생회 웹사이트</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>학생회 웹사이트</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">홈</a></li>
+                <li><a href="#announcements">공지사항</a></li>
+                <li><a href="#events">이벤트</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>환영합니다!</h2>
+        <p>학생회 웹사이트에 오신 것을 환영합니다. 최신 공지사항과 이벤트 정보를 확인하세요.</p>
+    </section>
+
+    <section id="announcements">
+        <h2>공지사항</h2>
+        <ul id="announcement-list">
+            <li>곧 있을 정기 회의</li>
+            <li>학교 축제 일정 공지</li>
+        </ul>
+    </section>
+
+    <section id="events">
+        <h2>이벤트 일정</h2>
+        <div class="event">
+            <h3>미리 배움터</h3>
+            <p>2024년 11월 10일</p>
+            <a href="https://www.youtube.com/" class="event-link" target="_blank">신청하러 가기</a>
+        </div>
+        <div class="event">
+            <h3>새로 배움터</h3>
+            <p>2024년 11월 20일</p>
+            <a href="https://www.youtube.com/" class="event-link" target="_blank">신청하러 가기</a>
+        </div>
+        <div class="event">
+            <h3>MT</h3>
+            <p>2024년 12월 5일</p>
+            <a href="https://www.youtube.com/" class="event-link" target="_blank">신청하러 가기</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>연락처</h2>
+        <button id="show-contact-btn">연락처 보기</button>
+        <div id="contact-info" style="display: none;">
+            <p>회장: 010-1234-5678</p>
+            <p>부회장: 010-8765-4321</p>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
