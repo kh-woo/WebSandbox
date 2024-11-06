@@ -1,2 +1,1 @@
-## hi brothers 
-## we will happy
+#Hello, Jeon Hanasol! I’m Kim Hyunwoo, and our team consists of Choi Woojin, Kim Kyungmok, and myself. We recommended you as our representative, and you've been elected! We’re counting on you to give it your best effort.
