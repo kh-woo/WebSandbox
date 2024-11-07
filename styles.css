@@ -31,3 +31,23 @@ section {
     padding: 2rem;
     border-bottom: 1px solid #ddd;
 }
+
+/* 소모임 링크 스타일 - 세로 정렬 */
+.club-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    gap: 1rem;
+    align-items: center; /* 중앙 정렬 */
+}
+
+.club-links ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.club-links ul li a:hover {
+    text-decoration: underline;
+}

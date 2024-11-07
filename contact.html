@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>홈 - 학생회 웹사이트</title>
+    <title>연락처 - 학생회 웹사이트</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,9 +21,19 @@
     </header>
     
     <section>
-        <h2>환영합니다!</h2>
-        <p>학생회 웹사이트에 오신 것을 환영합니다. 최신 공지사항과 이벤트 정보를 확인하세요.</p>
+        <h2>연락처</h2>
+        <button id="show-contact-btn">연락처 보기</button>
+        <div id="contact-info" style="display: none;">
+            <p>회장: 010-1234-5678</p>
+            <p>부회장: 010-8765-4321</p>
+        </div>
     </section>
 
+    <script>
+        document.getElementById("show-contact-btn").addEventListener("click", function() {
+            const contactInfo = document.getElementById("contact-info");
+            contactInfo.style.display = contactInfo.style.display === "none" ? "block" : "none";
+        });
+    </script>
 </body>
 </html>

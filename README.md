@@ -24,3 +24,4 @@ Briefly describe your project here. Explain its purpose, main features, and what
 
 
 ## 학생회 페이지 만들기
+### 아솔이형이 대충 해보고 느낌 잡아서 데구 끝나고 바로 시작
