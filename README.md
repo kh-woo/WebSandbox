@@ -1,27 +1,40 @@
-# Project Name
+# 학생회 페이지 프로젝트
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
 
-## 📖 About the Project
-Briefly describe your project here. Explain its purpose, main features, and what makes it unique. Consider adding a quick description that will catch the reader's attention.
+## 📖 프로젝트 소개
+이 프로젝트는 컴퓨터 정보공학부 학생들이 학과 행사, 소식, 공지사항 및 공부와 관련된 자료들을 쉽게 확인할 수 있도록 돕는 플랫폼입니다. 학생회와 학생들 간의 소통을 강화하고, 모든 학생들이 최신 정보를 쉽게 접할 수 있도록 하는 것을 목표로 합니다.
 
-## 🚀 Features
-- **Feature 1:** Describe the first main feature here.
-- **Feature 2:** Explain the second feature.
-- **Feature 3:** Add any additional features you plan to include.
+## 🚀 주요 기능
+- **공지사항 및 뉴스 피드**: 학생회에서 주최하거나 학과와 관련된 중요한 소식 및 공지사항을 제공합니다.
+- **이벤트 관리**: 학생회에서 주최하는 행사 정보를 등록하고 참여 신청을 받을 수 있습니다.
+- **학생회 소개**: 학생회 구성원들의 프로필과 역할을 소개하는 페이지입니다.
+- **소모임 소개**: 학과 내 다양한 소모임을 소개하는 페이지입니다.
+- **Q&A 게시판**: 학생들이 익명으로 질문을 올리고 학생회가 답변할 수 있는 기능을 제공합니다.
+- **공부자료**: 학습에 도움이 되는 자료를 공유할 수 있는 게시판입니다.
 
-## 🛠️ Tech Stack
-- **Frontend:** HTML, CSS, JavaScript (Update if using a specific framework/library like React, Vue, etc.)
-- **Backend:** Node.js, Express (Adjust depending on your backend choices)
-- **Database:** MongoDB / MySQL / etc.
-  
-## 🔧 Installation
+### 추가 기능
+- **알림 시스템**: 새 공지나 이벤트 등록 시 사용자에게 알림을 보냅니다.
+- **캘린더 뷰**: 주요 일정과 이벤트를 한눈에 볼 수 있는 달력 기능입니다.
+- **관리자 권한 설정**: 학생회 임원들만 콘텐츠를 추가하거나 편집할 수 있도록 권한을 부여합니다.
 
-1. Clone the repository:
+## 👥 역할 분배
+- **김현우**: 학생회 소개 페이지 및 공부자료 게시판 개발, 전체적인 프론트엔드 통합 작업.
+- **전한아솔**: 공지사항 및 뉴스 피드 페이지 개발, 알림 시스템 구현, 프로젝트 관리 및 GitHub 유지.
+- **최우진**: 이벤트 관리 시스템 개발, 캘린더 뷰 구현, 서버 설정 및 성능 최적화.
+- **김경목**: Q&A 게시판 및 소모임 소개 페이지 개발, 데이터베이스 설계 및 관리.
+
+### 프로젝트 일정
+- 11/6 첫 회의 -> 주제 설정
+- 11/11 두 번째 회의를 통해서 프로젝트 시작 예정
+
+## 🛠️ 기술 스택
+- **프론트엔드**: HTML, CSS, JavaScript (React 또는 Vue.js와 같은 프레임워크 사용 가능)
+- **백엔드**: Node.js
+- **데이터베이스**: MongoDB / MySQL (프로젝트 요구 사항에 따라 선택)
+
+## 🔧 설치 방법
+
+1. 레포지토리를 클론합니다:
    ```bash
    git clone https://github.com/yourusername/yourrepositoryname.git
-
-
-## 학생회 페이지 만들기
-### 아솔이형이 대충 해보고 느낌 잡아서 데구 끝나고 바로 시작
