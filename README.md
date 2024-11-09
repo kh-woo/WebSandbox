@@ -36,6 +36,6 @@
 
 ## 🔧 설치 방법
 
-1. 레포지토리를 클론합니다:
+1. 레포지토리를 클론하여 설치 가능
    ```bash
    git clone https://github.com/yourusername/yourrepositoryname.git
