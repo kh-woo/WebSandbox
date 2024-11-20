@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A 게시판</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .status-waiting {
+            color: red; /* 답변 대기 상태는 빨간색 */
+        }
+
+        .status-answered {
+            color: green; /* 답변 완료 상태는 초록색 */
+        }
+
+        .question {
+            margin-bottom: 20px; /* 각 질문 사이에 간격 추가 */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .status {
+            margin-top: 10px; /* 답변 상태와 답변 내용 간의 간격 조정 */
+        }
+
+        .answer-section {
+            margin-top: 10px; /* 답변 작성 영역과 상태 간의 간격 */
+        }
+
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+        }
+
+        .question-title {
+            display: inline;
+            cursor: pointer;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Q&A 게시판</h1>
+    </header>
+    <main>
+        <!-- 질문 작성 -->
+        <section>
+            <h2>질문 작성</h2>
+            <form id="questionForm">
+                <label for="title">질문 제목:</label><br>
+                <input type="text" id="title" name="title" placeholder="질문 제목 입력" required><br><br>
+                
+                <label for="content">질문 내용:</label><br>
+                <textarea id="content" name="content" rows="5" placeholder="질문 내용을 입력하세요" required></textarea><br><br>
+                
+                <button type="submit">질문 등록</button>
+            </form>
+        </section>
+
+        <!-- 질문 목록 -->
+        <section class="question-list">
+            <h2>질문 목록</h2>
+            <div id="questionsContainer">
+                <!-- 질문들이 여기에 추가됩니다 -->
+            </div>
+        </section>
+
+        <!-- 답변 완료된 질문 목록 -->
+        <section class="answered-questions">
+            <h2>답변 완료된 질문</h2>
+            <div id="answeredQuestionsContainer">
+                <!-- 답변 완료된 질문들이 여기에 추가됩니다 -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const questionForm = document.getElementById("questionForm");
+        const questionsContainer = document.getElementById("questionsContainer");
+        const answeredQuestionsContainer = document.getElementById("answeredQuestionsContainer");
+
+ // 로컬 스토리지에서 질문과 답변 데이터를 불러오기
+window.addEventListener('load', function () {
+    const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+    storedQuestions.forEach(question => {
+        // 저장된 답변 상태에 따라 올바른 섹션에 질문을 추가
+        if (question.isAnswered) {
+            displayAnsweredQuestion(question); // 답변 완료된 질문
+        } else {
+            displayWaitingQuestion(question);  // 답변 대기 중인 질문
+        }
+    });
+});
+
+// 답변 완료된 질문을 화면에 표시하는 함수
+function displayAnsweredQuestion(question) {
+    const questionElement = document.createElement("div");
+    questionElement.className = "question";
+    questionElement.innerHTML = `
+        <h3 class="question-title">${question.title}</h3>
+        <button class="toggle-btn">+</button>
+        <div class="question-content hidden">
+            <p>${question.content}</p>
+            ${question.answers.map(answer => `<p>답변: ${answer}</p>`).join('')}
+            <p class="status status-answered">${question.status}</p>
+        </div>
+    `;
+
+    // 토글 버튼 클릭 시 질문 내용 표시/숨기기
+    const toggleBtn = questionElement.querySelector(".toggle-btn");
+    const questionContent = questionElement.querySelector(".question-content");
+
+    toggleBtn.addEventListener("click", function () {
+        if (questionContent.classList.contains("hidden")) {
+            questionContent.classList.remove("hidden");
+            toggleBtn.textContent = "-"; // 버튼을 -로 변경
+        } else {
+            questionContent.classList.add("hidden");
+            toggleBtn.textContent = "+"; // 버튼을 +로 변경
+        }
+    });
+
+    // 답변 완료된 질문 목록에 추가
+    answeredQuestionsContainer.appendChild(questionElement);
+}
+
+// 답변 대기 중인 질문을 화면에 표시하는 함수
+function displayWaitingQuestion(question) {
+    const questionElement = document.createElement("div");
+    questionElement.className = "question";
+    questionElement.innerHTML = `
+        <h3 class="question-title">${question.title}</h3>
+        <button class="toggle-btn">+</button>
+        <div class="question-content hidden">
+            <p>${question.content}</p>
+            <div class="answer-section">
+                <textarea rows="3" placeholder="답변을 작성하세요"></textarea><br>
+                <button class="answer-btn">답변 달기</button>
+            </div>
+            <p class="status status-waiting">${question.status}</p>
+        </div>
+    `;
+
+    // 답변 버튼 이벤트 핸들러 추가
+    const answerBtn = questionElement.querySelector(".answer-btn");
+    answerBtn.addEventListener("click", function () {
+        const answerInput = questionElement.querySelector("textarea");
+        const answerText = answerInput.value.trim();
+
+        if (answerText) {
+            // 답변 추가 및 상태 업데이트
+            question.answers.push(answerText);
+            const answerElement = document.createElement("p");
+            answerElement.textContent = `답변: ${answerText}`;
+            questionElement.querySelector(".question-content").appendChild(answerElement);
+
+            // 상태 업데이트
+            const statusElement = questionElement.querySelector(".status");
+            statusElement.textContent = "답변 완료";
+            statusElement.className = "status status-answered"; // 초록색 상태로 변경
+
+            // 답변 입력란 및 버튼 숨기기
+            answerInput.style.display = "none";
+            answerBtn.style.display = "none";
+
+            // 질문 상태 업데이트
+            question.status = "답변 완료";
+            question.isAnswered = true; // 이 부분이 핵심
+
+            // 답변 완료된 질문은 답변 완료 섹션에 추가
+            answeredQuestionsContainer.appendChild(questionElement);
+
+            // 질문 대기 목록에서 제거
+            questionsContainer.removeChild(questionElement);
+
+            // 로컬 스토리지에 상태 업데이트
+            updateLocalStorage();
+        } else {
+            alert("답변 내용을 입력하세요!");
+        }
+    });
+
+    // 토글 버튼 클릭 시 질문 내용 표시/숨기기
+    const toggleBtn = questionElement.querySelector(".toggle-btn");
+    const questionContent = questionElement.querySelector(".question-content");
+
+    toggleBtn.addEventListener("click", function () {
+        if (questionContent.classList.contains("hidden")) {
+            questionContent.classList.remove("hidden");
+            toggleBtn.textContent = "-"; // 버튼을 -로 변경
+        } else {
+            questionContent.classList.add("hidden");
+            toggleBtn.textContent = "+"; // 버튼을 +로 변경
+        }
+    });
+
+    // 질문 목록에 추가
+    questionsContainer.appendChild(questionElement);
+}
+
+// 로컬 스토리지에 질문 상태 업데이트
+function updateLocalStorage() {
+    const questions = [];
+
+    // 대기 중인 질문 저장
+    document.querySelectorAll(".question-list .question").forEach(questionElement => {
+        questions.push(extractQuestionData(questionElement, false));
+    });
+
+    // 완료된 질문 저장
+    document.querySelectorAll(".answered-questions .question").forEach(questionElement => {
+        questions.push(extractQuestionData(questionElement, true));
+    });
+
+    localStorage.setItem("questions", JSON.stringify(questions));
+}
+
+// 질문 데이터를 추출하는 함수
+function extractQuestionData(questionElement, isAnswered) {
+    const title = questionElement.querySelector("h3").textContent;
+    const content = questionElement.querySelector(".question-content > p").textContent;
+    const status = questionElement.querySelector(".status").textContent;
+    const answers = [];
+
+    questionElement.querySelectorAll(".question-content p").forEach(answer => {
+        if (answer.textContent.startsWith("답변: ")) {
+            answers.push(answer.textContent.replace("답변: ", ""));
+        }
+    });
+
+    return {
+        title,
+        content,
+        status,
+        answers,
+        isAnswered
+    };
+}
+
+
+    </script>
+</body>
+</html>
