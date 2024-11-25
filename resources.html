@@ -45,21 +45,16 @@
             <a href="#" class="back-arrow" style="display: none;">&lt;</a>
             <h2><a href="#" onclick="loadSemesterSchedule()">학기별 추천 시간표</a></h2>
         </div>
-        <p>학기별로 들으면 좋은 추천 시간표를 제공합니다.</p>
+        
+        <h2><a href="#" onclick="loadRegistrationTips()">수강신청 방법</a></h2>
+        
 
-        <h2>수강신청 방법</h2>
-        <p>효율적인 수강신청 방법과 꿀팁을 확인하세요. <a href="https://example.com/registration-tips" target="_blank">자세히 보기</a></p>
-
-        <h2>공부 자료</h2>
-        <ul>
-            <li><a href="https://example.com/good-blog" target="_blank">추천 블로그</a></li>
-            <li><a href="https://example.com/senior-tips" target="_blank">선배가 정리한 공부 자료</a></li>
-            <li><a href="https://www.acmicpc.net/" target="_blank">백준 문제 풀이</a></li>
-        </ul>
+        <h2><a href="#" onclick="loadStudyResources()">공부 자료</a></h2>
+        
     </main>
 
     <script>
-        // 학기별 추천 시간표 내용을 동적으로 로드
+        // 학기별 추천 시간표 동적 콘텐츠 로드
         function loadSemesterSchedule() {
             const content = `
                 <div class="navigation">
@@ -67,45 +62,132 @@
                     <h1>학기별 추천 시간표</h1>
                 </div>
                 <section>
-                    <h3>1학기</h3>
+                    <h3>1-1</h3>
                     <ul>
-                        <li>프로그래밍 기초</li>
-                        <li>컴퓨터 개론</li>
-                        <li>기초 수학</li>
-                        <li>영어 회화</li>
+                        <li>C프로그래밍</li>
+                        <li>컴퓨터공학입문세미나</li>
+                        <li>대학수학및연습1</li>
+                        <li>대학화학및실험1</li>
+                        <li>대학물리학1</li>
+                        <li>융합적사고와글쓰기</li>
+                        <li>광운인되기</li>
                     </ul>
                 </section>
                 <section>
-                    <h3>2학기</h3>
+                    <h3>1-2</h3>
                     <ul>
-                        <li>자료 구조</li>
-                        <li>기초 알고리즘</li>
-                        <li>디지털 논리 회로</li>
-                        <li>선형대수학</li>
+                        <li>고급C프로그래밍</li>
+                        <li>공학설계입문</li>
+                        <li>대학물리학2</li>
+                        <li>대학수학및연습2</li>
+                        <li>대학영어</li>
+                    </ul>
+                </section>
+                <!-- 추가 내용 생략 -->
+            `;
+            document.getElementById('main-content').innerHTML = content;
+            bindBackArrow();
+        }
+
+        // 수강신청 방법 동적 콘텐츠 로드
+        function loadRegistrationTips() {
+            const content = `
+                <div class="navigation">
+                    <a href="#" class="back-arrow">&lt;</a>
+                    <h1>수강신청 방법</h1>
+                </div>
+                <section>
+                    <h3>효율적인 수강신청 팁</h3>
+                    <ul>
+                        <li>1. 과목의 우선순위를 정하고 빠르게 선택하기</li>
+                        <li>2. 수강신청 전에 미리 로그인을 해둡니다.</li>
+                        <li>3. 과목의 코드를 미리 메모하거나 복사해둡니다.</li>
+                        <li>4. 인기 과목은 사전에 정보를 수집하고, 빠르게 신청합니다.</li>
+                        <li>5. 백업 과목을 계획해, 실패 시 대체 과목을 선택합니다.</li>
                     </ul>
                 </section>
                 <section>
-                    <h3>3학기</h3>
+                    <h3>도움이 되는 링크</h3>
+                    <p>
+                        <a href="https://example.com/tips" target="_blank">수강신청 꿀팁 모음</a>
+                    </p>
+                </section>
+            `;
+            document.getElementById('main-content').innerHTML = content;
+            bindBackArrow();
+        }
+
+        // 공부 자료 동적 콘텐츠 로드
+        function loadStudyResources() {
+            const content = `
+                <div class="navigation">
+                    <a href="#" class="back-arrow">&lt;</a>
+                    <h1>공부 자료</h1>
+                </div>
+                <section>
+                    <h3>1-1 추천 자료</h3>
                     <ul>
-                        <li>운영체제</li>
-                        <li>소프트웨어 공학</li>
-                        <li>컴퓨터 네트워크</li>
-                        <li>확률과 통계</li>
+                        <li><a href="https://example.com/basic-programming-blog" target="_blank">프로그래밍 기초 블로그</a></li>
+                        <li><a href="https://example.com/math-tips" target="_blank">기초 수학 학습 자료</a></li>
+                        <li><a href="https://example.com/physics-101" target="_blank">기초 물리학 정리</a></li>
+                        <li><a href="https://www.acmicpc.net/problem/1000" target="_blank">백준 문제 1000번</a></li>
                     </ul>
                 </section>
+        
                 <section>
-                    <h3>4학기</h3>
+                    <h3>1-2 추천 자료</h3>
                     <ul>
-                        <li>인공지능 개론</li>
-                        <li>데이터베이스</li>
-                        <li>컴퓨터 그래픽스</li>
-                        <li>임베디드 시스템</li>
+                        <li><a href="https://example.com/advanced-c-blog" target="_blank">고급 C프로그래밍 블로그</a></li>
+                        <li><a href="https://example.com/design-intro" target="_blank">공학설계 입문 자료</a></li>
+                        <li><a href="https://example.com/physics-201" target="_blank">대학물리학2 요약</a></li>
+                        <li><a href="https://www.acmicpc.net/problem/2557" target="_blank">백준 문제 2557번</a></li>
+                    </ul>
+                </section>
+        
+                <section>
+                    <h3>2-1 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/oop-design" target="_blank">객체지향 프로그래밍 설계</a></li>
+                        <li><a href="https://example.com/digital-circuits" target="_blank">디지털 논리회로 학습 자료</a></li>
+                        <li><a href="https://example.com/circuit-theory" target="_blank">회로 이론 핵심 정리</a></li>
+                        <li><a href="https://www.acmicpc.net/problem/10950" target="_blank">백준 문제 10950번</a></li>
+                    </ul>
+                </section>
+        
+                <section>
+                    <h3>2-2 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/data-structures" target="_blank">데이터 구조 설계 및 실습</a></li>
+                        <li><a href="https://example.com/open-source-tips" target="_blank">오픈소스 소프트웨어 가이드</a></li>
+                        <li><a href="https://example.com/assembly-tutorial" target="_blank">어셈블리 프로그래밍 학습 자료</a></li>
+                        <li><a href="https://www.acmicpc.net/problem/11720" target="_blank">백준 문제 11720번</a></li>
+                    </ul>
+                </section>
+        
+                <section>
+                    <h3>3-1 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/os-intro" target="_blank">운영체제 기본 자료</a></li>
+                        <li><a href="https://example.com/software-engineering" target="_blank">소프트웨어 공학 개론</a></li>
+                        <li><a href="https://example.com/network-basics" target="_blank">컴퓨터 네트워크 기초</a></li>
+                        <li><a href="https://www.acmicpc.net/problem/1920" target="_blank">백준 문제 1920번</a></li>
+                    </ul>
+                </section>
+        
+                <section>
+                    <h3>4-1 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/ai-intro" target="_blank">인공지능 개론 블로그</a></li>
+                        <li><a href="https://example.com/database-basics" target="_blank">데이터베이스 개념 정리</a></li>
+                        <li><a href="https://example.com/graphics-tutorial" target="_blank">컴퓨터 그래픽스 학습 자료</a></li>
+                        <li><a href="https://www.acmicpc.net/problem/7576" target="_blank">백준 문제 7576번</a></li>
                     </ul>
                 </section>
             `;
             document.getElementById('main-content').innerHTML = content;
-            bindBackArrow(); // 새로 생성된 화살표에 이벤트 연결
+            bindBackArrow(); // 화살표에 이벤트 연결
         }
+        
 
         // 이전 콘텐츠로 돌아가기
         function goBack() {
@@ -114,15 +196,12 @@
                     <a href="#" class="back-arrow" style="display: none;">&lt;</a>
                     <h2><a href="#" onclick="loadSemesterSchedule()">학기별 추천 시간표</a></h2>
                 </div>
-                <p>학기별로 들으면 좋은 추천 시간표를 제공합니다.</p>
-                <h2>수강신청 방법</h2>
-                <p>효율적인 수강신청 방법과 꿀팁을 확인하세요. <a href="https://example.com/registration-tips" target="_blank">자세히 보기</a></p>
-                <h2>공부 자료</h2>
-                <ul>
-                    <li><a href="https://example.com/good-blog" target="_blank">추천 블로그</a></li>
-                    <li><a href="https://example.com/senior-tips" target="_blank">선배가 정리한 공부 자료</a></li>
-                    <li><a href="https://www.acmicpc.net/" target="_blank">백준 문제 풀이</a></li>
-                </ul>
+                
+                <h2><a href="#" onclick="loadRegistrationTips()">수강신청 방법</a></h2>
+                <p>효율적인 수강신청 방법과 꿀팁을 확인하세요.</p>
+
+                <h2><a href="#" onclick="loadStudyResources()">공부 자료</a></h2>
+                <p>추천 자료와 블로그, 그리고 백준 문제 풀이를 확인하세요.</p>
             `;
             document.getElementById('main-content').innerHTML = content;
         }
