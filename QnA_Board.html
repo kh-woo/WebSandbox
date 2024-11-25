@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A 게시판</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .status-waiting {
+            color: red;
+        }
+        .status-answered {
+            color: green;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .status {
+            margin-top: 10px;
+        }
+        .answer-section {
+            margin-top: 10px;
+        }
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 5px 10px;
+        }
+        .question-title {
+            display: inline;
+            cursor: pointer;
+        }
+        .toggle-btn {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Q&A 게시판</h1>
+    </header>
+    <main>
+        <section>
+            <h2>질문 작성</h2>
+            <form id="questionForm">
+                <label for="title">질문 제목:</label><br>
+                <input type="text" id="title" name="title" placeholder="질문 제목 입력" required><br><br>
+                <label for="content">질문 내용:</label><br>
+                <textarea id="content" name="content" rows="5" placeholder="질문 내용을 입력하세요" required></textarea><br><br>
+                <button type="submit">질문 등록</button>
+            </form>
+        </section>
+        <section class="question-list">
+            <h2>질문 목록</h2>
+            <div id="questionsContainer">
+                <!-- 질문들이 여기에 추가됩니다 -->
+            </div>
+        </section>
+        <section class="answered-questions">
+            <h2>답변 완료된 질문</h2>
+            <div id="answeredQuestionsContainer">
+                <!-- 답변 완료된 질문들이 여기에 추가됩니다 -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const questionForm = document.getElementById("questionForm");
+        const questionsContainer = document.getElementById("questionsContainer");
+        const answeredQuestionsContainer = document.getElementById("answeredQuestionsContainer");
+
+        // 로컬 스토리지에서 질문 불러오기
+        window.addEventListener('load', function () {
+            const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+            storedQuestions.forEach(question => {
+                if (question.isAnswered) {
+                    displayAnsweredQuestion(question);
+                } else {
+                    displayWaitingQuestion(question);
+                }
+            });
+        });
+
+        // 질문 등록 이벤트
+        questionForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const title = document.getElementById("title").value.trim();
+            const content = document.getElementById("content").value.trim();
+
+            if (!title || !content) {
+                alert("제목과 내용을 모두 입력하세요!");
+                return;
+            }
+
+            const newQuestion = {
+                title,
+                content,
+                status: "답변 대기",
+                answers: [],
+                isAnswered: false
+            };
+
+            displayWaitingQuestion(newQuestion);
+
+            // 로컬 스토리지에 저장
+            const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+            storedQuestions.push(newQuestion);
+            localStorage.setItem("questions", JSON.stringify(storedQuestions));
+
+            questionForm.reset();
+        });
+
+        // 답변 대기 중인 질문 표시
+        function displayWaitingQuestion(question) {
+            const questionElement = document.createElement("div");
+            questionElement.className = "question";
+            questionElement.innerHTML = `
+                <h3 class="question-title">${question.title}</h3>
+                <button class="toggle-btn">+</button>
+                <div class="question-content hidden">
+                    <p>${question.content}</p>
+                    <div class="answer-section">
+                        <textarea rows="3" placeholder="답변을 작성하세요"></textarea><br>
+                        <button class="answer-btn">답변 달기</button>
+                    </div>
+                    <p class="status status-waiting">${question.status}</p>
+                </div>
+            `;
+
+            const toggleBtn = questionElement.querySelector(".toggle-btn");
+            const questionContent = questionElement.querySelector(".question-content");
+            const answerBtn = questionElement.querySelector(".answer-btn");
+
+            toggleBtn.addEventListener("click", function () {
+                questionContent.classList.toggle("hidden");
+                toggleBtn.textContent = questionContent.classList.contains("hidden") ? "+" : "-";
+            });
+
+            answerBtn.addEventListener("click", function () {
+                const answerInput = questionElement.querySelector("textarea");
+                const answerText = answerInput.value.trim();
+
+                if (answerText) {
+                    question.answers.push(answerText);
+                    question.status = "답변 완료";
+                    question.isAnswered = true;
+
+                    updateQuestionStatus(questionElement, question);
+                    answeredQuestionsContainer.appendChild(questionElement);
+                    //questionsContainer.removeChild(questionElement);
+
+                    updateLocalStorage();
+                } else {
+                    alert("답변 내용을 입력하세요!");
+                }
+            });
+            addDeleteFunctionality(questionElement, question);
+            questionsContainer.appendChild(questionElement);
+        }
+
+        // 질문 상태 업데이트
+        function updateQuestionStatus(questionElement, question) {
+            const statusElement = questionElement.querySelector(".status");
+            statusElement.textContent = "답변 완료";
+            statusElement.classList.remove("status-waiting");
+            statusElement.classList.add("status-answered");
+
+            const answerInput = questionElement.querySelector("textarea");
+            const answerBtn = questionElement.querySelector(".answer-btn");
+            answerInput.style.display = "none";
+            answerBtn.style.display = "none";
+        }
+
+        // 답변 완료된 질문 표시
+        function displayAnsweredQuestion(question) {
+            const questionElement = document.createElement("div");
+            questionElement.className = "question";
+            questionElement.innerHTML = `
+                <h3 class="question-title">${question.title}</h3>
+                <button class="toggle-btn">+</button>
+                <div class="question-content hidden">
+                    <p>${question.content}</p>
+                    ${question.answers.map(answer => `<p>답변: ${answer}</p>`).join('')}
+                    <p class="status status-answered">${question.status}</p>
+                </div>
+            `;
+
+            const toggleBtn = questionElement.querySelector(".toggle-btn");
+            const questionContent = questionElement.querySelector(".question-content");
+
+            toggleBtn.addEventListener("click", function () {
+                questionContent.classList.toggle("hidden");
+                toggleBtn.textContent = questionContent.classList.contains("hidden") ? "+" : "-";
+            });
+            addDeleteFunctionality(questionElement, question);
+            answeredQuestionsContainer.appendChild(questionElement);
+        }
+
+        // 로컬 스토리지 업데이트
+        function updateLocalStorage() {
+            const questions = [];
+            document.querySelectorAll(".question").forEach(questionElement => {
+                const title = questionElement.querySelector("h3").textContent;
+                const content = questionElement.querySelector(".question-content > p").textContent;
+                const status = questionElement.querySelector(".status").textContent;
+                const isAnswered = status === "답변 완료";
+                const answers = Array.from(questionElement.querySelectorAll(".question-content p"))
+                    .filter(p => p.textContent.startsWith("답변: "))
+                    .map(p => p.textContent.replace("답변: ", ""));
+
+                questions.push({ title, content, status, answers, isAnswered });
+            });
+            localStorage.setItem("questions", JSON.stringify(questions));
+        }
+        // 질문 삭제 기능 추가
+function addDeleteFunctionality(questionElement, questionData) {
+    let titleContainer = questionElement.querySelector(".title-container");
+
+    // 기존 삭제 버튼이 있는 경우 중복 추가 방지
+    if (questionElement.querySelector(".delete-btn")) return;
+
+    // 제목을 감쌀 컨테이너 확인 (없으면 생성)
+    if (!titleContainer) {
+        titleContainer = document.createElement("div");
+        titleContainer.className = "title-container";
+        titleContainer.style.display = "flex";
+        titleContainer.style.alignItems = "center";
+        titleContainer.style.justifyContent = "space-between";
+
+        // 제목 이동
+        const titleElement = questionElement.querySelector("h3");
+        titleElement.style.margin = "0";
+        titleContainer.appendChild(titleElement);
+
+        // 기존 제목 요소를 컨테이너로 대체
+        questionElement.prepend(titleContainer);
+    }
+
+    // 삭제 버튼 생성
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "X";
+    deleteBtn.className = "delete-btn";
+    deleteBtn.style.color = "red";
+    deleteBtn.style.background = "none";
+    deleteBtn.style.border = "none";
+    deleteBtn.style.cursor = "pointer";
+    deleteBtn.style.marginLeft = "10px";
+
+    // 삭제 버튼 클릭 이벤트 추가
+    deleteBtn.addEventListener("click", function () {
+        if (confirm("정말 삭제하시겠습니까?")) {
+            questionElement.remove(); // 화면에서 제거
+
+            // 로컬 스토리지에서 삭제
+            let storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+            storedQuestions = storedQuestions.filter(q => 
+                q.title !== questionData.title || q.content !== questionData.content
+            );
+            localStorage.setItem("questions", JSON.stringify(storedQuestions));
+        }
+    });
+
+    // 삭제 버튼 컨테이너에 추가
+    titleContainer.appendChild(deleteBtn);
+}
+
+    </script>
+</body>
+</html>
