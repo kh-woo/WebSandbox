@@ -1,0 +1,159 @@
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'SBAggroB', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 헤더 스타일 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-bottom: 1px solid white;
+}
+.department {
+  font-size: 50px; /* 원하는 크기로 설정 */
+  font-weight: bold; /* 굵기 조절 (선택 사항) */
+  color: black; /* 색상 설정 (선택 사항) */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 100px;
+  margin-right: 15px;
+}
+.social-icons img {
+  width: 45px; /* 크기 증가 */
+  height: 45px; /* 크기 증가 */
+  margin-left: 1px;
+  margin-right: 1px;
+  cursor: pointer;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+}
+.search-container input {
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.search-container .search-icon {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 18px;
+}
+.search-container .menu-links {
+  margin-left: 20px;
+  display: flex;
+  gap: 20px;
+}
+.search-container .menu-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.dropdown-container {
+  position: relative;
+}
+
+.keyboard-icon img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-right: 50px;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+  top: 100%; /* 드롭다운이 버튼 바로 아래에 위치 */
+  left: 0; /* 부모 요소와 정렬 */
+  max-width: 100vw; /* 화면 너비를 초과하지 않도록 설정 */
+  overflow-x: hidden; /* 수평 스크롤 방지 */
+}
+
+.dropdown a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+.dropdown a:hover {
+  background-color: white;
+}
+
+/* 메인 컨텐츠 스타일 */
+main {
+  text-align: center;
+  padding: 20px;
+}
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.chart img {
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+/* 푸터 스타일 */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-top: 1px solid white;
+  padding: 20px;
+  font-size: 16px;
+  position: fixed; /* 화면 하단에 고정 */
+  bottom: 0; /* 맨 밑에 위치 */
+  width: 100%; /* 전체 화면 너비 */
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left a {
+  text-decoration: none;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  max-width: 100%; /* 컨테이너가 페이지 너비를 초과하지 않도록 설정 */
+  padding-right: 20px;
+}
+
+.footer-right p {
+  margin: 0;
+  padding-right: 10px;
+}

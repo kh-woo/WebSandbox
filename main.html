@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>광운대학교 컴퓨터정보공학부</title>
+  <link rel="stylesheet" href="main_style.css">
+</head>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
+            <span style="font-size: 40px; font-weight: bold;">컴퓨터정보공학부</span>
+            <div class="social-icons">
+                <img src="image/메세지.png" alt="Message Icon">
+                <img src="image/인스타그램.png" alt="Instagram Icon">
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="검색...">
+            <span class="search-icon">🔍</span>
+            <div class="menu-links">
+                <a href="#home">홈페이지</a>
+                <a href="#data">자료집</a>
+                <a href="#notice">공지사항</a>
+                <a href="#qa">Q&A</a>
+            </div>
+            <div class="dropdown-container">
+                <span class="keyboard-icon">
+                    <img src="image/키보드.png" alt="Keyboard Icon">
+                </span>
+                <div class="dropdown">
+                    <a href="#home">홈페이지</a>
+                    <a href="#data">자료집</a>
+                    <a href="#notice">공지사항</a>
+                    <a href="#qa">Q&A</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>컴퓨터정보공학부 학생회 공식 웹사이트에 오신 것을 환영합니다.</h1>
+        <div class="chart">
+            <img src="image/조직도.png" alt="학생회 조직도">
+        </div>
+    </main>
+    <footer>
+        <div class="footer-left">
+            <a href="https://www.kw.ac.kr" target="_blank">광운대학교 홈페이지</a>
+            <a href="https://sw.kw.ac.kr" target="_blank">인융대 홈페이지</a>
+        </div>
+        <div class="footer-right">
+            <p>김재용(회장): 010-5651-4415</p>
+            <p>최우진(부회장): 010-4907-7802</p>
+        </div>
+    </footer>
+    <script>
+        // 키보드 이미지 클릭 시 드롭다운 메뉴 토글
+        document.querySelector('.keyboard-icon img').addEventListener('click', function () {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // 드롭다운 외부 클릭 시 닫기
+        document.addEventListener('click', function (event) {
+            const dropdown = document.querySelector('.dropdown');
+            const keyboardIcon = document.querySelector('.keyboard-icon img');
+            if (!dropdown.contains(event.target) && !keyboardIcon.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
