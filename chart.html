@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학생회 조직도</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .organization-chart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .top-level {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .sub-level {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    .department {
+      background-color: #003366;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      width: 150px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .department h3 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+    }
+    .members {
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 8px;
+      color: #333;
+      font-size: 14px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .members p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>학생회 조직도</h1>
+  <div class="organization-chart">
+    <!-- Top-level -->
+    <div class="top-level">
+      <div class="department">
+        <h3>학생회장</h3>
+        <div class="members">
+          <p>백도열</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sub-level -->
+    <div class="sub-level">
+      <div class="department">
+        <h3>중등부회장</h3>
+        <div class="members">
+          <p>권의철</p>
+        </div>
+      </div>
+      <div class="department">
+        <h3>고등부회장</h3>
+        <div class="members">
+          <p>노서윤</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Departments -->
+    <div class="sub-level">
+      <div class="department">
+        <h3>기획부</h3>
+        <div class="members">
+          <p>부장: 김은결</p>
+          <p>고등차장: 고은아</p>
+          <p>중등차장: 정유진</p>
+        </div>
+      </div>
+      <div class="department">
+        <h3>정보부</h3>
+        <div class="members">
+          <p>부장: 박건형</p>
+          <p>고등차장: 배서진</p>
+          <p>중등차장: 곽구하</p>
+        </div>
+      </div>
+      <div class="department">
+        <h3>생활부</h3>
+        <div class="members">
+          <p>부장: 이수민</p>
+          <p>고등차장: 정선아</p>
+          <p>중등차장: 이정민</p>
+        </div>
+      </div>
+      <div class="department">
+        <h3>방송부</h3>
+        <div class="members">
+          <p>부장: 하승지</p>
+          <p>고등차장: 고승근</p>
+          <p>중등차장: 추유미</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-level">
+      <div class="department">
+        <h3>홍보부</h3>
+        <div class="members">
+          <p>부장: 이안나</p>
+          <p>고등차장: 김예준</p>
+          <p>중등차장: 임시온</p>
+        </div>
+      </div>
+      <div class="department">
+        <h3>문화부</h3>
+        <div class="members">
+          <p>부장: 김세연</p>
+          <p>고등차장: 박요한</p>
+          <p>중등차장: 한호진</p>
+        </div>
+      </div>
+      <div class="department">
+        <h3>복지부</h3>
+        <div class="members">
+          <p>부장: 안예현</p>
+          <p>고등차장: 신재민</p>
+          <p>중등차장: 신유진</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
