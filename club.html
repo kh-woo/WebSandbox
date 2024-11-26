@@ -5,6 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>소모임 - 학생회 웹사이트</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .section {
+            flex: 1;
+            height: 150px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .section a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .section:nth-child(1)::before {
+            background-image: url('path/to/nongmin.jpg'); /* 농민 이미지 */
+            background-color: #ff6666;
+        }
+
+        .section:nth-child(2)::before {
+            background-image: url('path/to/cp.jpg'); /* CP 이미지 */
+            background-color: #66cc66;
+        }
+
+        .section:nth-child(3)::before {
+            background-image: url('path/to/recoder.jpg'); /* Recoder 이미지 */
+            background-color: #6699ff;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,12 +85,17 @@
         <h2>소모임</h2>
         <p>학생회의 다양한 소모임을 소개합니다. 각 소모임 페이지로 이동해 더 자세한 정보를 확인해 보세요.</p>
         
-        <div class="club-links">
-            <ul>
-                <li><a href="nongmin.html">농민</a></li>
-                <li><a href="cp.html">CP</a></li>
-                <li><a href="recoder.html">Re:coder</a></li>
-            </ul>
+        <div class="container">
+            <!-- 소모임 링크만 수정 -->
+            <div class="section" onclick="location.href='nongmin.html'">
+                <a href="nongmin.html">농민</a>
+            </div>
+            <div class="section" onclick="location.href='cp.html'">
+                <a href="cp.html">CP</a>
+            </div>
+            <div class="section" onclick="location.href='recoder.html'">
+                <a href="recoder.html">Recoder</a>
+            </div>
         </div>
     </section>
 </body>
