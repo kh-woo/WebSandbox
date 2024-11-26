@@ -14,14 +14,14 @@
 
         .back-arrow {
             font-size: 24px;
-            color: #ccc;
+            color: #aaa;
             text-decoration: none;
             margin-right: 10px;
             cursor: pointer;
         }
 
         .back-arrow:hover {
-            color: white;
+            color: #ccc;
         }
     </style>
 </head>
@@ -43,17 +43,22 @@
     <main id="main-content">
         <div class="navigation">
             <a href="#" class="back-arrow" style="display: none;">&lt;</a>
-            <h2><a href="#" onclick="loadSemesterSchedule()">학기별 추천 시간표</a></h2>
+            
         </div>
-        
+        <h2><a href="#" onclick="loadSemesterSchedule()">학기별 추천 시간표</a></h2>
+        <p>각 학기 별 추천하는 시간표를 확인하세요</p>
         <h2><a href="#" onclick="loadRegistrationTips()">수강신청 방법</a></h2>
-        
+        <p>효율적인 수강신청 방법과 꿀팁을 확인하세요.</p>
 
         <h2><a href="#" onclick="loadStudyResources()">공부 자료</a></h2>
-        
+        <p>추천 자료와 블로그, 그리고 백준 문제 풀이를 확인하세요.</p>
+
     </main>
 
     <script>
+        // 초기 콘텐츠를 저장하는 변수
+        let initialContent = '';
+    
         // 학기별 추천 시간표 동적 콘텐츠 로드
         function loadSemesterSchedule() {
             const content = `
@@ -73,7 +78,7 @@
                         <li>광운인되기</li>
                     </ul>
                 </section>
-                <section>
+                 <section>
                     <h3>1-2</h3>
                     <ul>
                         <li>고급C프로그래밍</li>
@@ -88,7 +93,7 @@
             document.getElementById('main-content').innerHTML = content;
             bindBackArrow();
         }
-
+    
         // 수강신청 방법 동적 콘텐츠 로드
         function loadRegistrationTips() {
             const content = `
@@ -106,17 +111,11 @@
                         <li>5. 백업 과목을 계획해, 실패 시 대체 과목을 선택합니다.</li>
                     </ul>
                 </section>
-                <section>
-                    <h3>도움이 되는 링크</h3>
-                    <p>
-                        <a href="https://example.com/tips" target="_blank">수강신청 꿀팁 모음</a>
-                    </p>
-                </section>
             `;
             document.getElementById('main-content').innerHTML = content;
             bindBackArrow();
         }
-
+    
         // 공부 자료 동적 콘텐츠 로드
         function loadStudyResources() {
             const content = `
@@ -129,83 +128,19 @@
                     <ul>
                         <li><a href="https://example.com/basic-programming-blog" target="_blank">프로그래밍 기초 블로그</a></li>
                         <li><a href="https://example.com/math-tips" target="_blank">기초 수학 학습 자료</a></li>
-                        <li><a href="https://example.com/physics-101" target="_blank">기초 물리학 정리</a></li>
-                        <li><a href="https://www.acmicpc.net/problem/1000" target="_blank">백준 문제 1000번</a></li>
-                    </ul>
-                </section>
-        
-                <section>
-                    <h3>1-2 추천 자료</h3>
-                    <ul>
-                        <li><a href="https://example.com/advanced-c-blog" target="_blank">고급 C프로그래밍 블로그</a></li>
-                        <li><a href="https://example.com/design-intro" target="_blank">공학설계 입문 자료</a></li>
-                        <li><a href="https://example.com/physics-201" target="_blank">대학물리학2 요약</a></li>
-                        <li><a href="https://www.acmicpc.net/problem/2557" target="_blank">백준 문제 2557번</a></li>
-                    </ul>
-                </section>
-        
-                <section>
-                    <h3>2-1 추천 자료</h3>
-                    <ul>
-                        <li><a href="https://example.com/oop-design" target="_blank">객체지향 프로그래밍 설계</a></li>
-                        <li><a href="https://example.com/digital-circuits" target="_blank">디지털 논리회로 학습 자료</a></li>
-                        <li><a href="https://example.com/circuit-theory" target="_blank">회로 이론 핵심 정리</a></li>
-                        <li><a href="https://www.acmicpc.net/problem/10950" target="_blank">백준 문제 10950번</a></li>
-                    </ul>
-                </section>
-        
-                <section>
-                    <h3>2-2 추천 자료</h3>
-                    <ul>
-                        <li><a href="https://example.com/data-structures" target="_blank">데이터 구조 설계 및 실습</a></li>
-                        <li><a href="https://example.com/open-source-tips" target="_blank">오픈소스 소프트웨어 가이드</a></li>
-                        <li><a href="https://example.com/assembly-tutorial" target="_blank">어셈블리 프로그래밍 학습 자료</a></li>
-                        <li><a href="https://www.acmicpc.net/problem/11720" target="_blank">백준 문제 11720번</a></li>
-                    </ul>
-                </section>
-        
-                <section>
-                    <h3>3-1 추천 자료</h3>
-                    <ul>
-                        <li><a href="https://example.com/os-intro" target="_blank">운영체제 기본 자료</a></li>
-                        <li><a href="https://example.com/software-engineering" target="_blank">소프트웨어 공학 개론</a></li>
-                        <li><a href="https://example.com/network-basics" target="_blank">컴퓨터 네트워크 기초</a></li>
-                        <li><a href="https://www.acmicpc.net/problem/1920" target="_blank">백준 문제 1920번</a></li>
-                    </ul>
-                </section>
-        
-                <section>
-                    <h3>4-1 추천 자료</h3>
-                    <ul>
-                        <li><a href="https://example.com/ai-intro" target="_blank">인공지능 개론 블로그</a></li>
-                        <li><a href="https://example.com/database-basics" target="_blank">데이터베이스 개념 정리</a></li>
-                        <li><a href="https://example.com/graphics-tutorial" target="_blank">컴퓨터 그래픽스 학습 자료</a></li>
-                        <li><a href="https://www.acmicpc.net/problem/7576" target="_blank">백준 문제 7576번</a></li>
                     </ul>
                 </section>
             `;
             document.getElementById('main-content').innerHTML = content;
-            bindBackArrow(); // 화살표에 이벤트 연결
+            bindBackArrow();
         }
-        
-
+    
         // 이전 콘텐츠로 돌아가기
         function goBack() {
-            const content = `
-                <div class="navigation">
-                    <a href="#" class="back-arrow" style="display: none;">&lt;</a>
-                    <h2><a href="#" onclick="loadSemesterSchedule()">학기별 추천 시간표</a></h2>
-                </div>
-                
-                <h2><a href="#" onclick="loadRegistrationTips()">수강신청 방법</a></h2>
-                <p>효율적인 수강신청 방법과 꿀팁을 확인하세요.</p>
-
-                <h2><a href="#" onclick="loadStudyResources()">공부 자료</a></h2>
-                <p>추천 자료와 블로그, 그리고 백준 문제 풀이를 확인하세요.</p>
-            `;
-            document.getElementById('main-content').innerHTML = content;
+            document.getElementById('main-content').innerHTML = initialContent;
+            bindBackArrow(); // 초기 상태로 돌아간 후 화살표 이벤트 다시 연결
         }
-
+    
         // 화살표 클릭 이벤트 연결
         function bindBackArrow() {
             const backArrow = document.querySelector('.back-arrow');
@@ -216,11 +151,13 @@
                 });
             }
         }
-
-        // 초기 로드 시 화살표 숨김
+    
+        // 초기 로드 시 초기 콘텐츠 저장
         document.addEventListener('DOMContentLoaded', () => {
-            bindBackArrow();
+            initialContent = document.getElementById('main-content').innerHTML; // 초기 상태 저장
+            bindBackArrow(); // 초기 콘텐츠에 화살표 이벤트 연결
         });
     </script>
+    
 </body>
 </html>
