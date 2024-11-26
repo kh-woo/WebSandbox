@@ -123,10 +123,77 @@ main {
   font-size: 20px; /* 글씨 크기 증가 */
 }
 
-.chart img {
-  width: 90%;
-  max-width: 1200px;
+/* 조직도 스타일 */
+#organization {
+  width: 100%;
+  text-align: center;
+  margin: 10px auto;
 }
+
+.title p:last-child {
+  font-size: 36px;
+  color: black;
+  margin-bottom: 30px;
+}
+
+/* 조직도 영역 */
+.tree {
+  padding-top: -20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+}
+
+.org-ul {
+  padding-top: 5px;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  transform: translateX(-19px); /* 왼쪽으로 100px 이동 */
+}
+
+
+.org-li {
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+}
+
+.tree li p {
+  line-height: 80px;
+  width: 194px;
+  height: 74px;
+  border: 3px solid black;
+  color: #1E1E1E;
+  font-size: 23px;
+  display: inline-block;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.tree li p:hover {
+  transform: scale(1.05);
+}
+.org {
+  background-color: black;
+  color: white !important;
+}
+
+/* 작업 내용 */
+.work {
+  margin-top: 0px;
+  text-align: left;
+}
+
+.work li {
+  list-style: none;
+  font-size: 16px;
+  line-height: 1.8;
+  transform: translateX(-30px);
+}
+
 
 /* Footer 스타일 */
 footer {
@@ -136,7 +203,7 @@ footer {
   padding: 20px;
   background-color: white;
   border-top: 1px solid #ccc;
-  margin-top: 130px; /* 아래로 이동 */
+  margin-top: 210px; /* 아래로 이동 */
   font-size: 18px; /* 글씨 크기 증가 */
 }
 
