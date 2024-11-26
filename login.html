@@ -4,58 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>로그인</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f4f4f4;
-    }
-    .login-container {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-    input[type="password"] {
-      width: 80%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <link rel="stylesheet" href="login.css">
 </head>
 <body>
-  <div class="login-container">
-    <h1>로그인</h1>
-    <p>비밀번호를 입력하세요</p>
-    <input type="password" id="password" placeholder="비밀번호">
-    <br>
-    <button onclick="checkPassword()">로그인</button>
+  <div class="login-wrapper">
+    <h2>Login</h2>
+    <!-- form 태그에 action 속성을 통해 main.html로 이동 -->
+    <form id="login-form" action="main.html" method="get" onsubmit="return validatePassword();">
+      <input type="password" name="userPassword" placeholder="Password" id="password-field">
+      <label for="remember-check">
+        <input type="checkbox" id="remember-check">아이디 저장하기
+      </label>
+      <input type="submit" value="Login">
+    </form>
   </div>
   <script>
-    function checkPassword() {
-      const password = document.getElementById('password').value;
-      if (password === "123") {
-        window.location.href = "main.html"; // 기존 페이지로 이동
+    // 비밀번호 검증 함수
+    function validatePassword() {
+      const password = document.getElementById('password-field').value;
+      if (password === "1234") {
+        // 비밀번호가 맞으면 form 제출 허용
+        return true;
       } else {
+        // 비밀번호가 틀리면 경고창 출력, form 제출 방지
         alert("비밀번호가 틀렸습니다.");
+        return false;
       }
     }
   </script>
