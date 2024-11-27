@@ -3,21 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>홍보국 소개</title>
   <link rel="stylesheet" href="team.css">
+  <link rel="icon" type="파비콘/png" href="/image/파비콘.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>광운대학교 컴퓨터정보공학부</title>
 </head>
 <body>
+
+  <!-- 헤더 -->
   <header>
-    <h1>운영국 소개</h1>
-    <p>우리 운영국 팀원을 소개합니다!</p>
+    <div class="logo">
+      <img src="/image/광운대학교.png" alt="Kwangwoon University Logo">
+      <h1>컴퓨터정보공학부 학생회</h1>
+    </div>
+    <div class="search-container">
+      <input type="text" placeholder="검색...">
+      <nav class="menu-links">
+        <a href="/index.html">홈페이지</a>
+        <a href="/resources.html">자료집</a>
+        <a href="/notices.html">공지사항</a>
+        <a href="/QnAgi_Board.html">Q&A</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="side-bar">
+ <!-- 사이드바 -->
+ <div class="side-bar">
     <div class="links">
       <ul>
         <li><a href="/login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
-        <li><a href="/main.html" style="color:white; text-decoration:none;">홈페이지</a></li>
+        <li><a href="/index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
         <li><a href="/resources.html" style="color:white; text-decoration:none;">자료집</a></li>
         <li><a href="/notices.html" style="color:white; text-decoration:none;">공지사항</a></li>
         <li><a href="/introduce_1.html" style="color:white; text-decoration:none;">소모임 소개</a></li>
@@ -31,8 +46,8 @@
     </div>
   </div>
 
-  
   <main>
+    <h1>우리 운영국 팀원을 소개합니다!</h1>
     <div class="team-container">
       <!-- 홍보국 팀원 카드 -->
       <div class="team-member">
@@ -61,7 +76,7 @@
 
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png"alt="팀원 4">
+          <img src="/image/사람.png" alt="팀원 4">
         </div>
         <h2>최예진</h2>
         <p class="role">소셜 미디어 관리</p>
@@ -116,5 +131,34 @@
       </div>
     </div>
   </main>
+
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-left"></div>
+    <div class="footer-right">
+      <!-- 첫 번째 아이콘: 카카오톡 -->
+      <div class="icon-wrapper">
+        <a href="https://open.kakao.com/o/gDFOk91g" target="_blank">
+          <img src="/image/메세지.png" alt="카카오톡 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+        </a>
+        <div class="tooltip">카카오톡 채팅방으로 이동합니다.</div>
+      </div>
+
+      <div class="icon-wrapper">
+        <a href="https://www.instagram.com/kw_cie/" target="_blank">
+          <img src="/image/인스타그램.png" alt="인스타그램 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+        </a>
+        <div class="tooltip">인스타그램 페이지로 이동합니다.</div>
+      </div>
+  
+      <!-- 텍스트 영역 -->
+      <div class="text">
+        <p>김재용(회장): 010-5651-4415</p>
+        <p>최우진(부회장): 010-4907-7802</p>
+      </div>
+    </div>
+  </footer>
+  
 </body>
 </html>
