@@ -80,7 +80,8 @@
 
         <h2><a href="#" onclick="loadStudyResources()">공부 자료</a></h2>
         <p>추천 자료와 블로그, 그리고 백준 문제 풀이를 확인하세요.</p>
-
+        <h2><a href="#" onclick="loadAdditionalResources()">기타 자료</a></h2>
+        <p>유용한 기타 자료와 링크를 확인하세요.</p> 
     </main>
 
     <script>
@@ -184,7 +185,6 @@
         document.getElementById('main-content').innerHTML = content;
         bindBackArrow();
     }
-
     // 공부 자료 동적 콘텐츠 로드
     function loadStudyResources() {
         const content = `
@@ -192,11 +192,66 @@
                 <a href="#" class="back-arrow">&lt;</a>
                 <h1>공부 자료</h1>
             </div>
+            <div class="schedule-grid">
+                <section>
+                    <h3>1-1 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/basic-programming-blog" target="_blank">프로그래밍 기초 블로그</a></li>
+                        <li><a href="https://example.com/math-tips" target="_blank">기초 수학 학습 자료</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>2-1 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/oop-blog" target="_blank">객체지향 프로그래밍 블로그</a></li>
+                        <li><a href="https://example.com/digital-circuits" target="_blank">디지털 논리회로 정리</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>3-1 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/os-basics" target="_blank">운영체제 개론</a></li>
+                        <li><a href="https://example.com/software-engineering" target="_blank">소프트웨어 공학 자료</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>1-2 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/advanced-programming-blog" target="_blank">고급 C프로그래밍 블로그</a></li>
+                        <li><a href="https://example.com/design-intro" target="_blank">공학설계 입문 자료</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>2-2 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/data-structures" target="_blank">데이터 구조 학습 자료</a></li>
+                        <li><a href="https://example.com/assembly-tutorial" target="_blank">어셈블리 프로그래밍 블로그</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>3-2 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/ai-intro" target="_blank">인공지능 기초 블로그</a></li>
+                        <li><a href="https://example.com/algorithms" target="_blank">알고리즘 문제 풀이</a></li>
+                    </ul>
+                </section>
+            </div>
+        `;
+        document.getElementById('main-content').innerHTML = content;
+        bindBackArrow();
+    }
+        // 기타 자료 동적 콘텐츠 로드
+        function loadAdditionalResources() {
+        const content = `
+            <div class="navigation">
+                <a href="#" class="back-arrow">&lt;</a>
+                <h1>기타 자료</h1>
+            </div>
             <section>
-                <h3>1-1 추천 자료</h3>
+                <h3>못 봤으면 인생 절반 손해</h3>
                 <ul>
-                    <li><a href="https://example.com/basic-programming-blog" target="_blank">프로그래밍 기초 블로그</a></li>
-                    <li><a href="https://example.com/math-tips" target="_blank">기초 수학 학습 자료</a></li>
+                    <li><a href="https://principled-lancer-521.notion.site/20cf89ae51244e11894161b872c5df31" target="_blank">에브리타임 꿀팁 모음집</a></li>
+                    <li><a href="https://chromewebstore.google.com/detail/klas-helper/jicidjkhiefbhbgbfbemakjndloecjlf?pli=1" target="_blank">Klas Helper 크롬 확장 프로그램 다운로드</a></li>
                 </ul>
             </section>
         `;
