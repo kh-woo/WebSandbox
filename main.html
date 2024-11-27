@@ -8,45 +8,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>광운대학교 컴퓨터정보공학부</title>
   <script>
-    const hiddenItems = []; // 숨겨진 항목 저장 배열
 
-    // 항목 숨김
-    function hideItem(id, name) {
-      const element = document.getElementById(id);
-      const hiddenArea = document.getElementById("hidden-items");
-
-      // 숨기고 정보 이동
-      element.style.display = "none";
-      hiddenItems.push({ id, name });
-      renderHiddenItems();
-    }
-
-    // 숨겨진 항목 표시
-    function showItem(id) {
-      const element = document.getElementById(id);
-      element.style.display = "block";
-
-      // 숨겨진 항목에서 제거
-      const index = hiddenItems.findIndex((item) => item.id === id);
-      if (index > -1) hiddenItems.splice(index, 1);
-      renderHiddenItems();
-    }
-
-    // 숨겨진 항목 목록 렌더링
-    function renderHiddenItems() {
-      const hiddenArea = document.getElementById("hidden-items");
-      hiddenArea.innerHTML = ""; // 기존 내용 초기화
-
-      hiddenItems.forEach((item) => {
-        const hiddenElement = document.createElement("div");
-        hiddenElement.className = "hidden-item";
-        hiddenElement.innerHTML = `
-          <span>${item.name}</span>
-          <button onclick="showItem('${item.id}')">+</button>
-        `;
-        hiddenArea.appendChild(hiddenElement);
-      });
-    }
+      
   </script>
 </head>
 <body>
@@ -140,17 +103,30 @@
   <footer>
     <div class="footer-left"></div>
     <div class="footer-right">
-      <a href="https://open.kakao.com/o/gDFOk91g" target="_blank">
-        <img src="image/메세지.png" alt="첫 번째 이미지">
-      </a>
-      <a href="https://www.instagram.com/kw_cie/" target="_blank">
-        <img src="image/인스타그램.png" alt="두 번째 이미지">
-      </a>
+      <!-- 첫 번째 아이콘: 카카오톡 -->
+      <div class="icon-wrapper">
+        <a href="https://open.kakao.com/o/gDFOk91g" target="_blank">
+          <img src="image/메세지.png" alt="카카오톡 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+
+        </a>
+        <div class="tooltip">카카오톡 채팅방으로 이동합니다.</div>
+      </div>
+  
+      <!-- 두 번째 아이콘: 인스타그램 -->
+      <div class="icon-wrapper">
+        <a href="https://www.instagram.com/kw_cie/" target="_blank">
+          <img src="image/인스타그램.png" alt="인스타그램 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+        </a>
+        <div class="tooltip">인스타그램 페이지로 이동합니다.</div>
+      </div>
+  
+      <!-- 텍스트 영역 -->
       <div class="text">
         <p>김재용(회장): 010-5651-4415</p>
         <p>최우진(부회장): 010-4907-7802</p>
       </div>
     </div>
-  </footer> 
+  </footer>
+  
 </body>
 </html>
