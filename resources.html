@@ -162,6 +162,46 @@
         `;
         document.getElementById('main-content').innerHTML = content;
         bindBackArrow();
+        }
+     // 수강신청 방법 동적 콘텐츠 로드
+    function loadRegistrationTips() {
+        const content = `
+            <div class="navigation">
+                <a href="#" class="back-arrow">&lt;</a>
+                <h1>수강신청 방법</h1>
+            </div>
+            <section>
+                <h3>효율적인 수강신청 팁</h3>
+                <ul>
+                    <li>1. 과목의 우선순위를 정하고 빠르게 선택하기</li>
+                    <li>2. 수강신청 전에 미리 로그인을 해둡니다.</li>
+                    <li>3. 과목의 코드를 미리 메모하거나 복사해둡니다.</li>
+                    <li>4. 인기 과목은 사전에 정보를 수집하고, 빠르게 신청합니다.</li>
+                    <li>5. 백업 과목을 계획해, 실패 시 대체 과목을 선택합니다.</li>
+                </ul>
+            </section>
+        `;
+        document.getElementById('main-content').innerHTML = content;
+        bindBackArrow();
+    }
+
+    // 공부 자료 동적 콘텐츠 로드
+    function loadStudyResources() {
+        const content = `
+            <div class="navigation">
+                <a href="#" class="back-arrow">&lt;</a>
+                <h1>공부 자료</h1>
+            </div>
+            <section>
+                <h3>1-1 추천 자료</h3>
+                <ul>
+                    <li><a href="https://example.com/basic-programming-blog" target="_blank">프로그래밍 기초 블로그</a></li>
+                    <li><a href="https://example.com/math-tips" target="_blank">기초 수학 학습 자료</a></li>
+                </ul>
+            </section>
+        `;
+        document.getElementById('main-content').innerHTML = content;
+        bindBackArrow();
     }
     
         // 이전 콘텐츠로 돌아가기
