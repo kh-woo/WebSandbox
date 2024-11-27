@@ -69,7 +69,7 @@ footer {
   border-top: 1px solid #ccc;
   font-size: 18px;
   position: relative;
-  bottom: -50px; /* 화면의 맨 아래에 위치 */
+  bottom: -30px; /* 화면의 맨 아래에 위치 */
   right: 0; /* 화면의 오른쪽에 위치 */
 }
 
