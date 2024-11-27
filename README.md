@@ -7,7 +7,7 @@
 <<<<<<< HEAD
 ![학생회 로고](https://github.com/kh-woo/WebSandbox_1/image.png)
 =======
-![사진](image.png)
+![사진](image/image.png)
 >>>>>>> c8bbdadbfeb02390596b4bf9de535ed3422238f2
 
 ## 🚀 주요 기능
