@@ -203,7 +203,7 @@ footer {
   padding: 20px;
   background-color: white;
   border-top: 1px solid #ccc;
-  margin-top: 210px; /* 아래로 이동 */
+  margin-top: 5px; /* 아래로 이동 */
   font-size: 18px; /* 글씨 크기 증가 */
 }
 
