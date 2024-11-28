@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료집</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .navigation {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .back-arrow {
+            font-size: 24px;
+            color: #aaa;
+            text-decoration: none;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .back-arrow:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>자료집</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="announcements.html" target="_blank">공지사항</a></li>
+                <li><a href="events.html" target="_blank">이벤트</a></li>
+                <li><a href="club.html" target="_blank">소모임</a></li>
+                <li><a href="contact.html" target="_blank">연락처</a></li>
+                <li><a href="resources.html">자료집</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="navigation">
+            <a href="#" class="back-arrow" style="display: none;">&lt;</a>
+            
+        </div>
+        <h2><a href="#" onclick="loadSemesterSchedule()">학기별 추천 시간표</a></h2>
+        <p>각 학기 별 추천하는 시간표를 확인하세요</p>
+        <h2><a href="#" onclick="loadRegistrationTips()">수강신청 방법</a></h2>
+        <p>효율적인 수강신청 방법과 꿀팁을 확인하세요.</p>
+
+        <h2><a href="#" onclick="loadStudyResources()">공부 자료</a></h2>
+        <p>추천 자료와 블로그, 그리고 백준 문제 풀이를 확인하세요.</p>
+
+    </main>
+
+    <script>
+        // 초기 콘텐츠를 저장하는 변수
+        let initialContent = '';
+    
+        // 학기별 추천 시간표 동적 콘텐츠 로드
+        function loadSemesterSchedule() {
+            const content = `
+                <div class="navigation">
+                    <a href="#" class="back-arrow">&lt;</a>
+                    <h1>학기별 추천 시간표</h1>
+                </div>
+                <section>
+                    <h3>1-1</h3>
+                    <ul>
+                        <li>C프로그래밍</li>
+                        <li>컴퓨터공학입문세미나</li>
+                        <li>대학수학및연습1</li>
+                        <li>대학화학및실험1</li>
+                        <li>대학물리학1</li>
+                        <li>융합적사고와글쓰기</li>
+                        <li>광운인되기</li>
+                    </ul>
+                </section>
+                 <section>
+                    <h3>1-2</h3>
+                    <ul>
+                        <li>고급C프로그래밍</li>
+                        <li>공학설계입문</li>
+                        <li>대학물리학2</li>
+                        <li>대학수학및연습2</li>
+                        <li>대학영어</li>
+                    </ul>
+                </section>
+                <!-- 추가 내용 생략 -->
+            `;
+            document.getElementById('main-content').innerHTML = content;
+            bindBackArrow();
+        }
+    
+        // 수강신청 방법 동적 콘텐츠 로드
+        function loadRegistrationTips() {
+            const content = `
+                <div class="navigation">
+                    <a href="#" class="back-arrow">&lt;</a>
+                    <h1>수강신청 방법</h1>
+                </div>
+                <section>
+                    <h3>효율적인 수강신청 팁</h3>
+                    <ul>
+                        <li>1. 과목의 우선순위를 정하고 빠르게 선택하기</li>
+                        <li>2. 수강신청 전에 미리 로그인을 해둡니다.</li>
+                        <li>3. 과목의 코드를 미리 메모하거나 복사해둡니다.</li>
+                        <li>4. 인기 과목은 사전에 정보를 수집하고, 빠르게 신청합니다.</li>
+                        <li>5. 백업 과목을 계획해, 실패 시 대체 과목을 선택합니다.</li>
+                    </ul>
+                </section>
+            `;
+            document.getElementById('main-content').innerHTML = content;
+            bindBackArrow();
+        }
+    
+        // 공부 자료 동적 콘텐츠 로드
+        function loadStudyResources() {
+            const content = `
+                <div class="navigation">
+                    <a href="#" class="back-arrow">&lt;</a>
+                    <h1>공부 자료</h1>
+                </div>
+                <section>
+                    <h3>1-1 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/basic-programming-blog" target="_blank">프로그래밍 기초 블로그</a></li>
+                        <li><a href="https://example.com/math-tips" target="_blank">기초 수학 학습 자료</a></li>
+                    </ul>
+                </section>
+            `;
+            document.getElementById('main-content').innerHTML = content;
+            bindBackArrow();
+        }
+    
+        // 이전 콘텐츠로 돌아가기
+        function goBack() {
+            document.getElementById('main-content').innerHTML = initialContent;
+            bindBackArrow(); // 초기 상태로 돌아간 후 화살표 이벤트 다시 연결
+        }
+    
+        // 화살표 클릭 이벤트 연결
+        function bindBackArrow() {
+            const backArrow = document.querySelector('.back-arrow');
+            if (backArrow) {
+                backArrow.addEventListener('click', (event) => {
+                    event.preventDefault(); // 기본 동작 방지
+                    goBack();
+                });
+            }
+        }
+    
+        // 초기 로드 시 초기 콘텐츠 저장
+        document.addEventListener('DOMContentLoaded', () => {
+            initialContent = document.getElementById('main-content').innerHTML; // 초기 상태 저장
+            bindBackArrow(); // 초기 콘텐츠에 화살표 이벤트 연결
+        });
+    </script>
+    
+</body>
+</html>
