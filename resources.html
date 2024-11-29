@@ -23,6 +23,34 @@
         .back-arrow:hover {
             color: #ccc;
         }
+        .schedule-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+        }
+
+        .schedule-grid section {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-grid h3 {
+            margin-top: 0;
+        }
+
+        .schedule-grid ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .schedule-grid li {
+            padding: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -52,7 +80,8 @@
 
         <h2><a href="#" onclick="loadStudyResources()">공부 자료</a></h2>
         <p>추천 자료와 블로그, 그리고 백준 문제 풀이를 확인하세요.</p>
-
+        <h2><a href="#" onclick="loadAdditionalResources()">기타 자료</a></h2>
+        <p>유용한 기타 자료와 링크를 확인하세요.</p> 
     </main>
 
     <script>
@@ -61,11 +90,12 @@
     
         // 학기별 추천 시간표 동적 콘텐츠 로드
         function loadSemesterSchedule() {
-            const content = `
-                <div class="navigation">
-                    <a href="#" class="back-arrow">&lt;</a>
-                    <h1>학기별 추천 시간표</h1>
-                </div>
+        const content = `
+            <div class="navigation">
+                <a href="#" class="back-arrow">&lt;</a>
+                <h1>학기별 추천 시간표</h1>
+            </div>
+            <div class="schedule-grid">
                 <section>
                     <h3>1-1</h3>
                     <ul>
@@ -78,7 +108,27 @@
                         <li>광운인되기</li>
                     </ul>
                 </section>
-                 <section>
+                <section>
+                    <h3>2-1</h3>
+                    <ul>
+                        <li>객체지향프로그래밍</li>
+                        <li>회로이론</li>
+                        <li>공학수학1</li>
+                        <li>컴퓨터공학기초실험1</li>
+                        <li>디지털논리회로1</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>3-1</h3>
+                    <ul>
+                        <li>소프트웨어프로젝트</li>
+                        <li>시스템프로그래밍</li>
+                        <li>컴퓨터구조</li>
+                        <li>신호 및 시스템</li>
+                        <li>확률 및 통계</li>
+                    </ul>
+                </section>
+                <section>
                     <h3>1-2</h3>
                     <ul>
                         <li>고급C프로그래밍</li>
@@ -88,41 +138,62 @@
                         <li>대학영어</li>
                     </ul>
                 </section>
-                <!-- 추가 내용 생략 -->
-            `;
-            document.getElementById('main-content').innerHTML = content;
-            bindBackArrow();
-        }
-    
-        // 수강신청 방법 동적 콘텐츠 로드
-        function loadRegistrationTips() {
-            const content = `
-                <div class="navigation">
-                    <a href="#" class="back-arrow">&lt;</a>
-                    <h1>수강신청 방법</h1>
-                </div>
                 <section>
-                    <h3>효율적인 수강신청 팁</h3>
+                    <h3>2-2</h3>
                     <ul>
-                        <li>1. 과목의 우선순위를 정하고 빠르게 선택하기</li>
-                        <li>2. 수강신청 전에 미리 로그인을 해둡니다.</li>
-                        <li>3. 과목의 코드를 미리 메모하거나 복사해둡니다.</li>
-                        <li>4. 인기 과목은 사전에 정보를 수집하고, 빠르게 신청합니다.</li>
-                        <li>5. 백업 과목을 계획해, 실패 시 대체 과목을 선택합니다.</li>
+                        <li>데이터구조</li>
+                        <li>어셈블리프로그래밍</li>
+                        <li>디지털논리회로2</li>
+                        <li>컴퓨터공학기초실험2</li>
+                        <li>오픈소스소프트웨어</li>
                     </ul>
                 </section>
-            `;
-            document.getElementById('main-content').innerHTML = content;
-            bindBackArrow();
+                <section>
+                    <h3>3-2</h3>
+                    <ul>
+                        <li>운영체제</li>
+                        <li>수치해석</li>
+                        <li>알고리즘</li>
+                        <li>인공지능</li>
+                        <li>디지털신호처리</li>
+                        <li>마이크로프로세서</li>
+                    </ul>
+                </section>
+            </div>
+        `;
+        document.getElementById('main-content').innerHTML = content;
+        bindBackArrow();
         }
-    
-        // 공부 자료 동적 콘텐츠 로드
-        function loadStudyResources() {
-            const content = `
-                <div class="navigation">
-                    <a href="#" class="back-arrow">&lt;</a>
-                    <h1>공부 자료</h1>
-                </div>
+     // 수강신청 방법 동적 콘텐츠 로드
+    function loadRegistrationTips() {
+        const content = `
+            <div class="navigation">
+                <a href="#" class="back-arrow">&lt;</a>
+                <h1>수강신청 방법</h1>
+            </div>
+            <section>
+                <h3>효율적인 수강신청 팁</h3>
+                <ul>
+                    <li>1. 과목의 우선순위를 정하고 빠르게 선택하기</li>
+                    <li>2. 수강신청 전에 미리 로그인을 해둡니다.</li>
+                    <li>3. 과목의 코드를 미리 메모하거나 복사해둡니다.</li>
+                    <li>4. 인기 과목은 사전에 정보를 수집하고, 빠르게 신청합니다.</li>
+                    <li>5. 백업 과목을 계획해, 실패 시 대체 과목을 선택합니다.</li>
+                </ul>
+                <h3>우진아 이거 기타 자료에 '에타 모음집' 보면 수강신청 팁 있는데 어디에 넣을까</h3>
+            </section>
+        `;
+        document.getElementById('main-content').innerHTML = content;
+        bindBackArrow();
+    }
+    // 공부 자료 동적 콘텐츠 로드
+    function loadStudyResources() {
+        const content = `
+            <div class="navigation">
+                <a href="#" class="back-arrow">&lt;</a>
+                <h1>공부 자료</h1>
+            </div>
+            <div class="schedule-grid">
                 <section>
                     <h3>1-1 추천 자료</h3>
                     <ul>
@@ -130,10 +201,65 @@
                         <li><a href="https://example.com/math-tips" target="_blank">기초 수학 학습 자료</a></li>
                     </ul>
                 </section>
-            `;
-            document.getElementById('main-content').innerHTML = content;
-            bindBackArrow();
-        }
+                <section>
+                    <h3>2-1 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/oop-blog" target="_blank">객체지향 프로그래밍 블로그</a></li>
+                        <li><a href="https://example.com/digital-circuits" target="_blank">디지털 논리회로 정리</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>3-1 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/os-basics" target="_blank">운영체제 개론</a></li>
+                        <li><a href="https://example.com/software-engineering" target="_blank">소프트웨어 공학 자료</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>1-2 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/advanced-programming-blog" target="_blank">고급 C프로그래밍 블로그</a></li>
+                        <li><a href="https://example.com/design-intro" target="_blank">공학설계 입문 자료</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>2-2 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/data-structures" target="_blank">데이터 구조 학습 자료</a></li>
+                        <li><a href="https://example.com/assembly-tutorial" target="_blank">어셈블리 프로그래밍 블로그</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>3-2 추천 자료</h3>
+                    <ul>
+                        <li><a href="https://example.com/ai-intro" target="_blank">인공지능 기초 블로그</a></li>
+                        <li><a href="https://example.com/algorithms" target="_blank">알고리즘 문제 풀이</a></li>
+                    </ul>
+                </section>
+            </div>
+        `;
+        document.getElementById('main-content').innerHTML = content;
+        bindBackArrow();
+    }
+        // 기타 자료 동적 콘텐츠 로드
+        function loadAdditionalResources() {
+        const content = `
+            <div class="navigation">
+                <a href="#" class="back-arrow">&lt;</a>
+                <h1>기타 자료</h1>
+            </div>
+            <section>
+                <h3>못 봤으면 인생 절반 손해</h3>
+                <ul>
+                    <li><a href="https://principled-lancer-521.notion.site/20cf89ae51244e11894161b872c5df31" target="_blank">에브리타임 꿀팁 모음집</a></li>
+                    <li><a href="https://chromewebstore.google.com/detail/klas-helper/jicidjkhiefbhbgbfbemakjndloecjlf?pli=1" target="_blank">Klas Helper 크롬 확장 프로그램 다운로드</a></li>
+                    <li><a href="https://github.com/kw-service/kw-class-registration" target="_blank">모의 수강 신청 프로그램 다운로드 링크</a></li>
+                </ul>
+            </section>
+        `;
+        document.getElementById('main-content').innerHTML = content;
+        bindBackArrow();
+    }
     
         // 이전 콘텐츠로 돌아가기
         function goBack() {
@@ -158,6 +284,7 @@
             bindBackArrow(); // 초기 콘텐츠에 화살표 이벤트 연결
         });
     </script>
+    
     
 </body>
 </html>
