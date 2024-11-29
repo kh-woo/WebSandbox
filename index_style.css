@@ -8,7 +8,7 @@
 
 /* CSS 변수 설정 */
 :root {
-  --side-bar-width: 270px;
+  --side-bar-width: 170px;
 }
 
 body {
@@ -28,7 +28,7 @@ body {
   background-color: black;
   color: white;
   border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.8), 0); /* 처음에 80% 숨기기 */
+  transform: translate(calc(var(--side-bar-width) * -0.999), 0); /* 처음에 80% 숨기기 */
   transition: transform 0.5s ease-in-out;
   padding: 20px;
   display: flex;
