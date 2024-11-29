@@ -81,9 +81,6 @@
 [Commit Link](https://github.com/kh-woo/WebSandbox_1/tree/develop_wjchoi)
 
 ### 김경목
-<<<<<<< HEAD
-:자료집파트 맡음. 학기별 추천 시간표 완성, 기타 자료 탭 생성 및 간단한 추가, 공부 자료 레이아웃 정리, 외부 사이트로 이동시에는 새로 탭 생기게 수정, 색상 수정, 소모임 사이트 간단한 디자인 설계.
-### 김경목
 
 ## 자료집 기능 설계 및 구현
    각 학기별 추천 시간표를 그리드 형식으로 재구성하여 사용자가 학기별로 효율적으로 자료를 탐색할 수 있도록 개선했습니다.
@@ -92,7 +89,8 @@
    Commit Link : https://github.com/kh-woo/WebSandbox_1/commit/74a5a349b9ccfcd5503af7d567c6a33b120f194f
 
 ## 소모임 활동 내역 종합
-
+   Commit Link : https://github.com/kh-woo/WebSandbox_1/commit/4841736bbf1bdc5f3414ee549fbd29ce1ea678d5
+   
 ## 공부 자료 레이아웃 정리 & 기타 자료 탭 생성
    기존의 단순 링크 나열 방식에서 벗어나 학기별 자료를 학기 순서대로 배치하였습니다.
    추천 시간표와 동일한 그리드 형식(2행 3열)으로 구성하여 일관성 있는 사용자 경험을 제공했습니다.
@@ -111,9 +109,6 @@
    뒤로 가기 화살표의 색상을 조금 더 눈에 띄게 수정하였고, 자료집 페이지에서 화살표를 클릭하였을 때 저장해두었던 초기 화면이 뜨게 설정하였습니다.
    Commit Link : https://github.com/kh-woo/WebSandbox_1/commit/edd60046659a89cfecec09a8e0fa489dbbd7084d
 
-=======
-:자료집파트 맡음. 학기별 추천 시간표 완성, 기타 자료 탭 생성 및 간단한 추가, 공부 자료 레이아웃 정리, 외부 사이트로 이동시에는 새로 탭 생기게 수정, 색상 수정, 소모임 페이지 레이아웃 및 디자인.
->>>>>>> develop_mok
 ### 김현우
 ## Main Page 구성
 - **사이드바(Side-Bar)**  :[Commit Link](https://github.com/kh-woo/WebSandbox_1/commit/464c9927fde4a5b69f1d9e7c8d670da4135502c5)
