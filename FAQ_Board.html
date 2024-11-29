@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="FAQ_style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>자주 묻는 질문</h1>
+    </header>
+    <div class="faq-container">
+        <!-- 분야 선택 드롭다운 -->
+        <div class="faq-category">
+            <label for="category-select">분야 선택: </label>
+            <select id="category-select" onchange="showCategory()">
+                <option value="general">일반</option>
+                <option value="activity">행사 및 활동</option>
+                <option value="club">동아리 및 소모임</option>
+                <option value="study">학업 및 학사</option>
+                <option value="welfare">복지 및 지원</option>
+                <option value="others">기타 문의</option>
+            </select>
+        </div>
+
+        <!-- FAQ 내용 -->
+        <div id="general" class="faq-section">
+            <h2>일반 FAQ</h2>
+            <!-- 검색 입력 필드 -->
+            <input type="text" id="general-search" onkeyup="searchFAQ('general')" placeholder="질문 및 답변 검색..." />
+            <div id="general-list">
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학생회는 어떤 역할을 하나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학생회에 연락하려면 어떻게 해야하나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학생회에 일원이 되려면 어떻게 해야하나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학생회는 세부적으로 어떻게 구성되나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학생회에 김현우라는 사람이 있나요?</p>
+                    <p><strong>A:</strong> 아니요</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학생회에 대장은 누군가요?</p>
+                    <p><strong>A:</strong> 최우진</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 저희과의 과방은 어디에 존재하고 어떻게 사용하나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="activity" class="faq-section">
+            <h2>행사 및 활동 FAQ</h2>
+            <input type="text" id="activity-search" onkeyup="searchFAQ('activity')" placeholder="질문 및 답변 검색..." />
+            <div id="activity-list">
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학생회에서 주관하는 주요 행사는 무엇인가요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 특정 행사에 참여하려면 어떻게 신청하나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 행사에 참여 비용이 있나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 저희 과는 주로 어떤 행사가 열리나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="club" class="faq-section">
+            <h2>동아리 및 소모임 관련 FAQ</h2>
+            <input type="text" id="club-search" onkeyup="searchFAQ('club')" placeholder="질문 및 답변 검색..." />
+            <div id="club-list">
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 동아리에 가입하려면 어떻게 해야 하나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 각 소모임의 정보를 어디서 확인할 수 있나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 새로운 동아리나 소모임을 만들 수 있나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="study" class="faq-section">
+            <h2>학업 및 학사 관련 FAQ</h2>
+            <input type="text" id="study-search" onkeyup="searchFAQ('study')" placeholder="질문 및 답변 검색..." />
+            <div id="study-list">
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학생회에서 학접 자료나 스터디 그룹을 지원하나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학업 관련 고충 상담은 어디서 받을 수 있나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="welfare" class="faq-section">
+            <h2>복지 및 지원 관련 FAQ</h2>
+            <input type="text" id="welfare-search" onkeyup="searchFAQ('welfare')" placeholder="질문 및 답변 검색..." />
+            <div id="welfare-list">
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학교 시설 이용에 대한 질문은 어디에 할 수 있나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="others" class="faq-section">
+            <h2>기타 FAQ</h2>
+            <input type="text" id="others-search" onkeyup="searchFAQ('others')" placeholder="질문 및 답변 검색..." />
+            <div id="others-list">
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 저희 과에서 가장 잘생긴 교수님은 누군가요?</p>
+                    <p><strong>A:</strong> 무조건 신동화 교수님입니다.</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 저희 과에서 가장 잘생긴 학우는 누군가요?</p>
+                    <p><strong>A:</strong> 김현우군은 아닙니다.</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 분실물 처리나 보관은 어디서 이루어지나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 학생회 SNS 채널이나 공지사항은 어디서 확인할 수 있나요?</p>
+                    <p><strong>A:</strong> 대답</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>Q:</strong> 회장이나 부회장의 연락처가 궁금해요</p>
+                    <p><strong>A:</strong> 회장 최우진 : cwj121346@kw.ac.kr <br> 부회장 누구 : idontknow@kw.ac.kr</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="side-bar">
+        <div class="links">
+            <ul>
+                <li><a href="index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
+            </ul>
+        </div>
+    
+        <div class="footer-links">
+            <a href="https://www.kw.ac.kr" target="_blank">광운대학교 홈페이지</a>
+            <a href="https://sw.kw.ac.kr" target="_blank">인융대 홈페이지</a>
+        </div>
+    </div>
+    
+
+    <script>
+        function showCategory() {
+            // 모든 FAQ 섹션을 숨김
+            let sections = document.querySelectorAll('.faq-section');
+            sections.forEach(section => section.style.display = 'none');
+
+            // 선택된 카테고리의 FAQ 섹션을 표시
+            let selectedCategory = document.getElementById('category-select').value;
+            let selectedSection = document.getElementById(selectedCategory);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+
+        // 페이지 로드 시 기본적으로 '일반' 카테고리 보이기
+        window.onload = function () {
+            showCategory();
+        };
+
+        function searchFAQ(category) {
+            let searchInput = document.getElementById(category + '-search').value.toLowerCase(); // 검색 입력값
+            let faqList = document.getElementById(category + '-list'); // 해당 분야의 FAQ 리스트
+            let faqItems = faqList.getElementsByClassName('faq-item'); // FAQ 항목들
+
+            // 각 FAQ 항목을 검색어와 비교
+            for (let i = 0; i < faqItems.length; i++) {
+                let itemText = faqItems[i].textContent || faqItems[i].innerText; // 질문과 답변 텍스트
+                if (itemText.toLowerCase().indexOf(searchInput) > -1) {
+                    faqItems[i].style.display = ''; // 검색어가 포함된 항목은 보이게
+                } else {
+                    faqItems[i].style.display = 'none'; // 검색어가 포함되지 않은 항목은 숨김
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
