@@ -13,6 +13,7 @@
   width: 640px;
 }
 
+
 /* 공통 스타일 */
 body {
     font-family: 'SBAggroB', 'Arial', sans-serif;
@@ -107,9 +108,9 @@ main {
   }
 
    /* 오른쪽 상단 위치에 입력 박스 */
-   .top-right-input {
+   .top-right-info {
     position: absolute;
-    left: 15px;
+    right: 15px;
     top: 15px;
-    width: 200px;
-}
+    width: 350px;
+  }
