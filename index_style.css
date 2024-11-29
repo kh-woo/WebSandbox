@@ -7,8 +7,9 @@
 }
 
 /* CSS 변수 설정 */
+
 :root {
-  --side-bar-width: 170px;
+  --side-bar-width: 180px;
 }
 
 body {
@@ -24,17 +25,17 @@ body {
   top: 120px; /* 로고 아래로 위치 조정 */
   left: 0;
   width: var(--side-bar-width);
-  height: calc(100vh - 120px); /* 로고 높이를 뺀 화면 높이 */
+
   background-color: black;
   color: white;
   border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.999), 0); /* 처음에 80% 숨기기 */
+  transform: translate(calc(var(--side-bar-width) * -0.99), 0); /* 처음에 99% 숨기기 */
   transition: transform 0.5s ease-in-out;
   padding: 20px;
   display: flex;
   flex-direction: column;
   overflow-y: auto; /* 콘텐츠가 넘칠 경우 스크롤 표시 */
-  z-index: 2;
+  z-index: 3;
   font-size: 20px; /* 글씨 크기 증가 */
 }
 
@@ -51,11 +52,35 @@ body {
 .side-bar li {
   padding: 20px 25px;
   cursor: pointer;
-  font-size: 20px; /* 글씨 크기 증가 */
+  font-size: 15px; /* 글씨 크기 증가 */
 }
 
 .side-bar li:hover {
   background-color: #555;
+}
+/* 화살표 표시 */
+.side-bar::after {
+  content: '>';
+  position: absolute;
+  top: 45%;
+  right: -5px; /* 사이드바 오른쪽 외부로 살짝 나가게 설정 */
+
+  margin-right: 10px;
+  transform: translateY(-50%);
+  background-color: black;
+  color: white;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.side-bar:hover::after {
+  content: '<'; /* 호버 시 화살표 모양 변경 */
 }
 
 .footer-links {
