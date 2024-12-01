@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ</title>
     <link rel="stylesheet" href="FAQ_style.css">
-    <style>
 
-    </style>
 </head>
 
 <body>
@@ -211,6 +209,25 @@
             }
         }
 
+        document.addEventListener('DOMContentLoaded', () => {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+    
+            faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const parent = question.parentElement;
+        
+                // 토글 활성 상태
+                parent.classList.toggle('active');
+        
+                // 다른 항목 닫기 (선택 사항)
+                document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== parent) {
+                    item.classList.remove('active');
+                }
+                });
+            });
+            });
+        });
     </script>
 </body>
 
