@@ -1,20 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ</title>
-    <link rel="stylesheet" href="FAQ_style.css">
-    <style>
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="tmp.css">
+  <link rel="stylesheet" href="FAQ_style.css">
+  <link rel="icon" type="파비콘/png" href="image/파비콘.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>광운대학교 컴퓨터정보공학부</title>
 </head>
 
 <body>
-    <header>
-        <h1>자주 묻는 질문</h1>
-    </header>
+    <!-- 헤더 -->
+  <header>
+    <div class="logo">
+      <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
+      <h1>컴퓨터정보공학부 학생회</h1>
+    </div>
+    <div class="search-container">
+      <input type="text" placeholder="검색...">
+      <nav class="menu-links">
+        <a href="index.html">홈페이지</a>
+        <a href="resources.html">자료집</a>
+        <a href="announcements.html">공지사항</a>
+        <a href="QnAgi_Board.html">Q&A</a>
+      </nav>
+    </div>
+  </header>
+
+ <!-- 사이드바 -->
+ <div class="side-bar">
+    <div class="links">
+      <ul>
+        <li><a href="login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
+        <li><a href="index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
+        <li><a href="resources.html" style="color:white; text-decoration:none;">자료집</a></li>
+        <li><a href="announcements.html" style="color:white; text-decoration:none;">공지사항</a></li>
+        <li><a href="introduce_1.html" style="color:white; text-decoration:none;">소모임 소개</a></li>
+        <li><a href="introduce_2.html" style="color:white; text-decoration:none;">학과 소개</a></li>
+        <li><a href="QnA_Board.html" style="color:white; text-decoration:none;">Q&A</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.kw.ac.kr" target="_blank">광운대학교 홈페이지</a>
+      <a href="https://sw.kw.ac.kr" target="_blank">인융대 홈페이지</a>
+    </div>
+  </div>
     <div class="faq-container">
         <!-- 분야 선택 드롭다운 -->
         <div class="faq-category">
@@ -163,24 +194,17 @@
 
     <!-- 사이드바 -->
     <div class="side-bar">
-    <div class="links">
-      <ul>
-        <li><a href="login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
-        <li><a href="index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
-        <li><a href="resources.html" style="color:white; text-decoration:none;">자료집</a></li>
-        <li><a href="events.html" style="color:white; text-decoration:none;">공지사항</a></li>
-        <li><a href="club.html" style="color:white; text-decoration:none;">소모임 소개</a></li>
-        <li><a href="introduce_2.html" style="color:white; text-decoration:none;">학과 소개</a></li>
-        <li><a href="FAQ_Board.html" style="color:white; text-decoration:none;">FAQ</a></li>
-        <li><a href="Plan_manager.html" style="color:white; text-decoration:none;">Plan Manager</a></li>
-      </ul>
+        <div class="links">
+            <ul>
+                <li><a href="index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
+            </ul>
+        </div>
+    
+        <div class="footer-links">
+            <a href="https://www.kw.ac.kr" target="_blank">광운대학교 홈페이지</a>
+            <a href="https://sw.kw.ac.kr" target="_blank">인융대 홈페이지</a>
+        </div>
     </div>
-    </div>
-    <div class="footer-links">
-      <a href="https://www.kw.ac.kr" target="_blank">광운대학교 홈페이지</a>
-      <a href="https://sw.kw.ac.kr" target="_blank">인융대 홈페이지</a>
-    </div>
-  </div>
     
 
     <script>
@@ -218,6 +242,32 @@
             }
         }
     </script>
+    <!-- 푸터 -->
+  <footer>
+    <div class="footer-left"></div>
+    <div class="footer-right">
+      <!-- 첫 번째 아이콘: 카카오톡 -->
+      <div class="icon-wrapper">
+        <a href="https://open.kakao.com/o/gDFOk91g" target="_blank">
+          <img src="image/메세지.png" alt="카카오톡 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+        </a>
+        <div class="tooltip">카카오톡 채팅방으로 이동합니다.</div>
+      </div>
+
+      <div class="icon-wrapper">
+        <a href="https://www.instagram.com/kw_cie/" target="_blank">
+          <img src="image/인스타그램.png" alt="인스타그램 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+        </a>
+        <div class="tooltip">인스타그램 페이지로 이동합니다.</div>
+      </div>
+  
+      <!-- 텍스트 영역 -->
+      <div class="text">
+        <p>김재용(회장): 010-5651-4415</p>
+        <p>최우진(부회장): 010-4907-7802</p>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
