@@ -8,7 +8,7 @@
 
 /* CSS 변수 설정 */
 :root {
-  --side-bar-width: 270px;
+  --side-bar-width: 200px;
 }
 
 body {
@@ -28,6 +28,8 @@ header {
   border-bottom: 1px solid #ccc;
 }
 
+
+
 .logo {
   display: flex;
   align-items: center;
@@ -40,8 +42,11 @@ header {
 
 .search-container {
   display: flex;
-  align-items: center;
+  align-items: center; /* 아이템들을 수직으로 중앙 정렬 */
+  position: relative;
+  gap: 10px; /* 입력창과 아이콘 사이의 간격 설정 */
 }
+
 
 .search-container input {
   padding: 15px; /* 내부 여백 */
@@ -50,7 +55,22 @@ header {
   border-radius: 5px; /* 둥근 모서리 */
   font-weight: bold; /* 글씨 두껍게 */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* 약간의 그림자 */
+  flex: 1; /* 입력창이 남은 공간을 차지하도록 설정 */
 }
+
+.search-container .search-icon {
+  cursor: pointer;
+  font-size: 40px; /* 아이콘 크기 조정 */
+  color: black;
+  transition: transform 0.2s ease, color 0.2s ease;
+  line-height: 1; /* 아이콘 수직 정렬 조정 */
+}
+
+.search-container .search-icon:hover {
+  transform: scale(1.1); /* 호버 시 약간의 확대 */
+  color: #555; /* 호버 색상 */
+}
+
 
 .search-container .menu-links a {
   text-decoration: none;
@@ -58,6 +78,37 @@ header {
   font-size: 20px; /* 글씨 크기 증가 */
   color: black;
 }
+
+#search-results {
+  position: absolute;
+  top: calc(100% + 5px); /* 검색창 바로 아래 */
+  left: 0;
+  width: 280px; /* 검색창 너비와 동일하게 설정 */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px;
+  display: none; /* 기본적으로 숨김 */
+  border-radius: 5px; /* 둥근 모서리 */
+  font-size: 16px; /* 검색 결과 글씨 크기 */
+}
+
+#search-results p {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+#search-results a {
+  text-decoration: none;
+  color: black;
+}
+
+#search-results a:hover {
+  text-decoration: underline;
+}
+
 
 /* Footer 스타일 */
 footer {
@@ -162,19 +213,20 @@ footer {
   top: 120px; /* 로고 아래로 위치 조정 */
   left: 0;
   width: var(--side-bar-width);
-  height: calc(100vh - 120px); /* 로고 높이를 뺀 화면 높이 */
+  height: calc(100vh - 200px);
   background-color: black;
   color: white;
   border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.8), 0); /* 처음에 80% 숨기기 */
+  transform: translate(calc(var(--side-bar-width) * -0.99), 0); /* 처음에 99% 숨기기 */
   transition: transform 0.5s ease-in-out;
   padding: 20px;
   display: flex;
   flex-direction: column;
   overflow-y: auto; /* 콘텐츠가 넘칠 경우 스크롤 표시 */
-  z-index: 2;
-  font-size: 20px; /* 글씨 크기 증가 */
+  z-index: 1001;
+  font-size: 15px; /* 글씨 크기 증가 */
 }
+
 
 .side-bar:hover {
   transform: translate(0, 0); /* 호버 시 원래 위치로 */
@@ -184,16 +236,44 @@ footer {
   list-style: none;
   padding: 0;
   margin: 0;
+  position: relative; /* 리스트 위치를 기준으로 z-index 적용 가능 */
+  z-index: 2; /* 화살표보다 위에 표시 */
 }
 
 .side-bar li {
+  margin-right: 20px;
   padding: 20px 25px;
   cursor: pointer;
-  font-size: 20px; /* 글씨 크기 증가 */
+  font-size: 15px; /* 글씨 크기 증가 */
 }
 
 .side-bar li:hover {
   background-color: #555;
+}
+/* 화살표 표시 */
+.side-bar::after {
+  content: '>';
+  position: absolute;
+  top: 45%;
+  right: -5px; /* 사이드바 오른쪽 외부로 살짝 나가게 설정 */
+  margin-right: 10px;
+  transform: translateY(-50%);
+  background-color: black;
+  color: white;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: content 0.5s ease-in-out;
+  z-index: 1; /* 화살표를 다른 콘텐츠 아래로 */
+  pointer-events: none; /* 클릭 방지 */
+}
+
+.side-bar:hover::after {
+  content: '<'; /* 호버 시 화살표 모양 변경 */
 }
 
 .footer-links {
