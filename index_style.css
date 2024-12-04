@@ -7,9 +7,8 @@
 }
 
 /* CSS 변수 설정 */
-
 :root {
-  --side-bar-width: 180px;
+  --side-bar-width: 200px;
 }
 
 body {
@@ -25,7 +24,6 @@ body {
   top: 120px; /* 로고 아래로 위치 조정 */
   left: 0;
   width: var(--side-bar-width);
-
   background-color: black;
   color: white;
   border-radius: 20px;
@@ -36,7 +34,7 @@ body {
   flex-direction: column;
   overflow-y: auto; /* 콘텐츠가 넘칠 경우 스크롤 표시 */
   z-index: 3;
-  font-size: 20px; /* 글씨 크기 증가 */
+  font-size: 15px; /* 글씨 크기 증가 */
 }
 
 .side-bar:hover {
@@ -47,9 +45,12 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  position: relative; /* 리스트 위치를 기준으로 z-index 적용 가능 */
+  z-index: 2; /* 화살표보다 위에 표시 */
 }
 
 .side-bar li {
+  margin-right: 20px;
   padding: 20px 25px;
   cursor: pointer;
   font-size: 15px; /* 글씨 크기 증가 */
@@ -64,25 +65,25 @@ body {
   position: absolute;
   top: 45%;
   right: -5px; /* 사이드바 오른쪽 외부로 살짝 나가게 설정 */
-
   margin-right: 10px;
   transform: translateY(-50%);
   background-color: black;
   color: white;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   font-size: 18px;
-  transition: transform 0.5s ease-in-out;
+  transition: content 0.5s ease-in-out;
+  z-index: 1; /* 화살표를 다른 콘텐츠 아래로 */
+  pointer-events: none; /* 클릭 방지 */
 }
 
 .side-bar:hover::after {
   content: '<'; /* 호버 시 화살표 모양 변경 */
 }
-
 .footer-links {
   margin-top: 20px; /* 상단 콘텐츠와 간격 추가 */
   border-top: 1px solid #666; /* 구분선 추가 */
@@ -342,13 +343,17 @@ footer {
 .footer-right {
   display: flex;
   align-items: center;
-  gap: 25px; /* 사진과 텍스트 사이 간격 */
+  gap: 15px; /* 아이콘과 텍스트 간 간격 */
+  justify-content: flex-end; /* 오른쪽 정렬 */
+}
+
+.footer-right .text {
+  text-align: right; /* 텍스트 오른쪽 정렬 */
 }
 
 .footer-right img {
-  width: 50px; /* 이미지 너비 */
-  height: 50px; /* 이미지 높이 */
-  border-radius: 5px; /* 이미지 테두리 둥글게 */
+  width: 40px; /* 이미지 너비 */
+  height: 40px; /* 이미지 높이 */
   cursor: pointer;
 }
 
@@ -356,11 +361,7 @@ footer {
   opacity: 0.8; /* 마우스 호버 시 투명도 */
 }
 
-.footer-right .text {
-  display: flex;
-  flex-direction: column;
-}
-
 .footer-right .text p {
   margin: 0;
+  line-height: 1.6;
 }
