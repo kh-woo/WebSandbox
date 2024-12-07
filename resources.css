@@ -1,0 +1,250 @@
+/* Font 설정 */
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* CSS 변수 설정 */
+:root {
+    --side-bar-width: 220px;
+    --primary-color: #800000; /* 메인 컬러 */
+    --hover-color: #cc0000; /* 호버 컬러 */
+    --background-color: #f9f9f9; /* 배경 색 */
+    --font-family: 'SBAggroB', Arial, sans-serif;
+}
+
+/* 기본 설정 */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+    background-color: var(--background-color);
+}
+
+/* 헤더 스타일 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 60px;
+    margin-right: 15px;
+}
+
+header .search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .search-container input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+header .menu-links a {
+    margin-left: 15px;
+    font-size: 18px;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+header .menu-links a:hover {
+    color: var(--hover-color);
+}
+
+/* 사이드바 스타일 */
+.side-bar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: var(--side-bar-width);
+    height: calc(100vh - 80px);
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.side-bar:hover {
+    transform: translateX(0);
+}
+
+.side-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-bar li {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.side-bar li:hover {
+    background-color: var(--hover-color);
+}
+
+.side-bar a {
+    color: white;
+    text-decoration: none;
+}
+
+.side-bar::after {
+    content: '>';
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    background-color: black;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.side-bar:hover::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* 메인 콘텐츠 스타일 */
+main {
+    margin-left: calc(var(--side-bar-width) + 20px);
+    padding: 20px;
+}
+
+main h2 {
+    font-size: 24px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+main p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.schedule-grid section {
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-grid h3 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.schedule-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.schedule-grid li {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+/* 빨간 박스 스타일 */
+main .content-box {
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* 푸터 스타일 */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+}
+
+footer .footer-right {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+footer .footer-right .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+footer .footer-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease;
+}
+
+footer .footer-icon:hover {
+    transform: scale(1.2);
+}
+
+footer .text {
+    text-align: left;
+}
+
+footer .footer-right a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+footer .footer-right a:hover {
+    color: var(--hover-color);
+}
