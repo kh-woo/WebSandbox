@@ -107,6 +107,7 @@
         <p>추천 자료와 블로그, 그리고 백준 문제 풀이를 확인하세요.</p>
         <h2><a href="#" onclick="loadAdditionalResources()">기타 자료</a></h2>
         <p>유용한 기타 자료와 링크를 확인하세요.</p> 
+        
     </main>
 
     <script>
@@ -268,23 +269,24 @@
     }
         // 기타 자료 동적 콘텐츠 로드
         function loadAdditionalResources() {
-        const content = `
-            <div class="navigation">
-                <a href="#" class="back-arrow">&lt;</a>
-                <h1>기타 자료</h1>
-            </div>
-            <section>
-                <h3>못 봤으면 인생 절반 손해</h3>
-                <ul>
-                    <li><a href="https://principled-lancer-521.notion.site/20cf89ae51244e11894161b872c5df31" target="_blank">에브리타임 꿀팁 모음집</a></li>
-                    <li><a href="https://chromewebstore.google.com/detail/klas-helper/jicidjkhiefbhbgbfbemakjndloecjlf?pli=1" target="_blank">Klas Helper 크롬 확장 프로그램 다운로드</a></li>
-                    <li><a href="https://github.com/kw-service/kw-class-registration" target="_blank">모의 수강 신청 프로그램 다운로드 링크</a></li>
-                </ul>
-            </section>
-        `;
-        document.getElementById('main-content').innerHTML = content;
-        bindBackArrow();
-    }
+            const content = `
+                <div class="navigation">
+                    <a href="#" class="back-arrow">&lt;</a>
+                    <h1>기타 자료</h1>
+                </div>
+                <section>
+                    <h3>못 봤으면 인생 절반 손해</h3>
+                    <ul>
+                        <li><a href="https://principled-lancer-521.notion.site/20cf89ae51244e11894161b872c5df31" target="_blank">에브리타임 꿀팁 모음집</a></li>
+                        <li><a href="https://chromewebstore.google.com/detail/klas-helper/jicidjkhiefbhbgbfbemakjndloecjlf?pli=1" target="_blank">Klas Helper 크롬 확장 프로그램 다운로드</a></li>
+                        <li><a href="https://github.com/kw-service/kw-class-registration" target="_blank">모의 수강 신청 프로그램 다운로드 링크</a></li>
+                        <li><a href="myQuiz.html" target="_self">퀴즈 페이지로 이동</a></li>
+                    </ul>
+                </section>
+            `;
+            document.getElementById('main-content').innerHTML = content;
+            bindBackArrow();
+        }
     
         // 이전 콘텐츠로 돌아가기
         function goBack() {
