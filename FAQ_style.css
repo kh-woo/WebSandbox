@@ -10,7 +10,7 @@
 }
 
 :root {
-  --side-bar-width: 270px;
+  --side-bar-width: 200px;
 }
 
 /* 공통 스타일 */
@@ -57,7 +57,6 @@ main {
 }
 
 /* 사이드바 스타일 */
-/* 사이드바 스타일 */
 .side-bar {
   position: fixed;
   top: 120px; /* 로고 아래로 위치 조정 */
@@ -66,15 +65,15 @@ main {
   height: calc(100vh - 120px); /* 로고 높이를 뺀 화면 높이 */
   background-color: black;
   color: white;
-  border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.8), 0); /* 처음에 80% 숨기기 */
+  border-radius: 0 20px 20px 0;
+  transform: translate(calc(var(--side-bar-width) * -0.99), 0); /* 처음에 99% 숨기기 */
   transition: transform 0.5s ease-in-out;
   padding: 20px;
   display: flex;
   flex-direction: column;
   overflow-y: auto; /* 콘텐츠가 넘칠 경우 스크롤 표시 */
   z-index: 3;
-  font-size: 20px; /* 글씨 크기 증가 */
+  font-size: 15px;
 }
 
 .side-bar:hover {
@@ -98,7 +97,7 @@ main {
   padding: 20px
     25px;
   cursor: pointer;
-  font-size: 20px; /* 글씨 크기 증가 */
+  font-size: 15px; /* 글씨 크기 증가 */
 }
 
 .side-bar

@@ -213,7 +213,7 @@ footer {
   top: 120px; /* 로고 아래로 위치 조정 */
   left: 0;
   width: var(--side-bar-width);
-  height: calc(100vh - 200px);
+  height: calc(100vh - 120px);
   background-color: black;
   color: white;
   border-radius: 20px;

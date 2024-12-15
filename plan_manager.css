@@ -24,15 +24,16 @@ body {
   top: 120px; /* 로고 아래로 위치 조정 */
   left: 0;
   width: var(--side-bar-width);
+  height: calc(100vh - 120px); /* 로고 높이를 뺀 화면 높이 */
   background-color: black;
   color: white;
-  border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.99), 0); /* 처음에 99% 숨기기 */
+  border-radius: 0 20px 0 0;/* 오른쪽 모서리 각지게 변경 */
+  transform: translate(calc(var(--side-bar-width) * -0.8), 0); /* 처음에 80% 숨기기 */
   transition: transform 0.5s ease-in-out;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto; /* 콘텐츠가 넘칠 경우 스크롤 표시 */
+  overflow-y: hidden; /* 콘텐츠가 넘칠 경우 스크롤 표시 */
   z-index: 3;
   font-size: 15px; /* 글씨 크기 증가 */
 }
@@ -51,7 +52,7 @@ body {
 
 .side-bar li {
   margin-right: 20px;
-  padding: 20px 25px;
+  padding: 18px 25px; /* padding 축소 */
   cursor: pointer;
   font-size: 15px; /* 글씨 크기 증가 */
 }

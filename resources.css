@@ -76,6 +76,7 @@ header .menu-links a:hover {
     top: 120px; /* 로고 아래로 위치 조정 */
     left: 0;
     width: var(--side-bar-width);
+    height: calc(100vh - 120px);
     background-color: black;
     color: white;
     border-radius: 0 20px 20px 0; /* 왼쪽 위 모서리는 둥글게 하지 않음 */
