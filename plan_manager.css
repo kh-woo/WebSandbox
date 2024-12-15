@@ -18,6 +18,11 @@ body {
   overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
+h1 {
+  color: black;
+  font-size: 30px;
+}
+
 /* 사이드바 스타일 */
 .side-bar {
   position: fixed;
@@ -131,13 +136,24 @@ header {
 }
 
 
-.search-container input {
+.search-container
+  input {
   padding: 15px; /* 내부 여백 */
-  font-size: 20px; /* 글씨 크기 */
-  border: 3px solid #000; /* 두꺼운 테두리 */
+  font-size: 17px; /* 글씨 크기 */
+  border: 3px
+    solid
+    #000; /* 두꺼운 테두리 */
   border-radius: 5px; /* 둥근 모서리 */
   font-weight: bold; /* 글씨 두껍게 */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* 약간의 그림자 */
+  box-shadow: 0px
+    2px
+    5px
+    rgba(
+      0,
+      0,
+      0,
+      0.2
+    ); /* 약간의 그림자 */
   flex: 1; /* 입력창이 남은 공간을 차지하도록 설정 */
 }
 

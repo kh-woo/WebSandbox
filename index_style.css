@@ -23,6 +23,11 @@ body {
   overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
+h1 {
+  color: black;
+  font-size: 30px;
+}
+
 /* 사이드바 스타일 */
 .side-bar {
   position: fixed;

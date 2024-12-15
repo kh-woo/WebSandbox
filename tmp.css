@@ -18,6 +18,11 @@ body {
   overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
+h1 {
+  color: black;
+  font-size: 30px;
+}
+
 section {
   display: flex;
   flex-direction: column; /* 내부 요소들을 세로로 정렬 */
