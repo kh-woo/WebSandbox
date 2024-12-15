@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +11,29 @@
 </head>
 
 <body>
-    <!-- 헤더 -->
+  <!-- 헤더 -->
   <header>
     <div class="logo">
-      <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
+      <a href="index.html"> <!-- 이미지를 링크로 감싸기 -->
+        <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
+      </a>
       <h1>컴퓨터정보공학부 학생회</h1>
     </div>
     <div class="search-container">
-      <input type="text" placeholder="검색...">
+      <input type="text" id="search-bar" placeholder="검색...">
+      <span class="search-icon" onclick="searchContent()">⌕</span>
       <nav class="menu-links">
         <a href="index.html">홈페이지</a>
         <a href="resources.html">자료집</a>
         <a href="events.html">공지사항</a>
         <a href="FAQ_Board.html">FAQ</a>
       </nav>
+      <div id="search-results"></div>
     </div>
   </header>
-    <!-- 사이드바 -->
- <div class="side-bar">
+
+  <!-- 사이드바 -->
+  <div class="side-bar">
     <div class="links">
       <ul>
         <li><a href="login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
@@ -44,35 +50,37 @@
       <a href="https://sw.kw.ac.kr" target="_blank">인융대 홈페이지</a>
     </div>
   </div>
-    <section>
-        <h2>농구하는 농민</h2>
-        <p>농구에 열정적인 학생들이 모여 함께 활동하는 소모임입니다. 농구 기술을 배우고, 팀워크를 기르는 다양한 활동이 있습니다.</p>
-        <p>패짱:김경목 부패짱:이예찬</p>
-        <p>연촌체전 참가</p>
-        <p>농구공 대여</p>
-        <p>정기 연습 및 회식</p>
-        <p>친목 도모</p>
+  <section>
+    <h2>농구하는 농민</h2>
+    <p>농구에 열정적인 학생들이 모여 함께 활동하는 소모임입니다. 농구 기술을 배우고, 팀워크를 기르는 다양한 활동이 있습니다.</p>
+    <p>패짱:김경목 부패짱:이예찬</p>
+    <p>연촌체전 참가</p>
+    <p>농구공 대여</p>
+    <p>정기 연습 및 회식</p>
+    <p>친목 도모</p>
 
-    </section>
-    <!-- 푸터 -->
+  </section>
+  <!-- 푸터 -->
   <footer>
     <div class="footer-left"></div>
     <div class="footer-right">
       <!-- 첫 번째 아이콘: 카카오톡 -->
       <div class="icon-wrapper">
         <a href="https://open.kakao.com/o/gDFOk91g" target="_blank">
-          <img src="image/메세지.png" alt="카카오톡 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+          <img src="image/메세지.png" alt="카카오톡 아이콘" class="footer-icon"
+            style="width: 60px; height: 50px; transition: transform 0.2s ease;">
         </a>
         <div class="tooltip">카카오톡 채팅방으로 이동합니다.</div>
       </div>
 
       <div class="icon-wrapper">
         <a href="https://www.instagram.com/kw_cie/" target="_blank">
-          <img src="image/인스타그램.png" alt="인스타그램 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+          <img src="image/인스타그램.png" alt="인스타그램 아이콘" class="footer-icon"
+            style="width: 60px; height: 50px; transition: transform 0.2s ease;">
         </a>
         <div class="tooltip">인스타그램 페이지로 이동합니다.</div>
       </div>
-  
+
       <!-- 텍스트 영역 -->
       <div class="text">
         <p>김재용(회장): 010-5651-4415</p>
@@ -81,6 +89,5 @@
     </div>
   </footer>
 </body>
+
 </html>
-
-
