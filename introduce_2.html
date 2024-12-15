@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="tmp.css">
+  <link rel="icon" type="파비콘/png" href="image/파비콘.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>학과 소개 - 컴퓨터정보공학부</title>
+  <style>
+    /* 컨텐츠 오른쪽 여백 추가 */
+    .content {
+        margin-left: 50px;
+        font-size: 1.1em; /* 전체 글씨 크기 늘리기 */
+      }
+  
+      h2, h3 {
+        font-size: 1.5em; /* 섹션 제목 글씨 크기 */
+      }
+  
+      p, li {
+        font-size: 1.2em; /* 일반 텍스트 및 리스트 항목 크기 */
+      }
+
+      /* 푸터 레이아웃 조정 */
+      footer {
+        display: flex; /* 푸터 요소를 가로 배치 */
+        justify-content: space-between; /* 요소 간 공간 분배 */
+        align-items: center; /* 요소를 수직 중앙 정렬 */
+        padding: 20px; /* 푸터 안쪽 여백 설정 */
+        box-sizing: border-box; /* 패딩 포함한 박스 크기 계산 */
+        width: calc(100% - 200px); /* 전체 너비에서 사이드바 크기 제외 */
+        margin-left: 200px; /* 사이드바 너비만큼 왼쪽 여백 추가 */
+      }
+  
+      .footer-left, .footer-right {
+        flex: 1;
+      }
+  
+      .footer-left {
+        text-align: left;
+      }
+  
+      .footer-right {
+        text-align: right;
+      }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header>
+    <div class="logo">
+      <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
+      <h1>컴퓨터정보공학부 학생회</h1>
+    </div>
+    <div class="search-container">
+      <input type="text" placeholder="검색...">
+      <nav class="menu-links">
+        <a href="index.html">홈페이지</a>
+        <a href="resources.html">자료집</a>
+        <a href="events.html">공지사항</a>
+        <a href="FAQ_Board.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+ <!-- 사이드바 -->
+ <div class="side-bar">
+    <div class="links">
+      <ul>
+        <li><a href="login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
+        <li><a href="index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
+        <li><a href="resources.html" style="color:white; text-decoration:none;">자료집</a></li>
+        <li><a href="events.html" style="color:white; text-decoration:none;">공지사항</a></li>
+        <li><a href="introduce_1.html" style="color:white; text-decoration:none;">소모임 소개</a></li>
+        <li><a href="introduce_2.html" style="color:white; text-decoration:none;">학과 소개</a></li>
+        <li><a href="FAQ_Board.html" style="color:white; text-decoration:none;">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.kw.ac.kr" target="_blank">광운대학교 홈페이지</a>
+      <a href="https://sw.kw.ac.kr" target="_blank">인융대 홈페이지</a>
+    </div>
+  </div>
+
+  <!-- 메인 컨텐츠 -->
+  <main class="content">
+    <section class="department-intro">
+      <h1>컴퓨터정보공학부 소개</h1>
+      <p>광운대학교 컴퓨터정보공학부는 IT 및 컴퓨터 기술의 이론과 응용을 학습하며, 현대 사회의 다양한 기술적 요구에 부응할 수 있는 인재를 양성하는 것을 목표로 하는 학과입니다. 
+         이 학부는 컴퓨터 과학 및 소프트웨어 공학, 데이터 처리 및 분석, 네트워크 및 보안, 인공지능(AI), 임베디드 시스템 등 다양한 분야에서 체계적인 교육과 연구를 제공합니다.</p>
+    </section>
+
+    <section class="majors">
+      <h3>주요 교육 목표</h3>
+      <ul>
+        <li><strong>기초 지식의 탄탄한 기반:</strong> 컴퓨터 과학의 기본 이론을 중심으로 프로그래밍, 알고리즘, 데이터 구조, 컴퓨터 아키텍처 등의 기초를 익힙니다.</li>
+        <li><strong>실무 능력 배양:</strong> 최신 기술 트렌드를 반영한 실습 중심의 교육과정을 통해 현장에서 필요한 기술과 도구를 익힙니다.</li>
+        <li><strong>융합적 사고와 문제 해결 능력:</strong> 복합적인 문제를 분석하고 창의적으로 해결할 수 있는 역량을 개발합니다.</li>
+        <li><strong>연구 및 개발 능력:</strong> 대학원 진학 또는 연구개발 분야에서 활약할 수 있도록 심화된 전공 지식과 프로젝트 경험을 제공합니다.</li>
+      </ul>
+    </section>
+
+    <section class="majors">
+      <h3>주요 전공 분야</h3>
+      <ul>
+        <li><strong>소프트웨어 개발:</strong> 시스템 소프트웨어 및 애플리케이션 개발, 프로그래밍 언어와 도구 활용</li>
+        <li><strong>인공지능 및 머신러닝:</strong> AI 모델 설계, 딥러닝 기술, 데이터 처리 및 분석</li>
+        <li><strong>네트워크 및 보안:</strong> 인터넷 프로토콜, 네트워크 설계, 보안 기술</li>
+        <li><strong>임베디드 시스템:</strong> 하드웨어 및 소프트웨어의 통합 설계와 응용</li>
+        <li><strong>빅데이터 및 데이터베이스:</strong> 대규모 데이터 관리 및 분석 기술</li>
+      </ul>
+    </section>
+
+    <section class="majors">
+      <h3>특징 및 장점</h3>
+      <ul>
+        <li><strong>산학 협력 프로그램:</strong> 다양한 기업과의 협력을 통해 현장 실습 및 프로젝트 기회를 제공합니다.</li>
+        <li><strong>전문 교수진:</strong> 연구와 교육에 전문성을 갖춘 교수진이 학문적 지도를 제공합니다.</li>
+        <li><strong>첨단 교육 환경:</strong> 최신 IT 인프라를 활용한 실습 및 연구가 가능하며, 학생들에게 창의적인 학습 환경을 제공합니다.</li>
+        <li><strong>커리어 지원:</strong> 취업 연계 프로그램 및 스타트업 지원 활동을 통해 졸업 후 경력을 설계하는 데 도움을 줍니다.</li>
+      </ul>
+    </section>
+
+    <section class="majors">
+      <h3>졸업 후 진로</h3>
+      <ul>
+        <li><strong>소프트웨어 엔지니어:</strong> IT 기업, 스타트업, 게임 개발사 등에서 소프트웨어 개발자로 활동.</li>
+        <li><strong>데이터 과학자:</strong> 빅데이터 처리 및 분석 전문가로 성장.</li>
+        <li><strong>AI 및 머신러닝 엔지니어:</strong> 인공지능 시스템 개발 및 최적화.</li>
+        <li><strong>IT 컨설턴트:</strong> 기업의 IT 전략을 설계하고 기술 솔루션을 제공.</li>
+        <li><strong>연구자 및 학자:</strong> 대학원 진학 후 학계 또는 연구소에서 첨단 기술 연구.</li>
+      </ul>
+    </section>
+
+    <section class="department-summary">
+      <p>광운대학교 컴퓨터정보공학부는 IT 기술의 혁신을 주도하고, 4차 산업혁명 시대의 중심에 설 수 있는 전문가를 육성하는 데 중점을 둡니다.</p>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-left"></div>
+    <div class="footer-right">
+      <!-- 첫 번째 아이콘: 카카오톡 -->
+      <div class="icon-wrapper">
+        <a href="https://open.kakao.com/o/gDFOk91g" target="_blank">
+          <img src="image/메세지.png" alt="카카오톡 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+        </a>
+        <div class="tooltip">카카오톡 채팅방으로 이동합니다.</div>
+      </div>
+
+      <div class="icon-wrapper">
+        <a href="https://www.instagram.com/kw_cie/" target="_blank">
+          <img src="image/인스타그램.png" alt="인스타그램 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+        </a>
+        <div class="tooltip">인스타그램 페이지로 이동합니다.</div>
+      </div>
+  
+      <!-- 텍스트 영역 -->
+      <div class="text">
+        <p>김재용(회장): 010-5651-4415</p>
+        <p>최우진(부회장): 010-4907-7802</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
