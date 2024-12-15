@@ -18,6 +18,16 @@ body {
   overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
+section {
+  display: flex;
+  flex-direction: column; /* 내부 요소들을 세로로 정렬 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  align-items: center; /* 수평 중앙 정렬 */
+  height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+
 /* Header 스타일 */
 header {
   display: flex;
@@ -27,8 +37,6 @@ header {
   background-color: white;
   border-bottom: 1px solid #ccc;
 }
-
-
 
 .logo {
   display: flex;
@@ -113,17 +121,19 @@ header {
 /* Footer 스타일 */
 footer {
   display: flex;
-  justify-content: flex-end; /* 콘텐츠를 오른쪽으로 정렬 */
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   background-color: white;
-  border-top: 1px solid #ccc;
+  border-top: 1px
+    solid
+    #ccc;
   font-size: 18px;
-  position: fixed; /* 화면의 고정된 위치로 설정 */
-  bottom: 0; /* 화면의 맨 아래에 위치 */
-  right: 0; /* 화면의 오른쪽에 위치 */
-  width: 81%; /* 전체 너비 */
-  z-index: 1000; /* 다른 요소 위에 위치 */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; /* padding을 width에 포함시켜서 글씨가 잘리지 않게 수정 */
 }
 
 /* 아이콘 컨테이너 */
@@ -216,7 +226,7 @@ footer {
   height: calc(100vh - 120px);
   background-color: black;
   color: white;
-  border-radius: 20px;
+  border-radius: 0 20px 20px 0;
   transform: translate(calc(var(--side-bar-width) * -0.99), 0); /* 처음에 99% 숨기기 */
   transition: transform 0.5s ease-in-out;
   padding: 20px;

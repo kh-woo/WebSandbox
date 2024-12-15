@@ -8,7 +8,7 @@
 
 /* CSS 변수 설정 */
 :root {
-    --side-bar-width: 220px;
+    --side-bar-width: 200px;
     --primary-color: #800000; /* 메인 컬러 */
     --hover-color: #cc0000; /* 호버 컬러 */
     --background-color: #f9f9f9; /* 배경 색 */
@@ -17,6 +17,7 @@
 
 /* 기본 설정 */
 body {
+    width: 100%;
     font-family: var(--font-family);
     margin: 0;
     padding: 0;
@@ -145,6 +146,7 @@ header .menu-links a:hover {
 
 /* 메인 콘텐츠 스타일 */
 main {
+    flex-grow: 1; /* 메인 콘텐츠가 화면의 나머지 공간을 차지하도록 설정 */
     margin-left: calc(var(--side-bar-width) + 20px);
     padding: 20px;
 }
@@ -207,57 +209,145 @@ main .content-box {
 
 /* 푸터 스타일 */
 footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-top: 1px
+      solid
+      #ccc;
+    font-size: 18px;
     position: fixed;
     bottom: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 20px;
-    background-color: white;
-    border-top: 1px solid #ccc;
-}
-
-footer .footer-right {
-    display: flex;
-    align-items: flex-end;
-    gap: 15px;
-}
-
-footer .footer-right .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-}
-
-footer .footer-icon {
-    width: 50px;
+    box-sizing: border-box; /* padding을 width에 포함시켜서 글씨가 잘리지 않게 수정 */
+  }
+  
+  /* 아이콘 컨테이너 */
+  .icon-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-right: 7px;
+    cursor: pointer;
+  }
+  
+  /* 아이콘 스타일 */
+  .footer-icon {
+    width: 80px;
     height: 50px;
-    transition: transform 0.2s ease;
-}
+    transition: transform
+      0.2s
+      ease;
+  }
+  
+  .footer-icon:hover {
+    transform: scale(
+      1.3
+    ); /* 아이콘 확대 */
+  }
+  
+  /* 툴팁 스타일 */
+  .tooltip {
+    position: absolute;
+    top: -40px; /* 아이콘 위에 위치 */
+    left: 50%;
+    transform: translateX(
+      -50%
+    );
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.8
+    );
+    color: white;
+    padding: 5px
+      10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0
+      4px
+      6px
+      rgba(
+        0,
+        0,
+        0,
+        0.2
+      );
+    opacity: 0; /* 기본적으로 숨김 */
+    transition: opacity
+        0.3s
+        ease,
+      transform
+        0.3s
+        ease;
+    pointer-events: none; /* 마우스 이벤트 차단 */
+  }
+  
+  /* 툴팁 화살표 */
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* 툴팁 아래에 삼각형 추가 */
+    left: 50%;
+    transform: translateX(
+      -50%
+    );
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(
+        0,
+        0,
+        0,
+        0.8
+      )
+      transparent
+      transparent
+      transparent;
+  }
+  
+  /* 마우스를 올렸을 때 툴팁 표시 */
+  .icon-wrapper:hover
+    .tooltip {
+    opacity: 1; /* 툴팁 표시 */
+    transform: translateX(
+        -50%
+      )
+      translateY(
+        -5px
+      ); /* 약간 위로 이동 */
+  }
+  
+  .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* 아이콘과 텍스트 간 간격 */
+    justify-content: flex-end; /* 오른쪽 정렬 */
+  }
+  
+  .footer-right .text {
+    text-align: right; /* 텍스트 오른쪽 정렬 */
+  }
+  
+  .footer-right img {
+    width: 40px; /* 이미지 너비 */
+    height: 40px; /* 이미지 높이 */
+    cursor: pointer;
+  }
+  
+  .footer-right
+    img:hover {
+    opacity: 0.8; /* 마우스 호버 시 투명도 */
+  }
+  
+  .footer-right .text p {
+    margin: 0;
+    line-height: 1.6;
+  }
 
-footer .footer-icon:hover {
-    transform: scale(1.2);
-}
-
-footer .text {
-    text-align: left;
-}
-
-footer .footer-right a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 16px;
-    display: block;
-    margin-bottom: 5px;
-}
-
-footer .footer-right a:hover {
-    color: var(--hover-color);
-}
-
-.footer-links {
+  .footer-links {
     margin-top: 20px; /* 상단 콘텐츠와 간격 추가 */
     border-top: 1px
       solid

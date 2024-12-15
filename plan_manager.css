@@ -271,8 +271,6 @@ main {
   transform: translateX(-30px);
 }
 
-
-/* Footer 스타일 */
 /* 푸터 스타일 */
 footer {
   display: flex;
@@ -282,7 +280,11 @@ footer {
   background-color: white;
   border-top: 1px solid #ccc;
   font-size: 18px;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; /* padding을 width에 포함시켜서 글씨가 잘리지 않게 수정 */
 }
 
 /* 아이콘 컨테이너 */
