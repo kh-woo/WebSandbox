@@ -8,8 +8,7 @@
 
 /* CSS 변수 설정 */
 :root {
-  --side-bar-width: 200px;
-  font-size: 10px;
+  --side-bar-width: 250px;
 }
 
 body {

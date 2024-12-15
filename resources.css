@@ -73,67 +73,74 @@ header .menu-links a:hover {
 /* 사이드바 스타일 */
 .side-bar {
     position: fixed;
-    top: 80px;
+    top: 120px; /* 로고 아래로 위치 조정 */
     left: 0;
     width: var(--side-bar-width);
-    height: calc(100vh - 80px);
     background-color: black;
     color: white;
+    border-radius: 0 20px 20px 0; /* 왼쪽 위 모서리는 둥글게 하지 않음 */
+    transform: translate(calc(var(--side-bar-width) * -0.99), 0); /* 처음에 80% 숨기기 */
+    transition: transform 0.5s ease-in-out;
     padding: 20px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 10;
-}
-
-.side-bar:hover {
-    transform: translateX(0);
-}
-
-.side-bar ul {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* 콘텐츠가 넘칠 경우 스크롤 표시 */
+    z-index: 3;
+    font-size: 15px; /* 글씨 크기 증가 */
+  }
+  
+  .side-bar:hover {
+    transform: translate(
+      0,
+      0
+    ); /* 호버 시 원래 위치로 */
+  }
+  
+  .side-bar
+    ul {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.side-bar li {
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
+    position: relative; /* 리스트 위치를 기준으로 z-index 적용 가능 */
+    z-index: 2; /* 화살표보다 위에 표시 */
+  }
+  
+  .side-bar li {
+    margin-right: 20px;
+    padding: 20px 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.side-bar li:hover {
-    background-color: var(--hover-color);
-}
-
-.side-bar a {
-    color: white;
-    text-decoration: none;
-}
-
-.side-bar::after {
+    font-size: 15px; /* 글씨 크기 증가 */
+  }
+  
+  .side-bar
+    li:hover {
+    background-color: #555;
+  }
+  /* 화살표 표시 */
+  .side-bar::after {
     content: '>';
     position: absolute;
-    top: 50%;
-    right: -15px;
+    top: 45%;
+    right: -5px; /* 사이드바 오른쪽 외부로 살짝 나가게 설정 */
+    margin-right: 10px;
+    transform: translateY(-50%);
     background-color: black;
     color: white;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    text-align: center;
-    line-height: 30px;
     font-size: 18px;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease;
-}
-
-.side-bar:hover::after {
-    transform: translateY(-50%) rotate(180deg);
-}
+    transition: content 0.5s ease-in-out;
+    z-index: 1; /* 화살표를 다른 콘텐츠 아래로 */
+    pointer-events: none; /* 클릭 방지 */
+  }
+  
+  .side-bar:hover::after {
+    content: '<'; /* 호버 시 화살표 모양 변경 */
+  }
 
 /* 메인 콘텐츠 스타일 */
 main {
@@ -248,3 +255,26 @@ footer .footer-right a {
 footer .footer-right a:hover {
     color: var(--hover-color);
 }
+
+.footer-links {
+    margin-top: 20px; /* 상단 콘텐츠와 간격 추가 */
+    border-top: 1px
+      solid
+      #666; /* 구분선 추가 */
+    padding-top: 10px;
+  }
+  
+  .footer-links
+    a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px; /* 글씨 크기 증가 */
+    margin: 10px
+      0; /* 각 링크 간의 간격 */
+    display: block; /* 각 링크가 개별적으로 표시 */
+  }
+  
+  .footer-links
+    a:hover {
+    color: #ddd;
+  }
