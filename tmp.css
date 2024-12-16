@@ -16,6 +16,11 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* 가로 스크롤 방지 */
+  padding-bottom: 120px;
+}
+/* 컨텐츠 공간 확보 */
+body {
+  padding-bottom: 120px;
 }
 
 h1 {
@@ -23,14 +28,106 @@ h1 {
   font-size: 30px;
 }
 
-section {
-  display: flex;
-  flex-direction: column; /* 내부 요소들을 세로로 정렬 */
-  justify-content: center; /* 수직 중앙 정렬 */
-  align-items: center; /* 수평 중앙 정렬 */
-  height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
-  text-align: center; /* 텍스트 중앙 정렬 */
+/* 갤러리 스타일 */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 고정된 비율 유지 */
+  gap: 20px;
 }
+
+.gallery-grid img {
+  width: 100%; /* 가로 크기를 부모 요소에 맞춤 */
+  height: 200px; /* 고정 높이 설정 */
+  object-fit: cover; /* 이미지 비율을 유지하며 크기에 맞게 잘림 */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* 메인 섹션 스타일 */
+section {
+  margin-left: 240px;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+section h1, section h2, section h3 {
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.activities ul, .leaders ul {
+  list-style: none;
+  padding: 0;
+}
+
+.activities li, .leaders li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activities li strong {
+  color: #00509e;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* 테이블 스타일 */
+.schedule table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.schedule th, .schedule td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.schedule th {
+  background-color: #00509e;
+  color: white;
+  font-weight: bold;
+}
+
+.schedule td {
+  background: #f9f9f9;
+  color: #333;
+}
+
+.schedule tr:hover td {
+  background: #eef5ff;
+  transition: background 0.3s ease;
+}
+
 
 
 /* Header 스타일 */
