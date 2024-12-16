@@ -17,38 +17,48 @@
   <title>Plan-Manager</title>
   <script>
     const content = [
-      { title: "공지사항 ", url: "announcements.html" },
-      { title: "자료집", url: "events.html" },
-      { title: "FAQ 페이지", url: "FAQ_Board.html" },
-    ];
+  { title: "공지사항 ", url: "events.html" },
+  { title: "자료집", url: "resources.html" },
+  { title: "FAQ 페이지", url: "FAQ_Board.html" },
+  { title: "홈페이지", url: "index.html" },
+  { title: "공지사항", url: "events.html" },
+  { title: "소모임 소개", url: "club.html" },
+  { title: "FAQ 페이지", url: "introduce_2.html" },
+  { title: "운영국", url: "team/team_1.html" },
+  { title: "홍보국", url: "team/team_2.html" },
+  { title: "기획국", url: "team/team_3.html" },
+  { title: "Plan_manager", url: "Plan_manager.html" },
+  { title: "Plan_manager", url: "Plan_manager.html" },
+  { title: "Plan_manager", url: "Plan_manager.html" },
+];
 
-    function searchContent() {
-      const query = document.getElementById('search-bar').value.toLowerCase();
-      const resultsContainer = document.getElementById('search-results');
-      resultsContainer.innerHTML = '';
+function searchContent() {
+  const query = document.getElementById('search-bar').value.toLowerCase();
+  const resultsContainer = document.getElementById('search-results');
+  resultsContainer.innerHTML = '';
 
-      if (query.trim() === '') {
-        resultsContainer.style.display = 'none';
-        return;
-      }
+  if (query.trim() === '') {
+    resultsContainer.style.display = 'none';
+    return;
+  }
 
-      const results = content.filter(item => item.title.toLowerCase().includes(query));
+  const results = content.filter(item => item.title.toLowerCase().includes(query));
+  
+  if (results.length > 0) {
+    resultsContainer.style.display = 'block';
+    resultsContainer.innerHTML = results.map(item => 
+      `<p><a href="${item.url}" style="text-decoration: none; color: black;">${item.title}</a></p>`
+    ).join('');
+  } else {
+    resultsContainer.style.display = 'block';
+    resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
+  }
 
-      if (results.length > 0) {
-        resultsContainer.style.display = 'block';
-        resultsContainer.innerHTML = results.map(item =>
-          `<p><a href="${item.url}" style="text-decoration: none; color: black;">${item.title}</a></p>`
-        ).join('');
-      } else {
-        resultsContainer.style.display = 'block';
-        resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
-      }
-
-      // 3초 후 검색 결과 숨기기
-      setTimeout(() => {
-        resultsContainer.style.display = 'none';
-      }, 1000);
-    }
+  // 3초 후 검색 결과 숨기기
+  setTimeout(() => {
+    resultsContainer.style.display = 'none';
+  }, 1000);
+}
   </script>
 </head>
 

@@ -1,13 +1,34 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="resources.css">
-  <link rel="icon" type="파비콘/png" href="image/파비콘.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <title>광운대학교 컴퓨터정보공학부</title>
+<html
+  lang="ko"
+>
+  <head>
+    <meta
+      charset="UTF-8"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="resources.css"
+    />
+    <link
+      rel="icon"
+      type="파비콘/png"
+      href="image/파비콘.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>
+      광운대학교
+      컴퓨터정보공학부
+    </title>
 
+<<<<<<< HEAD
 </head>
 <body>
    <!-- 헤더 -->
@@ -30,27 +51,246 @@
       <div id="search-results"></div>
     </div>
   </header>
+=======
+    <style>
+      .navigation {
+        display: flex;
+        align-items: center;
+        margin: 20px
+          0;
+      }
 
- <!-- 사이드바 -->
- <div class="side-bar">
-    <div class="links">
-      <ul>
-        <li><a href="login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
-        <li><a href="index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
-        <li><a href="resources.html" style="color:white; text-decoration:none;">자료집</a></li>
-        <li><a href="events.html" style="color:white; text-decoration:none;">공지사항</a></li>
-        <li><a href="club.html" style="color:white; text-decoration:none;">소모임 소개</a></li>
-        <li><a href="introduce_2.html" style="color:white; text-decoration:none;">학과 소개</a></li>
-        <li><a href="FAQ_Board.html" style="color:white; text-decoration:none;">FAQ</a></li>
-        <li><a href="Plan_manager.html" style="color:white; text-decoration:none;">Plan Manager</a></li>
-      </ul>
-    </div>
-    <div class="footer-links">
-      <a href="https://www.kw.ac.kr" target="_blank">광운대학교 홈페이지</a>
-      <a href="https://sw.kw.ac.kr" target="_blank">인융대 홈페이지</a>
-    </div>
-  </div>
+      .back-arrow {
+        font-size: 24px;
+        color: #aaa;
+        text-decoration: none;
+        margin-right: 10px;
+        cursor: pointer;
+      }
 
+      .back-arrow:hover {
+        color: #ccc;
+      }
+      .schedule-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          3,
+          1fr
+        );
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .schedule-grid
+        section {
+        border: 1px
+          solid
+          #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        box-shadow: 0
+          2px
+          5px
+          rgba(
+            0,
+            0,
+            0,
+            0.1
+          );
+      }
+
+      .schedule-grid
+        h3 {
+        margin-top: 0;
+      }
+
+      .schedule-grid
+        ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .schedule-grid
+        li {
+        padding: 5px
+          0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <div
+        class="logo"
+      >
+        <a
+          href="index.html"
+        >
+          <!-- 이미지를 링크로 감싸기 -->
+          <img
+            src="image/광운대학교.png"
+            alt="Kwangwoon University Logo"
+          />
+        </a>
+        <h1>
+          컴퓨터정보공학부
+          학생회
+        </h1>
+      </div>
+      <div
+        class="search-container"
+      >
+        <input
+          type="text"
+          id="search-bar"
+          placeholder="검색..."
+        />
+        <span
+          class="search-icon"
+          onclick="searchContent()"
+          >⌕</span
+        >
+        <nav
+          class="menu-links"
+        >
+          <a
+            href="index.html"
+            >홈페이지</a
+          >
+          <a
+            href="resources.html"
+            >자료집</a
+          >
+          <a
+            href="events.html"
+            >공지사항</a
+          >
+          <a
+            href="FAQ_Board.html"
+            >FAQ</a
+          >
+        </nav>
+        <div
+          id="search-results"
+        ></div>
+      </div>
+    </header>
+>>>>>>> df3d233a84f8611f4f9c6e3af50f6bc2d128f09b
+
+    <!-- 사이드바 -->
+    <div
+      class="side-bar"
+    >
+      <div
+        class="links"
+      >
+        <ul>
+          <li>
+            <a
+              href="login.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >로그아웃</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >홈페이지</a
+            >
+          </li>
+          <li>
+            <a
+              href="resources.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >자료집</a
+            >
+          </li>
+          <li>
+            <a
+              href="events.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >공지사항</a
+            >
+          </li>
+          <li>
+            <a
+              href="club.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >소모임
+              소개</a
+            >
+          </li>
+          <li>
+            <a
+              href="introduce_2.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >학과
+              소개</a
+            >
+          </li>
+          <li>
+            <a
+              href="FAQ_Board.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >FAQ</a
+            >
+          </li>
+          <li>
+            <a
+              href="Plan_manager.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >Plan
+              Manager</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div
+        class="footer-links"
+      >
+        <a
+          href="https://www.kw.ac.kr"
+          target="_blank"
+          >광운대학교
+          홈페이지</a
+        >
+        <a
+          href="https://sw.kw.ac.kr"
+          target="_blank"
+          >인융대
+          홈페이지</a
+        >
+      </div>
+    </div>
+
+<<<<<<< HEAD
     <main id="main-content">
         <div class="navigation">
             <a href="#" class="back-arrow" style="display: none;">&lt;</a>
@@ -67,14 +307,98 @@
         <h2><a href="myQuiz.html">퀴즈 프로그램</a></h2>
         <p>자신만의 퀴즈를 만들어, 학습률을 확인하세요.</p>
         
+=======
+    <main
+      id="main-content"
+    >
+      <div
+        class="navigation"
+      >
+        <a
+          href="#"
+          class="back-arrow"
+          style="
+            display: none;
+          "
+          >&lt;</a
+        >
+      </div>
+      <h2>
+        <a
+          href="#"
+          onclick="loadSemesterSchedule()"
+          >학기별
+          추천
+          시간표</a
+        >
+      </h2>
+      <p>
+        각
+        학기
+        별
+        추천하는
+        시간표를
+        확인하세요
+      </p>
+      <h2>
+        <a
+          href="#"
+          onclick="loadRegistrationTips()"
+          >수강신청
+          방법</a
+        >
+      </h2>
+      <p>
+        효율적인
+        수강신청
+        방법과
+        꿀팁을
+        확인하세요.
+      </p>
+
+      <h2>
+        <a
+          href="#"
+          onclick="loadStudyResources()"
+          >공부
+          자료</a
+        >
+      </h2>
+      <p>
+        추천
+        자료와
+        블로그,
+        그리고
+        백준
+        문제
+        풀이를
+        확인하세요.
+      </p>
+      <h2>
+        <a
+          href="#"
+          onclick="loadAdditionalResources()"
+          >기타
+          자료</a
+        >
+      </h2>
+      <p>
+        유용한
+        기타
+        자료와
+        링크를
+        확인하세요.
+      </p>
+>>>>>>> df3d233a84f8611f4f9c6e3af50f6bc2d128f09b
     </main>
 
     <script>
-        // 초기 콘텐츠를 저장하는 변수
-        let initialContent = '';
-    
-        // 학기별 추천 시간표 동적 콘텐츠 로드
-        function loadSemesterSchedule() {
+      // 초기 콘텐츠를 저장하는 변수
+      let initialContent =
+        '';
+
+      // 학기별 추천 시간표 동적 콘텐츠 로드
+      function loadSemesterSchedule() {
         const content = `
             <div class="navigation">
                 <a href="#" class="back-arrow">&lt;</a>
@@ -146,11 +470,14 @@
                 </section>
             </div>
         `;
-        document.getElementById('main-content').innerHTML = content;
+        document.getElementById(
+          'main-content'
+        ).innerHTML =
+          content;
         bindBackArrow();
-        }
-     // 수강신청 방법 동적 콘텐츠 로드
-    function loadRegistrationTips() {
+      }
+      // 수강신청 방법 동적 콘텐츠 로드
+      function loadRegistrationTips() {
         const content = `
         <div style="padding-bottom: 150px">
             <div class="navigation">
@@ -169,11 +496,14 @@
             </section>
         </div>
         `;
-        document.getElementById('main-content').innerHTML = content;
+        document.getElementById(
+          'main-content'
+        ).innerHTML =
+          content;
         bindBackArrow();
-    }
-    // 공부 자료 동적 콘텐츠 로드
-    function loadStudyResources() {
+      }
+      // 공부 자료 동적 콘텐츠 로드
+      function loadStudyResources() {
         const content = `
         <div style="padding-bottom: 20px">
             <div class="navigation">
@@ -226,13 +556,23 @@
             </div>
         </div>
         `;
-        document.getElementById('main-content').innerHTML = content;
+        document.getElementById(
+          'main-content'
+        ).innerHTML =
+          content;
         bindBackArrow();
+<<<<<<< HEAD
     }
         // 기타 자료 동적 콘텐츠 로드
         function loadAdditionalResources() {
             const content = `
             <div style="padding-bottom: 230px">
+=======
+      }
+      // 기타 자료 동적 콘텐츠 로드
+      function loadAdditionalResources() {
+        const content = `
+>>>>>>> df3d233a84f8611f4f9c6e3af50f6bc2d128f09b
                 <div class="navigation">
                     <a href="#" class="back-arrow">&lt;</a>
                     <h1>기타 자료</h1>
@@ -247,59 +587,274 @@
                 </section>
             </div>
             `;
-            document.getElementById('main-content').innerHTML = content;
-            bindBackArrow();
-        }
-    
-        // 이전 콘텐츠로 돌아가기
-        function goBack() {
-            document.getElementById('main-content').innerHTML = initialContent;
-            bindBackArrow(); // 초기 상태로 돌아간 후 화살표 이벤트 다시 연결
-        }
-    
-        // 화살표 클릭 이벤트 연결
-        function bindBackArrow() {
-            const backArrow = document.querySelector('.back-arrow');
-            if (backArrow) {
-                backArrow.addEventListener('click', (event) => {
-                    event.preventDefault(); // 기본 동작 방지
-                    goBack();
-                });
+        document.getElementById(
+          'main-content'
+        ).innerHTML =
+          content;
+        bindBackArrow();
+      }
+
+      // 이전 콘텐츠로 돌아가기
+      function goBack() {
+        document.getElementById(
+          'main-content'
+        ).innerHTML =
+          initialContent;
+        bindBackArrow(); // 초기 상태로 돌아간 후 화살표 이벤트 다시 연결
+      }
+
+      // 화살표 클릭 이벤트 연결
+      function bindBackArrow() {
+        const backArrow =
+          document.querySelector(
+            '.back-arrow'
+          );
+        if (
+          backArrow
+        ) {
+          backArrow.addEventListener(
+            'click',
+            (
+              event
+            ) => {
+              event.preventDefault(); // 기본 동작 방지
+              goBack();
             }
+          );
         }
-    
-        // 초기 로드 시 초기 콘텐츠 저장
-        document.addEventListener('DOMContentLoaded', () => {
-            initialContent = document.getElementById('main-content').innerHTML; // 초기 상태 저장
-            bindBackArrow(); // 초기 콘텐츠에 화살표 이벤트 연결
-        });
+      }
+
+      // 초기 로드 시 초기 콘텐츠 저장
+      document.addEventListener(
+        'DOMContentLoaded',
+        () => {
+          initialContent =
+            document.getElementById(
+              'main-content'
+            ).innerHTML; // 초기 상태 저장
+          bindBackArrow(); // 초기 콘텐츠에 화살표 이벤트 연결
+        }
+      );
+
+      const content =
+        [
+          {
+            title:
+              '공지사항 ',
+            url: 'events.html',
+          },
+          {
+            title:
+              '자료집',
+            url: 'resources.html',
+          },
+          {
+            title:
+              'FAQ 페이지',
+            url: 'FAQ_Board.html',
+          },
+          {
+            title:
+              '홈페이지',
+            url: 'index.html',
+          },
+          {
+            title:
+              '공지사항',
+            url: 'events.html',
+          },
+          {
+            title:
+              '소모임 소개',
+            url: 'club.html',
+          },
+          {
+            title:
+              'FAQ 페이지',
+            url: 'introduce_2.html',
+          },
+          {
+            title:
+              '운영국',
+            url: 'team/team_1.html',
+          },
+          {
+            title:
+              '홍보국',
+            url: 'team/team_2.html',
+          },
+          {
+            title:
+              '기획국',
+            url: 'team/team_3.html',
+          },
+          {
+            title:
+              'Plan_manager',
+            url: 'Plan_manager.html',
+          },
+          {
+            title:
+              'Plan_manager',
+            url: 'Plan_manager.html',
+          },
+          {
+            title:
+              'Plan_manager',
+            url: 'Plan_manager.html',
+          },
+        ];
+
+      function searchContent() {
+        const query =
+          document
+            .getElementById(
+              'search-bar'
+            )
+            .value.toLowerCase();
+        const resultsContainer =
+          document.getElementById(
+            'search-results'
+          );
+        resultsContainer.innerHTML =
+          '';
+
+        if (
+          query.trim() ===
+          ''
+        ) {
+          resultsContainer.style.display =
+            'none';
+          return;
+        }
+
+        const results =
+          content.filter(
+            (
+              item
+            ) =>
+              item.title
+                .toLowerCase()
+                .includes(
+                  query
+                )
+          );
+
+        if (
+          results.length >
+          0
+        ) {
+          resultsContainer.style.display =
+            'block';
+          resultsContainer.innerHTML =
+            results
+              .map(
+                (
+                  item
+                ) =>
+                  `<p><a href="${item.url}" style="text-decoration: none; color: black;">${item.title}</a></p>`
+              )
+              .join(
+                ''
+              );
+        } else {
+          resultsContainer.style.display =
+            'block';
+          resultsContainer.innerHTML =
+            '<p>검색 결과가 없습니다.</p>';
+        }
+
+        // 3초 후 검색 결과 숨기기
+        setTimeout(
+          () => {
+            resultsContainer.style.display =
+              'none';
+          },
+          1000
+        );
+      }
     </script>
     <!-- 푸터 -->
-  <footer>
-    <div class="footer-left"></div>
-    <div class="footer-right">
-      <!-- 첫 번째 아이콘: 카카오톡 -->
-      <div class="icon-wrapper">
-        <a href="https://open.kakao.com/o/gDFOk91g" target="_blank">
-          <img src="image/메세지.png" alt="카카오톡 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
-        </a>
-        <div class="tooltip">카카오톡 채팅방으로 이동합니다.</div>
-      </div>
+    <footer>
+      <div
+        class="footer-left"
+      ></div>
+      <div
+        class="footer-right"
+      >
+        <!-- 첫 번째 아이콘: 카카오톡 -->
+        <div
+          class="icon-wrapper"
+        >
+          <a
+            href="https://open.kakao.com/o/gDFOk91g"
+            target="_blank"
+          >
+            <img
+              src="image/메세지.png"
+              alt="카카오톡 아이콘"
+              class="footer-icon"
+              style="
+                width: 60px;
+                height: 50px;
+                transition: transform
+                  0.2s
+                  ease;
+              "
+            />
+          </a>
+          <div
+            class="tooltip"
+          >
+            카카오톡
+            채팅방으로
+            이동합니다.
+          </div>
+        </div>
 
-      <div class="icon-wrapper">
-        <a href="https://www.instagram.com/kw_cie/" target="_blank">
-          <img src="image/인스타그램.png" alt="인스타그램 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
-        </a>
-        <div class="tooltip">인스타그램 페이지로 이동합니다.</div>
+        <div
+          class="icon-wrapper"
+        >
+          <a
+            href="https://www.instagram.com/kw_cie/"
+            target="_blank"
+          >
+            <img
+              src="image/인스타그램.png"
+              alt="인스타그램 아이콘"
+              class="footer-icon"
+              style="
+                width: 60px;
+                height: 50px;
+                transition: transform
+                  0.2s
+                  ease;
+              "
+            />
+          </a>
+          <div
+            class="tooltip"
+          >
+            인스타그램
+            페이지로
+            이동합니다.
+          </div>
+        </div>
+
+        <!-- 텍스트 영역 -->
+        <div
+          class="text"
+        >
+          <p>
+            김재용(회장):
+            010-5651-4415
+          </p>
+          <p>
+            최우진(부회장):
+            010-4907-7802
+          </p>
+        </div>
       </div>
-  
-      <!-- 텍스트 영역 -->
-      <div class="text">
-        <p>김재용(회장): 010-5651-4415</p>
-        <p>최우진(부회장): 010-4907-7802</p>
-      </div>
-    </div>
-  </footer>
-    
-</body>
+    </footer>
+  </body>
 </html>
