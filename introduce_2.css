@@ -23,16 +23,6 @@ h1 {
   font-size: 30px;
 }
 
-section {
-  display: flex;
-  flex-direction: column; /* 내부 요소들을 세로로 정렬 */
-  justify-content: center; /* 수직 중앙 정렬 */
-  align-items: center; /* 수평 중앙 정렬 */
-  height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
-  text-align: center; /* 텍스트 중앙 정렬 */
-}
-
-
 /* Header 스타일 */
 header {
   display: flex;
@@ -41,6 +31,19 @@ header {
   padding: 20px;
   background-color: white;
   border-bottom: 1px solid #ccc;
+}
+
+.content {
+  margin-left: 50px;
+  font-size: 1.1em; /* 전체 글씨 크기 늘리기 */
+}
+
+h2, h3 {
+  font-size: 1.5em; /* 섹션 제목 글씨 크기 */
+}
+
+p, li {
+  font-size: 1.2em; /* 일반 텍스트 및 리스트 항목 크기 */
 }
 
 .logo {
@@ -134,11 +137,7 @@ footer {
     solid
     #ccc;
   font-size: 18px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  box-sizing: border-box; /* padding을 width에 포함시켜서 글씨가 잘리지 않게 수정 */
+  position: relative;
 }
 
 /* 아이콘 컨테이너 */
@@ -307,4 +306,87 @@ footer {
 
 .footer-links a:hover {
   color: #ddd;
+}
+
+
+
+
+main.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+.department-intro {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.department-intro h1 {
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.department-intro p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.majors h3 {
+  font-size: 1.5rem;
+  color: black;
+  margin-bottom: 10px;
+  border-bottom: 2px solid black;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.majors ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.majors ul li {
+  margin-bottom: 10px;
+}
+
+.majors ul li strong {
+  color: #bd4f4f;
+}
+
+.department-summary {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  main.content {
+    padding: 15px;
+  }
+
+  .department-intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .majors h3 {
+    font-size: 1.3rem;
+  }
 }

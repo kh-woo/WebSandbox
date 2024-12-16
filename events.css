@@ -1,0 +1,279 @@
+/* Font 설정 */
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* CSS 변수 설정 */
+  :root {
+    --side-bar-width: 200px;
+  }
+  
+  body {
+    font-family: 'SBAggroB', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+  }
+
+  h1 {
+    color: black;
+    font-size: 30px;
+  }
+  
+  /* 헤더 스타일 */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 80px;
+    margin-right: 15px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .search-container input {
+    padding: 15px;
+    font-size: 20px;
+    border: 3px solid #000;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    flex: 1;
+  }
+  
+  .search-container .search-icon {
+    cursor: pointer;
+    font-size: 40px;
+    color: black;
+    transition: transform 0.2s ease, color 0.2s ease;
+    line-height: 1;
+  }
+  
+  .search-container .search-icon:hover {
+    transform: scale(1.1);
+    color: #555;
+  }
+  
+  .menu-links a {
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 20px;
+    color: black;
+  }
+  
+  /* 사이드바 스타일 */
+  .side-bar {
+    position: fixed;
+    top: 120px; /* 로고 아래로 위치 조정 */
+    left: 0;
+    width: var(--side-bar-width);
+    height: calc(100vh - 120px);
+    background-color: black;
+    color: white;
+    border-radius: 0 20px 20px 0; /* 왼쪽 위 모서리는 둥글게 하지 않음 */
+    transform: translate(calc(var(--side-bar-width) * -0.99), 0); /* 처음에 80% 숨기기 */
+    transition: transform 0.5s ease-in-out;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* 콘텐츠가 넘칠 경우 스크롤 표시 */
+    overflow-x: hidden;
+    z-index: 3;
+    font-size: 15px; /* 글씨 크기 증가 */
+  }
+  
+  .side-bar:hover {
+    transform: translateX(0); /* 호버 시 보이도록 */
+  }
+  
+  .side-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .side-bar li {
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .side-bar li:hover {
+    background-color: #555;
+  }
+  
+  .side-bar::after {
+    content: '>';
+    position: absolute;
+    top: 45%;
+    right: -5px;
+    background-color: black;
+    color: white;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: content 0.5s ease-in-out;
+  }
+  
+  .side-bar:hover::after {
+    content: '<';
+  }
+  
+  /* 메인 콘텐츠 */
+  section {
+    margin-left: calc(var(--side-bar-width) + 20px);
+    padding: 20px;
+  }
+  
+  section h2 {
+    color: #800000; /* 빨간색 */
+    border-bottom: 2px solid #800000; /* 빨간색 */
+    padding-bottom: 5px;
+    font-size: 24px;
+  }
+  
+  .event {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .event h3 {
+    margin: 0;
+    color: #333;
+    font-size: 20px;
+  }
+  
+  .event p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .event a {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #800000; /* 빨간색 */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .event a:hover {
+    background-color: #cc0000; /* 더 밝은 빨간색 */
+  }
+  
+  /* 푸터 스타일 */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-top: 1px
+      solid
+      #ccc;
+    font-size: 18px;
+    position: relative;
+  }
+  
+  .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .footer-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease;
+  }
+  
+  .footer-icon:hover {
+    transform: scale(1.3);
+  }
+
+  .footer-links {
+    margin-top: 20px; /* 상단 콘텐츠와 간격 추가 */
+    border-top: 1px
+      solid
+      #666; /* 구분선 추가 */
+    padding-top: 10px;
+  }
+  
+  .footer-links
+    a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px; /* 글씨 크기 증가 */
+    margin: 10px
+      0; /* 각 링크 간의 간격 */
+    display: block; /* 각 링크가 개별적으로 표시 */
+  }
+  
+  .footer-links
+    a:hover {
+    color: #ddd;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+  }
+  
+  .icon-wrapper:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+  }
+  
+  .text {
+    text-align: right;
+  }
+  

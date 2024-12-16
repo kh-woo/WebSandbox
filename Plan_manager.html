@@ -2,15 +2,16 @@
 <html>
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<<<<<<< HEAD
     <link rel="stylesheet" href="plan_manager.css">
     <link rel="icon" type="파비콘/png" href="image/파비콘.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,56 +19,72 @@
     <script>
         const content = [
       { title: "공지사항 ", url: "events.html" },
+=======
+  <link rel="stylesheet" href="plan_manager.css">
+  <link rel="icon" type="파비콘/png" href="image/파비콘.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Plan-Manager</title>
+  <script>
+    const content = [
+      { title: "공지사항 ", url: "announcements.html" },
+>>>>>>> a879d258cdbb99e0277da05f0f9b1384b6c3200e
       { title: "자료집", url: "events.html" },
-      { title: "Q&A 페이지", url: "QnA_Board.html" },
-      ];
-    
-        function searchContent() {
-        const query = document.getElementById('search-bar').value.toLowerCase();
-        const resultsContainer = document.getElementById('search-results');
-        resultsContainer.innerHTML = '';
-        
-        if (query.trim() === '') {
-            resultsContainer.style.display = 'none';
-            return;
-        }
-        
-        const results = content.filter(item => item.title.toLowerCase().includes(query));
-        
-        if (results.length > 0) {
-            resultsContainer.style.display = 'block';
-            resultsContainer.innerHTML = results.map(item => 
-            `<p><a href="${item.url}" style="text-decoration: none; color: black;">${item.title}</a></p>`
-            ).join('');
-        } else {
-            resultsContainer.style.display = 'block';
-            resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
-        }
-        
-        // 3초 후 검색 결과 숨기기
-        setTimeout(() => {
-            resultsContainer.style.display = 'none';
-        }, 1000);
-        }
-    </script>
+      { title: "FAQ 페이지", url: "FAQ_Board.html" },
+    ];
+
+    function searchContent() {
+      const query = document.getElementById('search-bar').value.toLowerCase();
+      const resultsContainer = document.getElementById('search-results');
+      resultsContainer.innerHTML = '';
+
+      if (query.trim() === '') {
+        resultsContainer.style.display = 'none';
+        return;
+      }
+
+      const results = content.filter(item => item.title.toLowerCase().includes(query));
+
+      if (results.length > 0) {
+        resultsContainer.style.display = 'block';
+        resultsContainer.innerHTML = results.map(item =>
+          `<p><a href="${item.url}" style="text-decoration: none; color: black;">${item.title}</a></p>`
+        ).join('');
+      } else {
+        resultsContainer.style.display = 'block';
+        resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
+      }
+
+      // 3초 후 검색 결과 숨기기
+      setTimeout(() => {
+        resultsContainer.style.display = 'none';
+      }, 1000);
+    }
+  </script>
 </head>
 
 <body>
-    <!-- HTML Code -->
-      <!-- 헤더 -->
+  <!-- 헤더 -->
   <header>
     <div class="logo">
-      <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
-      <h1 id="h">컴퓨터정보공학부 학생회</h1>
+      <a href="index.html"> <!-- 이미지를 링크로 감싸기 -->
+        <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
+      </a>
+      <h1>컴퓨터정보공학부 학생회</h1>
     </div>
     <div class="search-container">
       <input type="text" id="search-bar" placeholder="검색...">
       <span class="search-icon" onclick="searchContent()">⌕</span>
       <nav class="menu-links">
         <a href="index.html">홈페이지</a>
+<<<<<<< HEAD
         <a href="events.html">자료집</a>
         <a href="events.html">공지사항</a>
         <a href="QnA_Board.html">Q&A</a>
+=======
+        <a href="resources.html">자료집</a>
+        <a href="events.html">공지사항</a>
+        <a href="FAQ_Board.html">FAQ</a>
+>>>>>>> a879d258cdbb99e0277da05f0f9b1384b6c3200e
       </nav>
       <div id="search-results"></div>
     </div>
@@ -79,7 +96,11 @@
       <ul>
         <li><a href="login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
         <li><a href="index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
+<<<<<<< HEAD
         <li><a href="events.html" style="color:white; text-decoration:none;">자료집</a></li>
+=======
+        <li><a href="resources.html" style="color:white; text-decoration:none;">자료집</a></li>
+>>>>>>> a879d258cdbb99e0277da05f0f9b1384b6c3200e
         <li><a href="events.html" style="color:white; text-decoration:none;">공지사항</a></li>
         <li><a href="club.html" style="color:white; text-decoration:none;">소모임 소개</a></li>
         <li><a href="introduce_2.html" style="color:white; text-decoration:none;">학과 소개</a></li>
@@ -92,185 +113,188 @@
       <a href="https://sw.kw.ac.kr" target="_blank">인융대 홈페이지</a>
     </div>
   </div>
-    <nav class="navbar bg-body-tertiary">
-        <div class="container">
-            <span class="navbar-brand mb-0 h1">
-                <i class="bi bi-card-checklist"></i>
-                나만의 Plan-Manager</span>
-                여러분만의 계획을 설정하고 완료 시 표시가 가능한 Planmanager입니다.<br>
-                각 계획마다 우선 순위를 부여할 수 있으므로 입력할 계획 옆에 체크박스로 표시한 후 계획을 등록하세요 !
-        </div>
-    </nav>
 
+  <nav class="navbar bg-body-tertiary">
     <div class="container">
-        <div class="d-flex align-items-center my-1"><!--Top, Botoom Margin is my-1-->>
-            <input type="text" class="form-control" id="plan-input" placeholder="Enter a plan here"><!-- 입력받는 곳-->
-            <div class="btn-group ms-2" role="group" aria-label="Priority selection"><!--우선순위 선택하는 곳-->
-                <input type="checkbox" class="btn-check" id="priority-high" autocomplete="off">
-                <label class="btn btn-outline-danger" for="priority-high">High</label>
+      <span class="navbar-brand mb-0 h1">
+        <i class="bi bi-card-checklist"></i>
+        나만의 Plan-Manager</span>
+      여러분만의 계획을 설정하고 완료 시 표시가 가능한 Planmanager입니다.<br>
+      각 계획마다 우선 순위를 부여할 수 있으므로 입력할 계획 옆에 체크박스로 표시한 후 계획을 등록하세요 !
+    </div>
+  </nav>
 
-                <input type="checkbox" class="btn-check" id="priority-medium" autocomplete="off">
-                <label class="btn btn-outline-warning" for="priority-medium">Medium</label>
+  <div class="container">
+    <div class="d-flex align-items-center my-1"><!--Top, Botoom Margin is my-1-->>
+      <input type="text" class="form-control" id="plan-input" placeholder="Enter a plan here"><!-- 입력받는 곳-->
+      <div class="btn-group ms-2" role="group" aria-label="Priority selection"><!--우선순위 선택하는 곳-->
+        <input type="checkbox" class="btn-check" id="priority-high" autocomplete="off">
+        <label class="btn btn-outline-danger" for="priority-high">High</label>
 
-                <input type="checkbox" class="btn-check" id="priority-low" autocomplete="off">
-                <label class="btn btn-outline-success" for="priority-low">Low</label>
-            </div>
-            <button type="button" id="add-btn" class="btn btn-primary ms-1 text-nowrap">
-                <i class="bi bi-plus"></i>
-                Add
-            </button>
-        </div>
-        <!--Todo, Done-->
-        <div class="d-flex">
-            <div class="flex-grow-1 rounded-2 p-2 me-1 w-50">
-                <h3>Plans</h3>
-                <div id="plan-list"></div>
-            </div>
+        <input type="checkbox" class="btn-check" id="priority-medium" autocomplete="off">
+        <label class="btn btn-outline-warning" for="priority-medium">Medium</label>
 
-            <div class="flex-grow-1 rounded-2 p-2 w-50">
-                <h3>Done</h3>
-                <div id="done-list"></div>
-            </div>
-        </div>
-
-<!-- 푸터 -->
-<footer>
-    <div class="footer-left"></div>
-    <div class="footer-right">
-      <!-- 첫 번째 아이콘: 카카오톡 -->
-      <div class="icon-wrapper">
-        <a href="https://open.kakao.com/o/gDFOk91g" target="_blank">
-          <img src="image/메세지.png" alt="카카오톡 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
-        </a>
-        <div class="tooltip">카카오톡 채팅방으로 이동합니다.</div>
+        <input type="checkbox" class="btn-check" id="priority-low" autocomplete="off">
+        <label class="btn btn-outline-success" for="priority-low">Low</label>
+      </div>
+      <button type="button" id="add-btn" class="btn btn-primary ms-1 text-nowrap">
+        <i class="bi bi-plus"></i>
+        Add
+      </button>
+    </div>
+    <!--Todo, Done-->
+    <div class="d-flex">
+      <div class="flex-grow-1 rounded-2 p-2 me-1 w-50">
+        <h3>Plans</h3>
+        <div id="plan-list"></div>
       </div>
 
-      <div class="icon-wrapper">
-        <a href="https://www.instagram.com/kw_cie/" target="_blank">
-          <img src="image/인스타그램.png" alt="인스타그램 아이콘" class="footer-icon" style="width: 60px; height: 50px; transition: transform 0.2s ease;">
-        </a>
-        <div class="tooltip">인스타그램 페이지로 이동합니다.</div>
-      </div>
-  
-      <!-- 텍스트 영역 -->
-      <div class="text">
-        <p>김재용(회장): 010-5651-4415</p>
-        <p>최우진(부회장): 010-4907-7802</p>
+      <div class="flex-grow-1 rounded-2 p-2 w-50">
+        <h3>Done</h3>
+        <div id="done-list"></div>
       </div>
     </div>
-  </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 푸터 -->
+    <footer>
+      <div class="footer-left"></div>
+      <div class="footer-right">
+        <!-- 첫 번째 아이콘: 카카오톡 -->
+        <div class="icon-wrapper">
+          <a href="https://open.kakao.com/o/gDFOk91g" target="_blank">
+            <img src="image/메세지.png" alt="카카오톡 아이콘" class="footer-icon"
+              style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+          </a>
+          <div class="tooltip">카카오톡 채팅방으로 이동합니다.</div>
+        </div>
 
-        <script>
-            /* JS Code */
-            const Type = { // Object
-                Todo: 1,
-                Done: 2,
-            };
+        <div class="icon-wrapper">
+          <a href="https://www.instagram.com/kw_cie/" target="_blank">
+            <img src="image/인스타그램.png" alt="인스타그램 아이콘" class="footer-icon"
+              style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+          </a>
+          <div class="tooltip">인스타그램 페이지로 이동합니다.</div>
+        </div>
 
-            const PriorityColors = {//우선순위 색상
-                High: "#FBB4AE",
-                Medium: "#FFFFCC",
-                Low: "#CCEBC5"
-            };
+        <!-- 텍스트 영역 -->
+        <div class="text">
+          <p>김재용(회장): 010-5651-4415</p>
+          <p>최우진(부회장): 010-4907-7802</p>
+        </div>
+      </div>
+    </footer>
 
-            let plans = [];//저장된 plan을 담는 배열
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-            function loadPlans() {
-                let lastPlans = localStorage.getItem("plans");
-                if (!lastPlans) return;
+    <script>
+      /* JS Code */
+      const Type = { // Object
+        Todo: 1,
+        Done: 2,
+      };
 
-                plans = JSON.parse(lastPlans);
-                plans.forEach(p => {
-                    addToList(p);
-                });
-            }
+      const PriorityColors = {//우선순위 색상
+        High: "#FBB4AE",
+        Medium: "#FFFFCC",
+        Low: "#CCEBC5"
+      };
 
-            function savePlans() {
-                localStorage.setItem("plans", JSON.stringify(plans));
-            }
+      let plans = [];//저장된 plan을 담는 배열
 
-            //리스트에 계획 추가
-            function addToList(plan) {
-                let div = document.createElement("div");
-                div.className = "plan p-1 rounded-2 ps-2 d-flex align-items-center";
-                div.style.backgroundColor = plan.color;//우선순위에 맞춰서 배경색 설정
+      function loadPlans() {
+        let lastPlans = localStorage.getItem("plans");
+        if (!lastPlans) return;
 
-                let span = document.createElement("span");
-                span.classList.add("me-auto");
-                span.textContent = plan.text;
-                div.appendChild(span);
+        plans = JSON.parse(lastPlans);
+        plans.forEach(p => {
+          addToList(p);
+        });
+      }
 
-                if (plan.type === Type.Todo) {
-                    //완료버튼 생성
-                    let buttonDone = document.createElement("button");
-                    buttonDone.classList.add("btn", "btn-sm", "btn-success", "me-1");
-                    buttonDone.innerHTML = '<i class="bi bi-check"></i>';
-                    div.appendChild(buttonDone);
+      function savePlans() {
+        localStorage.setItem("plans", JSON.stringify(plans));
+      }
 
-                    //완료버튼 클릭 시, Done으로 이동
-                    buttonDone.addEventListener("click", () => {
-                        div.remove();//현재 항목을 Plans에서 제거
-                        plan.type = Type.Done;//상태를 Done으로 변경
-                        plans = plans.filter(p => p !== plan);//Plans 배열에서 제거
-                        plans.push(plan);//Done 항목에 추가
-                        savePlans();
-                        addToList(plan);//Done 리스트에 추가
-                    });
-                }
+      //리스트에 계획 추가
+      function addToList(plan) {
+        let div = document.createElement("div");
+        div.className = "plan p-1 rounded-2 ps-2 d-flex align-items-center";
+        div.style.backgroundColor = plan.color;//우선순위에 맞춰서 배경색 설정
 
-                //삭제버튼 생성
-                let buttonRemove = document.createElement("button");
-                buttonRemove.classList.add("btn", "btn-sm", "btn-danger");
-                let iElem = document.createElement("i");
-                iElem.classList.add("bi", "bi-x");
-                buttonRemove.appendChild(iElem);
-                div.appendChild(buttonRemove);
+        let span = document.createElement("span");
+        span.classList.add("me-auto");
+        span.textContent = plan.text;
+        div.appendChild(span);
 
-                //삭제버튼 클릭 시 발생하는 이벤트
-                buttonRemove.addEventListener("click", () => {
-                    div.remove();//화면에서 제거
-                    plans = plans.filter(p => p !== plan);//plans 배열에서 제거
-                    savePlans();
-                });
+        if (plan.type === Type.Todo) {
+          //완료버튼 생성
+          let buttonDone = document.createElement("button");
+          buttonDone.classList.add("btn", "btn-sm", "btn-success", "me-1");
+          buttonDone.innerHTML = '<i class="bi bi-check"></i>';
+          div.appendChild(buttonDone);
 
-                //상태에 따라 Todo or Done 리스트에 추가
-                let list = document.querySelector(plan.type === Type.Todo ? "#plan-list" : "#done-list");
-                list.appendChild(div);
-            }
+          //완료버튼 클릭 시, Done으로 이동
+          buttonDone.addEventListener("click", () => {
+            div.remove();//현재 항목을 Plans에서 제거
+            plan.type = Type.Done;//상태를 Done으로 변경
+            plans = plans.filter(p => p !== plan);//Plans 배열에서 제거
+            plans.push(plan);//Done 항목에 추가
+            savePlans();
+            addToList(plan);//Done 리스트에 추가
+          });
+        }
 
-            let addBtn = document.querySelector("#add-btn");
-            addBtn.addEventListener("click", () => {
-                let input = document.querySelector("#plan-input");
+        //삭제버튼 생성
+        let buttonRemove = document.createElement("button");
+        buttonRemove.classList.add("btn", "btn-sm", "btn-danger");
+        let iElem = document.createElement("i");
+        iElem.classList.add("bi", "bi-x");
+        buttonRemove.appendChild(iElem);
+        div.appendChild(buttonRemove);
 
-                let text = input.value;
-                if (!text.length) return;
+        //삭제버튼 클릭 시 발생하는 이벤트
+        buttonRemove.addEventListener("click", () => {
+          div.remove();//화면에서 제거
+          plans = plans.filter(p => p !== plan);//plans 배열에서 제거
+          savePlans();
+        });
 
-                //우선순위 확인 및 색상 설정
-                let color = "";
-                if (document.querySelector("#priority-high").checked) color = PriorityColors.High;
-                else if (document.querySelector("#priority-medium").checked) color = PriorityColors.Medium;
-                else if (document.querySelector("#priority-low").checked) color = PriorityColors.Low;
+        //상태에 따라 Todo or Done 리스트에 추가
+        let list = document.querySelector(plan.type === Type.Todo ? "#plan-list" : "#done-list");
+        list.appendChild(div);
+      }
 
-                let plan = {//새 계획 객체 생성
-                    text: text,
-                    color: color,
-                    type: Type.Todo
-                };
-                plans.push(plan);
-                savePlans();
-                addToList(plan);
-                input.value = "";//입력 초기화
+      let addBtn = document.querySelector("#add-btn");
+      addBtn.addEventListener("click", () => {
+        let input = document.querySelector("#plan-input");
 
-                //우선순위 초기화
-                document.querySelectorAll(".btn-check").forEach(btn => btn.checked = false);
-            });
+        let text = input.value;
+        if (!text.length) return;
 
-            window.addEventListener("load", () => {
-                loadPlans();
-            });
-        </script>
+        //우선순위 확인 및 색상 설정
+        let color = "";
+        if (document.querySelector("#priority-high").checked) color = PriorityColors.High;
+        else if (document.querySelector("#priority-medium").checked) color = PriorityColors.Medium;
+        else if (document.querySelector("#priority-low").checked) color = PriorityColors.Low;
+
+        let plan = {//새 계획 객체 생성
+          text: text,
+          color: color,
+          type: Type.Todo
+        };
+        plans.push(plan);
+        savePlans();
+        addToList(plan);
+        input.value = "";//입력 초기화
+
+        //우선순위 초기화
+        document.querySelectorAll(".btn-check").forEach(btn => btn.checked = false);
+      });
+
+      window.addEventListener("load", () => {
+        loadPlans();
+      });
+    </script>
 
 </body>
 

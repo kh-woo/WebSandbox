@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="tmp.css">
+  <link rel="stylesheet" href="resources.css">
   <link rel="icon" type="파비콘/png" href="image/파비콘.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>광운대학교 컴퓨터정보공학부</title>
@@ -58,19 +58,27 @@
 </head>
 <body>
    <!-- 헤더 -->
-  <header>
+   <header>
     <div class="logo">
-      <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
+      <a href="index.html"> <!-- 이미지를 링크로 감싸기 -->
+        <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
+      </a>
       <h1>컴퓨터정보공학부 학생회</h1>
     </div>
     <div class="search-container">
-      <input type="text" placeholder="검색...">
+      <input type="text" id="search-bar" placeholder="검색...">
+      <span class="search-icon" onclick="searchContent()">⌕</span>
       <nav class="menu-links">
         <a href="index.html">홈페이지</a>
         <a href="resources.html">자료집</a>
         <a href="events.html">공지사항</a>
+<<<<<<< HEAD
         <a href="QnAgi_Board.html">Q&A</a>
+=======
+        <a href="FAQ_Board.html">FAQ</a>
+>>>>>>> a879d258cdbb99e0277da05f0f9b1384b6c3200e
       </nav>
+      <div id="search-results"></div>
     </div>
   </header>
 
@@ -80,7 +88,11 @@
       <ul>
         <li><a href="login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
         <li><a href="index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
+<<<<<<< HEAD
         <li><a href="events.html" style="color:white; text-decoration:none;">자료집</a></li>
+=======
+        <li><a href="resources.html" style="color:white; text-decoration:none;">자료집</a></li>
+>>>>>>> a879d258cdbb99e0277da05f0f9b1384b6c3200e
         <li><a href="events.html" style="color:white; text-decoration:none;">공지사항</a></li>
         <li><a href="club.html" style="color:white; text-decoration:none;">소모임 소개</a></li>
         <li><a href="introduce_2.html" style="color:white; text-decoration:none;">학과 소개</a></li>
@@ -108,6 +120,7 @@
         <p>추천 자료와 블로그, 그리고 백준 문제 풀이를 확인하세요.</p>
         <h2><a href="#" onclick="loadAdditionalResources()">기타 자료</a></h2>
         <p>유용한 기타 자료와 링크를 확인하세요.</p> 
+        
     </main>
 
     <script>
@@ -206,7 +219,6 @@
                     <li>4. 인기 과목은 사전에 정보를 수집하고, 빠르게 신청합니다.</li>
                     <li>5. 백업 과목을 계획해, 실패 시 대체 과목을 선택합니다.</li>
                 </ul>
-                <h3>우진아 이거 기타 자료에 '에타 모음집' 보면 수강신청 팁 있는데 어디에 넣을까</h3>
             </section>
         `;
         document.getElementById('main-content').innerHTML = content;
@@ -269,23 +281,24 @@
     }
         // 기타 자료 동적 콘텐츠 로드
         function loadAdditionalResources() {
-        const content = `
-            <div class="navigation">
-                <a href="#" class="back-arrow">&lt;</a>
-                <h1>기타 자료</h1>
-            </div>
-            <section>
-                <h3>못 봤으면 인생 절반 손해</h3>
-                <ul>
-                    <li><a href="https://principled-lancer-521.notion.site/20cf89ae51244e11894161b872c5df31" target="_blank">에브리타임 꿀팁 모음집</a></li>
-                    <li><a href="https://chromewebstore.google.com/detail/klas-helper/jicidjkhiefbhbgbfbemakjndloecjlf?pli=1" target="_blank">Klas Helper 크롬 확장 프로그램 다운로드</a></li>
-                    <li><a href="https://github.com/kw-service/kw-class-registration" target="_blank">모의 수강 신청 프로그램 다운로드 링크</a></li>
-                </ul>
-            </section>
-        `;
-        document.getElementById('main-content').innerHTML = content;
-        bindBackArrow();
-    }
+            const content = `
+                <div class="navigation">
+                    <a href="#" class="back-arrow">&lt;</a>
+                    <h1>기타 자료</h1>
+                </div>
+                <section>
+                    <h3>못 봤으면 인생 절반 손해</h3>
+                    <ul>
+                        <li><a href="https://principled-lancer-521.notion.site/20cf89ae51244e11894161b872c5df31" target="_blank">에브리타임 꿀팁 모음집</a></li>
+                        <li><a href="https://chromewebstore.google.com/detail/klas-helper/jicidjkhiefbhbgbfbemakjndloecjlf?pli=1" target="_blank">Klas Helper 크롬 확장 프로그램 다운로드</a></li>
+                        <li><a href="https://github.com/kw-service/kw-class-registration" target="_blank">모의 수강 신청 프로그램 다운로드 링크</a></li>
+                        <li><a href="myQuiz.html" target="_self">퀴즈 페이지로 이동</a></li>
+                    </ul>
+                </section>
+            `;
+            document.getElementById('main-content').innerHTML = content;
+            bindBackArrow();
+        }
     
         // 이전 콘텐츠로 돌아가기
         function goBack() {
