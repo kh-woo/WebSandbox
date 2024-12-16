@@ -2,29 +2,6 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index_style.css">
-    <link rel="icon" type="파비콘/png" href="image/파비콘.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>광운대학교 컴퓨터정보공학부</title>
-    <script>
-      const content = [
-    { title: "공지사항 ", url: "events.html" },
-    { title: "자료집", url: "events.html" },
-    { title: "Q&A 페이지", url: "QnA_Board.html" },
-      ];
-  
-  function searchContent() {
-    const query = document.getElementById('search-bar').value.toLowerCase();
-    const resultsContainer = document.getElementById('search-results');
-    resultsContainer.innerHTML = '';
-  
-    if (query.trim() === '') {
-      resultsContainer.style.display = 'none';
-      return;
-=======
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index_style.css">
@@ -64,7 +41,6 @@
       setTimeout(() => {
         resultsContainer.style.display = 'none';
       }, 1000);
->>>>>>> a879d258cdbb99e0277da05f0f9b1384b6c3200e
     }
   </script>
   <style>
@@ -154,15 +130,9 @@
       <span class="search-icon" onclick="searchContent()">⌕</span>
       <nav class="menu-links">
         <a href="index.html">홈페이지</a>
-<<<<<<< HEAD
-        <a href="events.html">자료집</a>
-        <a href="events.html">공지사항</a>
-        <a href="QnA_Board.html">Q&A</a>
-=======
         <a href="resources.html">자료집</a>
         <a href="events.html">공지사항</a>
         <a href="FAQ_Board.html">FAQ</a>
->>>>>>> a879d258cdbb99e0277da05f0f9b1384b6c3200e
       </nav>
       <div id="search-results"></div>
     </div>
