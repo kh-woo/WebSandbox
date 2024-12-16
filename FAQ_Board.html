@@ -8,23 +8,72 @@
   <link rel="icon" type="파비콘/png" href="image/파비콘.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>광운대학교 컴퓨터정보공학부</title>
+
+  <script>
+    const content = [
+      { title: "공지사항 ", url: "events.html" },
+      { title: "자료집", url: "resources.html" },
+      { title: "FAQ 페이지", url: "FAQ_Board.html" },
+      { title: "홈페이지", url: "index.html" },
+      { title: "소모임 소개", url: "club.html" },
+      { title: "Plan_manager", url: "Plan_manager.html" },
+    ];
+  
+    function searchContent() {
+      const query = document.getElementById('search-bar').value.toLowerCase();
+      const resultsContainer = document.getElementById('search-results');
+      resultsContainer.innerHTML = '';
+  
+      if (query.trim() === '') {
+        resultsContainer.style.display = 'none';
+        return;
+      }
+  
+      const results = content.filter(item => item.title.toLowerCase().includes(query));
+  
+      if (results.length > 0) {
+        resultsContainer.style.display = 'block';
+        resultsContainer.innerHTML = results.map(item =>
+          `<p><a href="${item.url}" style="text-decoration: none; color: black;">${item.title}</a></p>`
+        ).join('');
+      } else {
+        resultsContainer.style.display = 'block';
+        resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
+      }
+  
+      // 3초 후 검색 결과 숨기기
+      setTimeout(() => {
+        resultsContainer.style.display = 'none';
+      }, 3000); // 3초
+    }
+  
+    // Enter 키로 검색 실행
+    document.getElementById('search-bar').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // 기본 동작 방지
+        searchContent();
+      }
+    });
+  </script>
 </head>
 
 <body>
     <!-- 헤더 -->
-<<<<<<< HEAD
   <header>
     <div class="logo">
-      <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
-      <h1>컴퓨터정보공학부 학생회</h1>
+        <a href="index.html"> <!-- 이미지를 링크로 감싸기 -->
+            <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
+        </a>
+        <h1>컴퓨터정보공학부 학생회</h1>
     </div>
     <div class="search-container">
       <input type="text" placeholder="검색...">
+      <span class="search-icon" onclick="searchContent()">⌕</span>
       <nav class="menu-links">
         <a href="index.html">홈페이지</a>
         <a href="resources.html">자료집</a>
         <a href="events.html">공지사항</a>
-        <a href="QnAgi_Board.html">Q&A</a>
+        <a href="FAQ_Board.html">FAQ</a>
       </nav>
     </div>
   </header>
@@ -49,29 +98,6 @@
     </div>
   </div>
   
-=======
-    <header>
-        <div class="logo">
-          <a href="index.html"> <!-- 이미지를 링크로 감싸기 -->
-            <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
-          </a>
-          <h1>컴퓨터정보공학부 학생회</h1 style= "color black;">
-        </div>
-        <div class="search-container">
-          <input type="text" id="search-bar" placeholder="검색...">
-          <span class="search-icon" onclick="searchContent()">⌕</span>
-          <nav class="menu-links">
-            <a href="index.html">홈페이지</a>
-            <a href="resources.html">자료집</a>
-            <a href="events.html">공지사항</a>
-            <a href="FAQ_Board.html">FAQ</a>
-          </nav>
-          <div id="search-results"></div>
-        </div>
-      </header>
-      
-
->>>>>>> a879d258cdbb99e0277da05f0f9b1384b6c3200e
     <div class="faq-container">
         <!-- 분야 선택 드롭다운 -->
         <div class="faq-category">

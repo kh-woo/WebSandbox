@@ -400,3 +400,15 @@ footer {
 .toggle-btn:hover {
   background-color: #bbb;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo
+  img {
+  height: 80px;
+  margin-right: 15px;
+}
+
