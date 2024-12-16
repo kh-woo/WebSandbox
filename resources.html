@@ -8,53 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>광운대학교 컴퓨터정보공학부</title>
 
-    <style>
-        .navigation {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-        }
-
-        .back-arrow {
-            font-size: 24px;
-            color: #aaa;
-            text-decoration: none;
-            margin-right: 10px;
-            cursor: pointer;
-        }
-
-        .back-arrow:hover {
-            color: #ccc;
-        }
-        .schedule-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        padding: 20px;
-        }
-
-        .schedule-grid section {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 15px;
-            background-color: #f9f9f9;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .schedule-grid h3 {
-            margin-top: 0;
-        }
-
-        .schedule-grid ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .schedule-grid li {
-            padding: 5px 0;
-        }
-    </style>
 </head>
 <body>
    <!-- 헤더 -->
@@ -107,11 +60,12 @@
         <p>각 학기 별 추천하는 시간표를 확인하세요</p>
         <h2><a href="#" onclick="loadRegistrationTips()">수강신청 방법</a></h2>
         <p>효율적인 수강신청 방법과 꿀팁을 확인하세요.</p>
-
         <h2><a href="#" onclick="loadStudyResources()">공부 자료</a></h2>
         <p>추천 자료와 블로그, 그리고 백준 문제 풀이를 확인하세요.</p>
         <h2><a href="#" onclick="loadAdditionalResources()">기타 자료</a></h2>
         <p>유용한 기타 자료와 링크를 확인하세요.</p> 
+        <h2><a href="myQuiz.html">퀴즈 프로그램</a></h2>
+        <p>자신만의 퀴즈를 만들어, 학습률을 확인하세요.</p>
         
     </main>
 
@@ -198,6 +152,7 @@
      // 수강신청 방법 동적 콘텐츠 로드
     function loadRegistrationTips() {
         const content = `
+        <div style="padding-bottom: 150px">
             <div class="navigation">
                 <a href="#" class="back-arrow">&lt;</a>
                 <h1>수강신청 방법</h1>
@@ -212,6 +167,7 @@
                     <li>5. 백업 과목을 계획해, 실패 시 대체 과목을 선택합니다.</li>
                 </ul>
             </section>
+        </div>
         `;
         document.getElementById('main-content').innerHTML = content;
         bindBackArrow();
@@ -219,6 +175,7 @@
     // 공부 자료 동적 콘텐츠 로드
     function loadStudyResources() {
         const content = `
+        <div style="padding-bottom: 20px">
             <div class="navigation">
                 <a href="#" class="back-arrow">&lt;</a>
                 <h1>공부 자료</h1>
@@ -267,6 +224,7 @@
                     </ul>
                 </section>
             </div>
+        </div>
         `;
         document.getElementById('main-content').innerHTML = content;
         bindBackArrow();
@@ -274,6 +232,7 @@
         // 기타 자료 동적 콘텐츠 로드
         function loadAdditionalResources() {
             const content = `
+            <div style="padding-bottom: 230px">
                 <div class="navigation">
                     <a href="#" class="back-arrow">&lt;</a>
                     <h1>기타 자료</h1>
@@ -284,9 +243,9 @@
                         <li><a href="https://principled-lancer-521.notion.site/20cf89ae51244e11894161b872c5df31" target="_blank">에브리타임 꿀팁 모음집</a></li>
                         <li><a href="https://chromewebstore.google.com/detail/klas-helper/jicidjkhiefbhbgbfbemakjndloecjlf?pli=1" target="_blank">Klas Helper 크롬 확장 프로그램 다운로드</a></li>
                         <li><a href="https://github.com/kw-service/kw-class-registration" target="_blank">모의 수강 신청 프로그램 다운로드 링크</a></li>
-                        <li><a href="myQuiz.html" target="_self">퀴즈 페이지로 이동</a></li>
                     </ul>
                 </section>
+            </div>
             `;
             document.getElementById('main-content').innerHTML = content;
             bindBackArrow();
