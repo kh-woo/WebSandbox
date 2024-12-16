@@ -1,213 +1,616 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en"
+>
+  <head>
+    <meta
+      charset="UTF-8"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="index_style.css"
+    />
+    <link
+      rel="icon"
+      type="파비콘/png"
+      href="image/파비콘.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>
+      광운대학교
+      컴퓨터정보공학부
+    </title>
+    <script>
+      const content =
+        [
+          {
+            title:
+              '공지사항 ',
+            url: 'events.html',
+          },
+          {
+            title:
+              '자료집',
+            url: 'resources.html',
+          },
+          {
+            title:
+              'FAQ 페이지',
+            url: 'FAQ_Board.html',
+          },
+          {
+            title:
+              '홈페이지',
+            url: 'index.html',
+          },
+          {
+            title:
+              '공지사항',
+            url: 'events.html',
+          },
+          {
+            title:
+              '소모임 소개',
+            url: 'club.html',
+          },
+          {
+            title:
+              'FAQ 페이지',
+            url: 'introduce_2.html',
+          },
+          {
+            title:
+              '운영국',
+            url: 'team/team_1.html',
+          },
+          {
+            title:
+              '홍보국',
+            url: 'team/team_2.html',
+          },
+          {
+            title:
+              '기획국',
+            url: 'team/team_3.html',
+          },
+          {
+            title:
+              'Plan_manager',
+            url: 'Plan_manager.html',
+          },
+          {
+            title:
+              'Plan_manager',
+            url: 'Plan_manager.html',
+          },
+          {
+            title:
+              'Plan_manager',
+            url: 'Plan_manager.html',
+          },
+        ];
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index_style.css">
-  <link rel="icon" type="파비콘/png" href="image/파비콘.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <title>광운대학교 컴퓨터정보공학부</title>
-  <script>
-    const content = [
-      { title: "공지사항 ", url: "announcements.html" },
-      { title: "자료집", url: "events.html" },
-      { title: "Q&A 페이지", url: "QnA_Board.html" },
-    ];
+      function searchContent() {
+        const query =
+          document
+            .getElementById(
+              'search-bar'
+            )
+            .value.toLowerCase();
+        const resultsContainer =
+          document.getElementById(
+            'search-results'
+          );
+        resultsContainer.innerHTML =
+          '';
 
-    function searchContent() {
-      const query = document.getElementById('search-bar').value.toLowerCase();
-      const resultsContainer = document.getElementById('search-results');
-      resultsContainer.innerHTML = '';
+        if (
+          query.trim() ===
+          ''
+        ) {
+          resultsContainer.style.display =
+            'none';
+          return;
+        }
 
-      if (query.trim() === '') {
-        resultsContainer.style.display = 'none';
-        return;
+        const results =
+          content.filter(
+            (
+              item
+            ) =>
+              item.title
+                .toLowerCase()
+                .includes(
+                  query
+                )
+          );
+
+        if (
+          results.length >
+          0
+        ) {
+          resultsContainer.style.display =
+            'block';
+          resultsContainer.innerHTML =
+            results
+              .map(
+                (
+                  item
+                ) =>
+                  `<p><a href="${item.url}" style="text-decoration: none; color: black;">${item.title}</a></p>`
+              )
+              .join(
+                ''
+              );
+        } else {
+          resultsContainer.style.display =
+            'block';
+          resultsContainer.innerHTML =
+            '<p>검색 결과가 없습니다.</p>';
+        }
+
+        // 3초 후 검색 결과 숨기기
+        setTimeout(
+          () => {
+            resultsContainer.style.display =
+              'none';
+          },
+          1000
+        );
+      }
+    </script>
+    <style>
+      .introduction {
+        margin: 0
+          auto;
+        text-align: center; /* 제목과 텍스트를 가운데 정렬 */
+        max-width: 800px;
+        margin-bottom: 30px;
       }
 
-      const results = content.filter(item => item.title.toLowerCase().includes(query));
-
-      if (results.length > 0) {
-        resultsContainer.style.display = 'block';
-        resultsContainer.innerHTML = results.map(item =>
-          `<p><a href="${item.url}" style="text-decoration: none; color: black;">${item.title}</a></p>`
-        ).join('');
-      } else {
-        resultsContainer.style.display = 'block';
-        resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 20px; /* 각 섹션 사이의 간격 */
+        flex-wrap: wrap; /* 화면 크기에 따라 줄바꿈 */
       }
 
-      // 3초 후 검색 결과 숨기기
-      setTimeout(() => {
-        resultsContainer.style.display = 'none';
-      }, 1000);
-    }
-  </script>
-  <style>
-    .introduction {
-      margin-left: 100px;
-      /* 왼쪽 여백을 추가하여 조금만 오른쪽으로 이동 */
-      text-align: left;
-      /* 텍스트는 기본 정렬 유지 */
-      max-width: 600px;
-      /* 내용의 최대 너비 제한 */
-    }
+      .section {
+        flex: 1;
+        min-width: 250px;
+        max-width: 350px; /* 카드 최대 너비 */
+        height: 450px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0
+          4px
+          8px
+          rgba(
+            0,
+            0,
+            0,
+            0.2
+          ); /* 카드에 그림자 추가 */
+        transition: transform
+            0.3s
+            ease,
+          box-shadow
+            0.3s
+            ease; /* 부드러운 호버 효과 */
+      }
 
-    .container {
-      margin-left: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      padding: 20px;
-    }
+      .section:hover {
+        transform: translateY(
+          -10px
+        ); /* 마우스 오버 시 살짝 위로 이동 */
+        box-shadow: 0
+          10px
+          15px
+          rgba(
+            0,
+            0,
+            0,
+            0.3
+          );
+      }
 
-    .section {
-      margin: 0;
-      flex: 1;
-      height: 500px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      cursor: pointer;
-      overflow: hidden;
-      background-color: rgba(0, 0, 0, 0.7);
-    }
+      .section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(
+          70%
+        ); /* 이미지 어둡게 처리 */
+      }
 
-    .section a {
-      text-decoration: none;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: bold;
-      z-index: 2;
-    }
+      .section:nth-child(
+          1
+        )::before {
+        background-image: url('image/nong.png');
+        filter: brightness(
+            100%
+          )
+          contrast(
+            105%
+          );
+      }
 
-    .section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-    }
+      .section:nth-child(
+          2
+        )::before {
+        background-image: url('image/cp.png');
+        filter: brightness(
+            100%
+          )
+          contrast(
+            105%
+          );
+      }
 
-    .section:nth-child(1)::before {
-      background-image: url('image/nongmin_ex.webp');
-      /* 농민 이미지 */
-      background-color: #ff6666;
-    }
+      .section:nth-child(
+          3
+        )::before {
+        background-image: url('image/recorder.png');
+        filter: brightness(
+            100%
+          )
+          contrast(
+            105%
+          );
+      }
 
-    .section:nth-child(2)::before {
-      background-image: url('image/cp_ex.jpg');
-      /* CP 이미지 */
-      background-color: #66cc66;
-    }
+      .section
+        a {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* 제목에 반투명 배경 */
+        padding: 10px
+          0;
+      }
 
-    .section:nth-child(3)::before {
-      background-image: url('image/recoder_ex.jpg');
-      /* Recoder 이미지 */
-      background-color: #6699ff;
-    }
-  </style>
-</head>
+      footer {
+        position: fixed; /* 화면 하단에 고정 */
+        bottom: 0;
+        left: -30px;
+        width: 100%;
+      }
+    </style>
+  </head>
 
-<body>
-  <!-- 헤더 -->
-  <header>
-    <div class="logo">
-      <a href="index.html"> <!-- 이미지를 링크로 감싸기 -->
-        <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
-      </a>
-      <h1>컴퓨터정보공학부 학생회</h1>
-    </div>
-    <div class="search-container">
-      <input type="text" id="search-bar" placeholder="검색...">
-      <span class="search-icon" onclick="searchContent()">⌕</span>
-      <nav class="menu-links">
-        <a href="index.html">홈페이지</a>
-        <a href="resources.html">자료집</a>
-        <a href="events.html">공지사항</a>
-        <a href="FAQ_Board.html">FAQ</a>
-      </nav>
-      <div id="search-results"></div>
-    </div>
-  </header>
-
-
-  <!-- 사이드바 -->
-  <div class="side-bar">
-    <div class="links">
-      <ul>
-        <li><a href="login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
-        <li><a href="index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
-        <li><a href="events.html" style="color:white; text-decoration:none;">자료집</a></li>
-        <li><a href="events.html" style="color:white; text-decoration:none;">공지사항</a></li>
-        <li><a href="club.html" style="color:white; text-decoration:none;">소모임 소개</a></li>
-        <li><a href="introduce_2.html" style="color:white; text-decoration:none;">학과 소개</a></li>
-        <li><a href="FAQ_Board.html" style="color:white; text-decoration:none;">FAQ</a></li>
-        <li><a href="Plan_manager.html" style="color:white; text-decoration:none;">Plan Manager</a></li>
-      </ul>
-    </div>
-    <div class="footer-links">
-      <a href="https://www.kw.ac.kr" target="_blank">광운대학교 홈페이지</a>
-      <a href="https://sw.kw.ac.kr" target="_blank">인융대 홈페이지</a>
-    </div>
-  </div>
-
-  <section>
-    <div class="introduction">
-      <h2>소모임</h2>
-      <p>학생회의 다양한 소모임을 소개합니다. 각 소모임 페이지로 이동해 더 자세한 정보를 확인해 보세요.</p>
-    </div>
-
-
-    <div class="container">
-      <!-- 소모임 링크만 수정 -->
-      <div class="section" onclick="location.href='nongmin.html'">
-        <a href="nongmin.html">농민</a>
-      </div>
-      <div class="section" onclick="location.href='cp.html'">
-        <a href="cp.html">CP</a>
-      </div>
-      <div class="section" onclick="location.href='recoder.html'">
-        <a href="recoder.html">Recoder</a>
-      </div>
-    </div>
-  </section>
-  <!-- 푸터 -->
-  <footer>
-    <div class="footer-left"></div>
-    <div class="footer-right">
-      <!-- 첫 번째 아이콘: 카카오톡 -->
-      <div class="icon-wrapper">
-        <a href="https://open.kakao.com/o/gDFOk91g" target="_blank">
-          <img src="image/메세지.png" alt="카카오톡 아이콘" class="footer-icon"
-            style="width: 60px; height: 50px; transition: transform 0.2s ease;">
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <div
+        class="logo"
+      >
+        <a
+          href="index.html"
+        >
+          <!-- 이미지를 링크로 감싸기 -->
+          <img
+            src="image/광운대학교.png"
+            alt="Kwangwoon University Logo"
+          />
         </a>
-        <div class="tooltip">카카오톡 채팅방으로 이동합니다.</div>
+        <h1>
+          컴퓨터정보공학부
+          학생회
+        </h1>
       </div>
-
-      <div class="icon-wrapper">
-        <a href="https://www.instagram.com/kw_cie/" target="_blank">
-          <img src="image/인스타그램.png" alt="인스타그램 아이콘" class="footer-icon"
-            style="width: 60px; height: 50px; transition: transform 0.2s ease;">
-        </a>
-        <div class="tooltip">인스타그램 페이지로 이동합니다.</div>
+      <div
+        class="search-container"
+      >
+        <input
+          type="text"
+          id="search-bar"
+          placeholder="검색..."
+        />
+        <span
+          class="search-icon"
+          onclick="searchContent()"
+          >⌕</span
+        >
+        <nav
+          class="menu-links"
+        >
+          <a
+            href="index.html"
+            >홈페이지</a
+          >
+          <a
+            href="resources.html"
+            >자료집</a
+          >
+          <a
+            href="events.html"
+            >공지사항</a
+          >
+          <a
+            href="FAQ_Board.html"
+            >FAQ</a
+          >
+        </nav>
+        <div
+          id="search-results"
+        ></div>
       </div>
+    </header>
 
-      <!-- 텍스트 영역 -->
-      <div class="text">
-        <p>김재용(회장): 010-5651-4415</p>
-        <p>최우진(부회장): 010-4907-7802</p>
+    <!-- 사이드바 -->
+    <div
+      class="side-bar"
+    >
+      <div
+        class="links"
+      >
+        <ul>
+          <li>
+            <a
+              href="login.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >로그아웃</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >홈페이지</a
+            >
+          </li>
+          <li>
+            <a
+              href="events.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >자료집</a
+            >
+          </li>
+          <li>
+            <a
+              href="events.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >공지사항</a
+            >
+          </li>
+          <li>
+            <a
+              href="club.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >소모임
+              소개</a
+            >
+          </li>
+          <li>
+            <a
+              href="introduce_2.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >학과
+              소개</a
+            >
+          </li>
+          <li>
+            <a
+              href="FAQ_Board.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >FAQ</a
+            >
+          </li>
+          <li>
+            <a
+              href="Plan_manager.html"
+              style="
+                color: white;
+                text-decoration: none;
+              "
+              >Plan
+              Manager</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div
+        class="footer-links"
+      >
+        <a
+          href="https://www.kw.ac.kr"
+          target="_blank"
+          >광운대학교
+          홈페이지</a
+        >
+        <a
+          href="https://sw.kw.ac.kr"
+          target="_blank"
+          >인융대
+          홈페이지</a
+        >
       </div>
     </div>
-  </footer>
 
-</body>
+    <section>
+      <div
+        class="introduction"
+      >
+        <h2>
+          소모임
+        </h2>
+        <p>
+          학생회의
+          다양한
+          소모임을
+          소개합니다.
+          각
+          소모임
+          페이지로
+          이동해
+          더
+          자세한
+          정보를
+          확인해
+          보세요.
+        </p>
+      </div>
 
+      <div
+        class="container"
+      >
+        <!-- 소모임 링크만 수정 -->
+        <div
+          class="section"
+          onclick="location.href='nongmin.html'"
+        >
+          <a
+            href="nongmin.html"
+            >농민</a
+          >
+        </div>
+        <div
+          class="section"
+          onclick="location.href='cp.html'"
+        >
+          <a
+            href="cp.html"
+            >CP</a
+          >
+        </div>
+        <div
+          class="section"
+          onclick="location.href='recoder.html'"
+        >
+          <a
+            href="recoder.html"
+            >Recoder</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- 푸터 -->
+    <footer>
+      <div
+        class="footer-left"
+      ></div>
+      <div
+        class="footer-right"
+      >
+        <!-- 첫 번째 아이콘: 카카오톡 -->
+        <div
+          class="icon-wrapper"
+        >
+          <a
+            href="https://open.kakao.com/o/gDFOk91g"
+            target="_blank"
+          >
+            <img
+              src="image/메세지.png"
+              alt="카카오톡 아이콘"
+              class="footer-icon"
+              style="
+                width: 60px;
+                height: 50px;
+                transition: transform
+                  0.2s
+                  ease;
+              "
+            />
+          </a>
+          <div
+            class="tooltip"
+          >
+            카카오톡
+            채팅방으로
+            이동합니다.
+          </div>
+        </div>
+
+        <div
+          class="icon-wrapper"
+        >
+          <a
+            href="https://www.instagram.com/kw_cie/"
+            target="_blank"
+          >
+            <img
+              src="image/인스타그램.png"
+              alt="인스타그램 아이콘"
+              class="footer-icon"
+              style="
+                width: 60px;
+                height: 50px;
+                transition: transform
+                  0.2s
+                  ease;
+              "
+            />
+          </a>
+          <div
+            class="tooltip"
+          >
+            인스타그램
+            페이지로
+            이동합니다.
+          </div>
+        </div>
+
+        <!-- 텍스트 영역 -->
+        <div
+          class="text"
+        >
+          <p>
+            김재용(회장):
+            010-5651-4415
+          </p>
+          <p>
+            최우진(부회장):
+            010-4907-7802
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
