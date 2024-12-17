@@ -411,4 +411,71 @@ footer {
   height: 80px;
   margin-right: 15px;
 }
+.search-container {
+  display: flex;
+  align-items: center; /* 아이템들을 수직으로 중앙 정렬 */
+  position: relative;
+  gap: 10px; /* 입력창과 아이콘 사이의 간격 설정 */
+}
 
+
+.search-container input {
+  padding: 15px; /* 내부 여백 */
+  font-size: 20px; /* 글씨 크기 */
+  border: 3px solid #000; /* 두꺼운 테두리 */
+  border-radius: 5px; /* 둥근 모서리 */
+  font-weight: bold; /* 글씨 두껍게 */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* 약간의 그림자 */
+  flex: 1; /* 입력창이 남은 공간을 차지하도록 설정 */
+}
+
+.search-container .search-icon {
+  cursor: pointer;
+  font-size: 40px; /* 아이콘 크기 조정 */
+  color: black;
+  transition: transform 0.2s ease, color 0.2s ease;
+  line-height: 1; /* 아이콘 수직 정렬 조정 */
+}
+
+.search-container .search-icon:hover {
+  transform: scale(1.1); /* 호버 시 약간의 확대 */
+  color: #555; /* 호버 색상 */
+}
+
+
+.search-container .menu-links a {
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 20px; /* 글씨 크기 증가 */
+  color: black;
+}
+
+#search-results {
+  position: absolute;
+  top: calc(100% + 5px); /* 검색창 바로 아래 */
+  left: 0;
+  width: 280px; /* 검색창 너비와 동일하게 설정 */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px;
+  display: none; /* 기본적으로 숨김 */
+  border-radius: 5px; /* 둥근 모서리 */
+  font-size: 16px; /* 검색 결과 글씨 크기 */
+}
+
+#search-results p {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+#search-results a {
+  text-decoration: none;
+  color: black;
+}
+
+#search-results a:hover {
+  text-decoration: underline;
+}

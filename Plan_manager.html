@@ -16,49 +16,113 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>Plan-Manager</title>
   <script>
+    function showCategory() {
+        // 모든 FAQ 섹션을 숨김
+        let sections = document.querySelectorAll('.faq-section');
+        sections.forEach(section => section.style.display = 'none');
+
+        // 선택된 카테고리의 FAQ 섹션을 표시
+        let selectedCategory = document.getElementById('category-select').value;
+        let selectedSection = document.getElementById(selectedCategory);
+        if (selectedSection) {
+            selectedSection.style.display = 'block';
+        }
+    }
+
+    // 페이지 로드 시 기본적으로 '일반' 카테고리 보이기
+    window.onload = function () {
+        showCategory();
+    };
+
+    function searchFAQ(category) {
+        let searchInput = document.getElementById(category + '-search').value.toLowerCase(); // 검색 입력값
+        let faqList = document.getElementById(category + '-list'); // 해당 분야의 FAQ 리스트
+        let faqItems = faqList.getElementsByClassName('faq-item'); // FAQ 항목들
+
+        // 각 FAQ 항목을 검색어와 비교
+        for (let i = 0; i < faqItems.length; i++) {
+            let itemText = faqItems[i].textContent || faqItems[i].innerText; // 질문과 답변 텍스트
+            if (itemText.toLowerCase().indexOf(searchInput) > -1) {
+                faqItems[i].style.display = ''; // 검색어가 포함된 항목은 보이게
+            } else {
+                faqItems[i].style.display = 'none'; // 검색어가 포함되지 않은 항목은 숨김
+            }
+        }
+    }
+
+    // 질문 옆 버튼 클릭 시 답변 토글
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item'); // 버튼이 포함된 FAQ 항목
+                const answer = faqItem.querySelector('.faq-answer'); // 해당 항목의 답변
+
+                if (answer.style.display === 'block') {
+                    // 답변 숨기기
+                    answer.style.display = 'none';
+                    button.textContent = '+'; // 버튼 텍스트 변경
+                } else {
+                    // 답변 보이기
+                    answer.style.display = 'block';
+                    button.textContent = '-'; // 버튼 텍스트 변경
+                }
+            });
+        });
+    });
+
+
     const content = [
-  { title: "공지사항 ", url: "events.html" },
-  { title: "자료집", url: "resources.html" },
-  { title: "FAQ 페이지", url: "FAQ_Board.html" },
-  { title: "홈페이지", url: "index.html" },
-  { title: "공지사항", url: "events.html" },
-  { title: "소모임 소개", url: "club.html" },
-  { title: "FAQ 페이지", url: "introduce_2.html" },
-  { title: "운영국", url: "team/team_1.html" },
-  { title: "홍보국", url: "team/team_2.html" },
-  { title: "기획국", url: "team/team_3.html" },
-  { title: "Plan_manager", url: "Plan_manager.html" },
-  { title: "Plan_manager", url: "Plan_manager.html" },
-  { title: "Plan_manager", url: "Plan_manager.html" },
-];
+    { title: "공지사항 ", url: "events.html" },
+    { title: "자료집", url: "resources.html" },
+    { title: "FAQ 페이지", url: "FAQ_Board.html" },
+    { title: "홈페이지", url: "index.html" },
+    { title: "소모임 소개", url: "club.html" },
+    { title: "운영국", url: "team/team_1.html" },
+    { title: "홍보국", url: "team/team_2.html" },
+    { title: "기획국", url: "team/team_3.html" },
+    { title: "Plan_manager", url: "Plan_manager.html" },
+    ];
 
-function searchContent() {
-  const query = document.getElementById('search-bar').value.toLowerCase();
-  const resultsContainer = document.getElementById('search-results');
-  resultsContainer.innerHTML = '';
 
-  if (query.trim() === '') {
+    function searchContent() {
+    const query = document.getElementById('search-bar').value.toLowerCase();
+    const resultsContainer = document.getElementById('search-results');
+    resultsContainer.innerHTML = '';
+
+    if (query.trim() === '') {
     resultsContainer.style.display = 'none';
     return;
-  }
+    }
 
-  const results = content.filter(item => item.title.toLowerCase().includes(query));
-  
-  if (results.length > 0) {
+    const results = content.filter(item => item.title.toLowerCase().includes(query));
+
+    if (results.length > 0) {
     resultsContainer.style.display = 'block';
     resultsContainer.innerHTML = results.map(item => 
       `<p><a href="${item.url}" style="text-decoration: none; color: black;">${item.title}</a></p>`
     ).join('');
-  } else {
+    } else {
     resultsContainer.style.display = 'block';
     resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
-  }
+    }
 
-  // 3초 후 검색 결과 숨기기
-  setTimeout(() => {
+    // 3초 후 검색 결과 숨기기
+    setTimeout(() => {
     resultsContainer.style.display = 'none';
-  }, 1000);
-}
+    }, 1000);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchBar = document.getElementById('search-bar');
+      searchBar.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // 기본 동작 방지
+          searchContent();
+        }
+      });
+    });
   </script>
 </head>
 

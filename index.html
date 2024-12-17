@@ -45,13 +45,16 @@
       }, 3000); // 3초
     }
   
-    // Enter 키로 검색 실행
-    document.getElementById('search-bar').addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') {
-        event.preventDefault(); // 기본 동작 방지
-        searchContent();
-      }
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchBar = document.getElementById('search-bar');
+      searchBar.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // 기본 동작 방지
+          searchContent();
+        }
+      });
     });
+
   </script>
   
   
