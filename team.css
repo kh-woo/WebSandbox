@@ -160,19 +160,20 @@ footer {
   top: 120px; /* 로고 아래로 위치 조정 */
   left: 0;
   width: var(--side-bar-width);
-  height: calc(100vh - 120px); /* 로고 높이를 뺀 화면 높이 */
+  height: calc(100vh - 120px);
   background-color: black;
   color: white;
-  border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.8), 0); /* 처음에 80% 숨기기 */
+  border-radius: 0 20px 20px 0;
+  transform: translate(calc(var(--side-bar-width) * -0.99), 0); /* 처음에 99% 숨기기 */
   transition: transform 0.5s ease-in-out;
   padding: 20px;
   display: flex;
   flex-direction: column;
   overflow-y: auto; /* 콘텐츠가 넘칠 경우 스크롤 표시 */
-  z-index: 2;
-  font-size: 20px; /* 글씨 크기 증가 */
+  z-index: 1001;
+  font-size: 15px; /* 글씨 크기 증가 */
 }
+
 
 .side-bar:hover {
   transform: translate(0, 0); /* 호버 시 원래 위치로 */
@@ -182,6 +183,8 @@ footer {
   list-style: none;
   padding: 0;
   margin: 0;
+  position: relative; /* 리스트 위치를 기준으로 z-index 적용 가능 */
+  z-index: 2; /* 화살표보다 위에 표시 */
 }
 
 .side-bar li {
@@ -193,6 +196,31 @@ footer {
 
 .side-bar li:hover {
   background-color: #555;
+}
+/* 화살표 표시 */
+.side-bar::after {
+  content: '>';
+  position: absolute;
+  top: 45%;
+  right: -5px; /* 사이드바 오른쪽 외부로 살짝 나가게 설정 */
+  margin-right: 10px;
+  transform: translateY(-50%);
+  background-color: black;
+  color: white;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: content 0.5s ease-in-out;
+  z-index: 1; /* 화살표를 다른 콘텐츠 아래로 */
+  pointer-events: none; /* 클릭 방지 */
+}
+
+.side-bar:hover::after {
+  content: '<'; /* 호버 시 화살표 모양 변경 */
 }
 
 .footer-links {
