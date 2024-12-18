@@ -253,6 +253,7 @@ header {
 }
 
 main {
+  height: 100%;/* 푸터가 밑에 고정되도록 */
   text-align: center;
   padding: 20px;
   font-size: 20px; /* 글씨 크기 증가 */

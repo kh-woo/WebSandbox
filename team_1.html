@@ -4,26 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="team.css">
-  <link rel="icon" type="파비콘/png" href="/image/파비콘.png">
+  <link rel="icon" type="파비콘/png" href="image/파비콘.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>광운대학교 컴퓨터정보공학부</title>
+
+  <script>
+    const content = [
+      { title: "공지사항 ", url: "events.html" },
+      { title: "자료집", url: "resources.html" },
+      { title: "FAQ 페이지", url: "FAQ_Board.html" },
+      { title: "홈페이지", url: "index.html" },
+      { title: "소모임 소개", url: "club.html" },
+      { title: "Plan_manager", url: "Plan_manager.html" },
+    ];
+  
+    function searchContent() {
+      const query = document.getElementById('search-bar').value.toLowerCase();
+      const resultsContainer = document.getElementById('search-results');
+      resultsContainer.innerHTML = '';
+  
+      if (query.trim() === '') {
+        resultsContainer.style.display = 'none';
+        return;
+      }
+  
+      const results = content.filter(item => item.title.toLowerCase().includes(query));
+  
+      if (results.length > 0) {
+        resultsContainer.style.display = 'block';
+        resultsContainer.innerHTML = results.map(item =>
+          `<p><a href="${item.url}" style="text-decoration: none; color: black;">${item.title}</a></p>`
+        ).join('');
+      } else {
+        resultsContainer.style.display = 'block';
+        resultsContainer.innerHTML = '<p>검색 결과가 없습니다.</p>';
+      }
+  
+      // 3초 후 검색 결과 숨기기
+      setTimeout(() => {
+        resultsContainer.style.display = 'none';
+      }, 3000); // 3초
+    }
+    //엔터로 검색 기능
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchBar = document.getElementById('search-bar');
+      searchBar.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // 기본 동작 방지
+          searchContent();
+        }
+      });
+    });
+  </script>
 </head>
 <body>
 
   <!-- 헤더 -->
   <header>
     <div class="logo">
-      <img src="/image/광운대학교.png" alt="Kwangwoon University Logo">
+      <a href="index.html"> <!-- 이미지를 링크로 감싸기 -->
+        <img src="image/광운대학교.png" alt="Kwangwoon University Logo">
+      </a>
       <h1>컴퓨터정보공학부 학생회</h1>
     </div>
     <div class="search-container">
-      <input type="text" placeholder="검색...">
+      <input type="text" id="search-bar" placeholder="검색..." />
+      <span class="search-icon" onclick="searchContent()">⌕</span>
+      <div id="search-results" style="display: none;"></div>
       <nav class="menu-links">
-        <a href="/index.html">홈페이지</a>
-        <a href="/events.html">자료집</a>
-        <a href="/announcements.html">공지사항</a>
-        <a href="/QnA_Board.html">Q&A</a>
+        <a href="index.html">홈페이지</a>
+        <a href="resources.html">자료집</a>
+        <a href="events.html">공지사항</a>
+        <a href="FAQ_Board.html">FAQ</a>
       </nav>
+      <div id="search-results"></div>
     </div>
   </header>
 
@@ -31,13 +85,14 @@
  <div class="side-bar">
     <div class="links">
       <ul>
-        <li><a href="/login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
-        <li><a href="/index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
-        <li><a href="/events.html" style="color:white; text-decoration:none;">자료집</a></li>
-        <li><a href="/announcements.html" style="color:white; text-decoration:none;">공지사항</a></li>
-        <li><a href="/club.html" style="color:white; text-decoration:none;">소모임 소개</a></li>
-        <li><a href="/introduce_2.html" style="color:white; text-decoration:none;">학과 소개</a></li>
-        <li><a href="/QnA_Board.html" style="color:white; text-decoration:none;">Q&A</a></li>
+        <li><a href="login.html" style="color:white; text-decoration:none;">로그아웃</a></li>
+        <li><a href="index.html" style="color:white; text-decoration:none;">홈페이지</a></li>
+        <li><a href="events.html" style="color:white; text-decoration:none;">자료집</a></li>
+        <li><a href="announcements.html" style="color:white; text-decoration:none;">공지사항</a></li>
+        <li><a href="club.html" style="color:white; text-decoration:none;">소모임 소개</a></li>
+        <li><a href="introduce_2.html" style="color:white; text-decoration:none;">학과 소개</a></li>
+        <li><a href="FAQ_Board.html" style="color:white; text-decoration:none;">FAQ</a></li>
+        <li><a href="Plan_manager.html" style="color:white; text-decoration:none;">Plan Manager</a></li>
     </div>
     <div class="footer-links">
       <a href="https://www.kw.ac.kr" target="_blank">광운대학교 홈페이지</a>
@@ -51,125 +106,126 @@
       <!-- 홍보국 팀원 카드 -->
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>김현우</h2>
         <p class="role">운영국장</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>곽도경</h2>
         <p class="role">운영국장</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>강현</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>김송혜</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>김재원</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>박현지</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>송일환</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>심수정</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>안성환</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>오윤서</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>이기현</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>이예찬</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>이정현</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>전한아솔</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>정은빈</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>최준서</h2>
         <p class="role">운영국원</p>
       </div>
       <div class="team-member">
         <div class="image-container">
-          <img src="/image/사람.png" alt="팀원 1">
+          <img src="image/사람.png" alt="팀원 1">
         </div>
         <h2>최현진</h2>
         <p class="role">운영국원</p>
       </div>
+    </div>
+</main>
 
-      
   </main>
 
 
